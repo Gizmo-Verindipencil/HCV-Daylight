@@ -19,7 +19,7 @@ class Daylight {
     /**
      * 要素に色を反映します。
      * @param {HTMLElement} element 要素。
-     * @param {String} プロパティ名。
+     * @param {String} property 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
     reflectToElement = (element, property, config) => {
@@ -28,7 +28,7 @@ class Daylight {
 
     /**
      * 全ての要素に色を反映します。
-     * @param {String} プロパティ名。
+     * @param {String} property 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
     reflectToPage = (property, config) => {
