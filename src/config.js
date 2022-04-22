@@ -17,7 +17,7 @@ class Config {
 
     /**
      * 要素への最大反射回数。1 を指定した場合は最初の実行のみ色への反映が適用されます。
-     * @type {Array<Number>}
+     * @type {Number}
      */
     numberOfLimitReflection = 1;
 
