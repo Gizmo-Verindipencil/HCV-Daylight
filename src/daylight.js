@@ -12,7 +12,7 @@ class Daylight {
      * @returns {String} 日の満ち欠けを反映した色を返します。色表現は expression と同種類になります。例えば、expression がヘックス表現の場
      *                   合は、返却される色表現もヘックス表現です。expression が色を含む表現の場合は、その色表現のみが変更された
      */
-    getReflectionColor = (expression, config) => {
+    getReflectionColor (expression, config) {
         throw "not implemented.";
     }
 
@@ -22,7 +22,7 @@ class Daylight {
      * @param {String} property 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
-    reflectToElement = (element, property, config) => {
+    reflectToElement (element, property, config) {
         throw "not implemented.";
     }
 
@@ -31,7 +31,7 @@ class Daylight {
      * @param {String} property 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
-    reflectToPage = (property, config) => {
+    reflectToPage (property, config) {
         const all = document.getElementsByTagName("*");
         for (const e of all) {
             this.reflectToElement(e, property, config);
