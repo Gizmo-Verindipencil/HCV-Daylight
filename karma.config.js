@@ -1,34 +1,34 @@
-var path = require(" path" );
+var path = require("path");
 
 module.exports = function (config) {
     config.set({
-        browsers: [" Chrome" ],
+        browsers: [ "Chrome" ],
         coverageReporter: {
             reporters: [
-                { type: " html" , subdir: " html"  },
-                { type: " lcovonly" , subdir: " ."  },
+                { type: "html", subdir: "html" },
+                { type: "lcovonly", subdir: "." },
             ],
         },
         files: [
-            " tests.webpack.js" ,
+            "tests.webpack.js",
         ],
         frameworks: [
-            " jasmine" ,
+            "jasmine",
         ],
         preprocessors: {
-            " tests.webpack.js" : [" webpack" , " sourcemap" ],
+            "tests.webpack.js" : [ "webpack", "sourcemap" ],
         },
-        reporters: [" progress" , " coverage" ],
+        reporters: [ "progress", "coverage" ],
         webpack: {
             cache: true,
-            devtool: " inline-source-map" ,
+            devtool: "inline-source-map",
             module: {
                 preLoaders: [
                     {
-                        test: /-test\.js$/,
-                        include: /src/,
+                        test: /\.js$/,
+                        include: /test/,
                         exclude: /(bower_components|node_modules)/,
-                        loader: " babel" ,
+                        loader: "babel",
                         query: {
                             cacheDirectory: true,
                         },
@@ -36,8 +36,8 @@ module.exports = function (config) {
                     {
                         test: /\.js?$/,
                         include: /src/,
-                        exclude: /(node_modules|bower_components|__tests__)/,
-                        loader: " babel-istanbul" ,
+                        exclude: /(node_modules|bower_components)/,
+                        loader: "babel-istanbul",
                         query: {
                             cacheDirectory: true,
                         },
@@ -46,9 +46,9 @@ module.exports = function (config) {
                 loaders: [
                     {
                         test: /\.js$/,
-                        include: path.resolve(__dirname, " ../src" ),
-                        exclude: /(bower_components|node_modules|__tests__)/,
-                        loader: " babel" ,
+                        include: path.resolve(__dirname, "../src" ),
+                        exclude: /(bower_components|node_modules)/,
+                        loader: "babel",
                         query: {
                             cacheDirectory: true,
                         },
