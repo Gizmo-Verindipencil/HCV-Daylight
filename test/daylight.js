@@ -237,7 +237,7 @@ describe("Daylight.getReflectionColor", () => {
         // テストの準備
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
-        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%" ];
+        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -269,7 +269,7 @@ describe("Daylight.getReflectionColor", () => {
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
-        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%" ];
+        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -303,7 +303,7 @@ describe("Daylight.getReflectionColor", () => {
         // テストの準備
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
-        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%" ];
+        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -335,7 +335,7 @@ describe("Daylight.getReflectionColor", () => {
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
-        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%" ];
+        const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
