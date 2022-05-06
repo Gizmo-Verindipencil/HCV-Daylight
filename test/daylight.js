@@ -8,10 +8,10 @@ describe("Daylight.getReflectionColor", () => {
         const expression = "not color";
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression);
+        const result = daylight.getReflectionColor(expression);
 
         // 結果を検証
-        expect(actual).toBe(expression);
+        expect(result).toBe(expression);
     });
 
     // hex3-1:
@@ -29,10 +29,10 @@ describe("Daylight.getReflectionColor", () => {
         };
         
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
         
         // 結果を検証
-        expect(actual).toBe("#123");
+        expect(result).toBe("#123");
         
         // NOTE :
         // 16進数(3桁)の各桁が示す値はRGB値で言うところの17を乗算した値となっている
@@ -60,10 +60,10 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(actual).toBe("linear-gradient(#123, #456);");
+        expect(result).toBe("linear-gradient(#123, #456);");
     });
 
     // hex4-1:
@@ -81,10 +81,10 @@ describe("Daylight.getReflectionColor", () => {
         };
         
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
         
         // 結果を検証
-        expect(actual).toBe("#123f");
+        expect(result).toBe("#123f");
         
         // NOTE :
         // 基本的な変換については hex3-1 を参照
@@ -106,10 +106,10 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(actual).toBe("linear-gradient(#123e, #456f);");
+        expect(result).toBe("linear-gradient(#123e, #456f);");
     });
 
     // hex6-1:
@@ -127,10 +127,10 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(actual).toBe("#0c1e30");
+        expect(result).toBe("#0c1e30");
     });
 
     // hex6-2:
@@ -148,10 +148,10 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(actual).toBe("linear-gradient(#0f2032, #3c4e60);");
+        expect(result).toBe("linear-gradient(#0f2032, #3c4e60);");
     });
 
     // hex8-1:
@@ -169,10 +169,10 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const actual = daylight.getReflectionColor(expression, config);
+        const result = daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(actual).toBe("#0c1e30ff");
+        expect(result).toBe("#0c1e30ff");
     });
 
     // hex8-2:
