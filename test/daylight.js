@@ -4,11 +4,10 @@ describe("Daylight.getReflectionColor", () => {
     // colorless-1:
     it("colorless-1: 第1引数が色表現ではない/色表現を含まない場合は、そのまま返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "not color";
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression);
+        const result = Daylight.getReflectionColor(expression);
 
         // 結果を検証
         expect(result).toBe(expression);
@@ -17,7 +16,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex3-1:
     it("hex3-1: 第1引数が16進数(3桁)の色表現の場合は、調整した色の16進数(3桁)表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "#012";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -29,7 +27,7 @@ describe("Daylight.getReflectionColor", () => {
         };
         
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
         
         // 結果を検証
         expect(result).toBe("#123");
@@ -48,7 +46,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex3-2:
     it("hex3-2: 第1引数が16進数(3桁)の色表現を含む場合は、調整した色の16進数(3桁)表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "linear-gradient(#012, #345);";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -60,7 +57,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("linear-gradient(#123, #456);");
@@ -69,7 +66,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex4-1:
     it("hex4-1: 第1引数が16進数(4桁)の色表現の場合は、調整した色の16進数(4桁)表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "#012f";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -81,7 +77,7 @@ describe("Daylight.getReflectionColor", () => {
         };
         
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
         
         // 結果を検証
         expect(result).toBe("#123f");
@@ -94,7 +90,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex4-2:
     it("hex4-2: 第1引数が16進数(4桁)の色表現を含む場合は、調整した色の16進数(4桁)表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "linear-gradient(#012e, #345f);";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -106,7 +101,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("linear-gradient(#123e, #456f);");
@@ -115,7 +110,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex6-1:
     it("hex6-1: 第1引数が16進数(6桁)の色表現の場合は、調整した色の16進数(6桁)表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "#001122";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -127,7 +121,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("#0c1e30");
@@ -136,7 +130,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex6-2:
     it("hex6-2: 第1引数が16進数(6桁)の色表現を含む場合は、調整した色の16進数(6桁)表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "linear-gradient(#001122, #334455);";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -148,7 +141,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("linear-gradient(#0f2032, #3c4e60);");
@@ -157,7 +150,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex8-1:
     it("hex8-1: 第1引数が16進数(8桁)の色表現の場合は、調整した色の16進数(8桁)表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "#001122ff";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -169,7 +161,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("#0c1e30ff");
@@ -178,7 +170,6 @@ describe("Daylight.getReflectionColor", () => {
     // hex8-2:
     it("hex8-2: 第1引数が16進数(8桁)の色表現を含む場合は、調整した色の16進数(8桁)表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const expression = "linear-gradient(#001122ee, #334455ff);";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
@@ -190,7 +181,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const result = daylight.getReflectionColor(expression, config);
+        const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
         expect(result).toBe("linear-gradient(#0f2032ee, #3c4e60ff);");
@@ -199,7 +190,6 @@ describe("Daylight.getReflectionColor", () => {
     // rgb-1:
     it("rgb-1: 第1引数がRGBの色表現の場合は、調整した色のRGB表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
         const expressions = delimiters.map(x => `rgb(${rgb.join(x)})`);
@@ -213,7 +203,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const results = expressions.map(x => daylight.getReflectionColor(x, config));
+        const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
         results.forEach(x => expect(x).toBe("rgb(12,30,48)"));
@@ -222,7 +212,6 @@ describe("Daylight.getReflectionColor", () => {
     // rgb-2:
     it("rgb-2: 第1引数がRGBの色表現を含む場合は、調整した色のRGB表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
         const delimiters = [",", ", ", " ,", " , "];
@@ -237,7 +226,7 @@ describe("Daylight.getReflectionColor", () => {
         };
 
         // テスト対象の処理を実行
-        const results = expressions.map(x => daylight.getReflectionColor(x, config));
+        const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
         results.forEach(x => expect(x).toBe("linear-gradient(rgb(15,32,50), rgb(60,78,96))"));
@@ -246,7 +235,6 @@ describe("Daylight.getReflectionColor", () => {
     // rgba-1:
     it("rgba-1: 第1引数がRGBAの色表現の場合は、調整した色のRGBA表現が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
         const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%" ];
@@ -268,7 +256,7 @@ describe("Daylight.getReflectionColor", () => {
             const expression = `rgba(${rgb.join(delimiter)}${delimiter}${alpha})`;
 
             // テスト対象の処理を実行
-            const result = daylight.getReflectionColor(expression, config);
+            const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
             expect(result).toBe(`rgb(12,30,48,${alpha})`);
@@ -278,7 +266,6 @@ describe("Daylight.getReflectionColor", () => {
     // rgba-2:
     it("rgba-2: 第1引数がRGBAの色表現を含む場合は、調整した色のRGBA表現に置換した内容が返却される", () => {
         // テストの準備
-        const daylight = new Daylight();
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
@@ -304,7 +291,7 @@ describe("Daylight.getReflectionColor", () => {
             const expression = `linear-gradient(${rgba1}, ${rgba2}`;
 
             // テスト対象の処理を実行
-            const result = daylight.getReflectionColor(expression, config);
+            const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
             expect(result).toBe(`linear-gradient(rgba(15,32,50${alpha}),rgba(60,78,96,${alpha}))`);
