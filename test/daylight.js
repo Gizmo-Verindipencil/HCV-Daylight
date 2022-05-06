@@ -116,7 +116,7 @@ describe("Daylight.getReflectionColor", () => {
     it("hex6-1: 第1引数が16進数(6桁)の色表現の場合は、調整した色の16進数(6桁)表現が返却される", () => {
         // テストの準備
         const daylight = new Daylight();
-        const expression = "001122";
+        const expression = "#001122";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
@@ -158,7 +158,7 @@ describe("Daylight.getReflectionColor", () => {
     it("hex8-1: 第1引数が16進数(8桁)の色表現の場合は、調整した色の16進数(8桁)表現が返却される", () => {
         // テストの準備
         const daylight = new Daylight();
-        const expression = "001122ff";
+        const expression = "#001122ff";
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
