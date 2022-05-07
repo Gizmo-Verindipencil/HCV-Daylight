@@ -607,11 +607,5 @@ describe("Daylight.getReflectionColor", () => {
             const hsla2 = `hsla(211,40.2%,24.9%,${alpha2})`;
             expect(result).toBe(`linear-gradient(${hsla1}, ${hsla2})`);
         }
-
-        // テスト対象の処理を実行
-        const results = expressions.map(x => Daylight.getReflectionColor(x, config));
-
-        // 結果を検証
-        results.forEach(x => expect(x).toBe(`linear-gradient(${hsl1}, ${hsl2})`));
     });
 });
