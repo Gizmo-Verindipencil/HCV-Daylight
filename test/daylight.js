@@ -405,7 +405,7 @@ describe("Daylight.getReflectionColor", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(15,32,50${alpha}),rgba(60,78,96,${alpha}))`);
+            expect(result).toBe(`linear-gradient(rgba(15,32,50,${alpha}),rgba(60,78,96,${alpha}))`);
         }
     });
 
