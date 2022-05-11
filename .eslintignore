@@ -2,5 +2,5 @@ build/*
 dist/*
 node_modules/*
 **/node_modules/*
-tools/*
+tool/*
 tests.webpack.js

@@ -5,8 +5,8 @@
     "main": "dist/daylight.js",
     "scripts": {
         "build": "npm run clean && npm run build:dev && npm run build:prd",
-        "build:dev": "webpack src/daylight.js dist/daylight.js --config tools/webpack.config.dev.js",
-        "build:prd": "webpack src/daylight.js dist/daylight.min.js --config tools/webpack.config.prd.js",
+        "build:dev": "webpack src/daylight.js dist/daylight.js --config tool/webpack.config.dev.js",
+        "build:prd": "webpack src/daylight.js dist/daylight.min.js --config tool/webpack.config.prd.js",
         "prepublish": "npm run build",
         "clean": "rimraf dist build",
         "lint": "eslint src",
