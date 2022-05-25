@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// rgba
+// RGBA表現(例: rgb(0, 0, 0, 0%) )に関するテスト
+
 describe("Daylight.getReflectionColor - rgba", () => {
     // rgba_1:
     it("1: 第1引数がRGBAの色表現の場合は、調整した色のRGBA表現が返却される", () => {

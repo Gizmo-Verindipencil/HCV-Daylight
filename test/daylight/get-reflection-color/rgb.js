@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// rgb
+// RGB表現(例: rgb(0, 0, 0) )に関するテスト
+
 describe("Daylight.getReflectionColor - rgb_", () => {
     // rgb_1:
     it("1: 第1引数がRGBの色表現の場合は、調整した色のRGB表現が返却される", () => {

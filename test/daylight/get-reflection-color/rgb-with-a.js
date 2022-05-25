@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// rgb-with-a
+// アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0%) )に関するテスト
+
 describe("Daylight.getReflectionColor - rgb-with-a_", () => {
     // rgb-with-a_1:
     it("1: 第1引数がアルファ値ありRGBの色表現の場合は、調整した色のアルファ値ありRGB表現が返却される", () => {

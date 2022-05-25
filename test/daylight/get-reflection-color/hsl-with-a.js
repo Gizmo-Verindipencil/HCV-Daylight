@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// hsl-with-a
+// アルファ値を含むHSL表現(例: hsl(0, 0%, 0%, 0%) )に関するテスト
+
 describe("Daylight.getReflectionColor - hsl-with-a_", () => {
     // hsl-with-a_1
     it("1: 第1引数がアルファ値ありHSLの色表現の場合は、調整した色のアルファ値ありHSL表現が返却される", () => {

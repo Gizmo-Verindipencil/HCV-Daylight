@@ -1,5 +1,11 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// rgb-percent
+// %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
+//
+// NOTE :
+// R、G、Bのいずれかのみ%で指定するのは不可。
+
 describe("Daylight.getReflectionColor - rgb-percent_", () => {
     // rgb-percent_1
     it("1: 第1引数がRGB(%)の色表現の場合は、調整した色のRGB(%)表現が返却される", () => {

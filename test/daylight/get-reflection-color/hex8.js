@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// hex8
+// 数値8桁の16進数表現(例: #00000000 )に関するテスト
+
 describe("Daylight.getReflectionColor - hex8_", () => {
     // hex8_1:
     it("1: 第1引数が16進数(8桁)の色表現の場合は、調整した色の16進数(8桁)表現が返却される", () => {

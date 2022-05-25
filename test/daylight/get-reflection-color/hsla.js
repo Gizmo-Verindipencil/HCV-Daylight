@@ -1,5 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
+// hsla
+// HSLA表現(例: hsla(0, 0%, 0%, 0%) )に関するテスト
+
 describe("Daylight.getReflectionColor - hsla_", () => {
     // hsla_1
     it("1: 第1引数がHSLAの色表現の場合は、調整した色のHSLA表現が返却される", () => {
