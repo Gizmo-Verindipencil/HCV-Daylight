@@ -2,7 +2,7 @@ import { Daylight } from "../../../src/daylight.js";
 
 describe("Daylight.getReflectionColor", () => {
     // hsl-with-a-1
-    it("hsl-1: 第1引数がアルファ値ありHSLの色表現の場合は、調整した色のアルファ値ありHSL表現が返却される", () => {
+    it("hsl-with-a-1: 第1引数がアルファ値ありHSLの色表現の場合は、調整した色のアルファ値ありHSL表現が返却される", () => {
         // テストの準備
         const delimiters = [ ",", ", ", " ,", " , " ];
         const hue = 210;
