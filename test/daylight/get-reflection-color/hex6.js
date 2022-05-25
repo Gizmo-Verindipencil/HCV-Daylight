@@ -1,8 +1,11 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // hex6-1:
-    it("hex6-1: 第1引数が16進数(6桁)の色表現の場合は、調整した色の16進数(6桁)表現が返却される", () => {
+// hex6
+// 数値6桁の16進数表現(例: #000000 )に関するテスト
+
+describe("Daylight.getReflectionColor - hex6_", () => {
+    // hex6_1:
+    it("1: 第1引数が16進数(6桁)の色表現の場合は、調整した色の16進数(6桁)表現が返却される", () => {
         // テストの準備
         const expression = "#001122";
         const config = {
@@ -21,8 +24,8 @@ describe("Daylight.getReflectionColor", () => {
         expect(result).toBe("#0c1e30");
     });
 
-    // hex6-2:
-    it("hex6-2: 第1引数が16進数(6桁)の色表現を含む場合は、調整した色の16進数(6桁)表現に置換した内容が返却される", () => {
+    // hex6_2:
+    it("2: 第1引数が16進数(6桁)の色表現を含む場合は、調整した色の16進数(6桁)表現に置換した内容が返却される", () => {
         // テストの準備
         const expression = "linear-gradient(#001122, #334455);";
         const config = {

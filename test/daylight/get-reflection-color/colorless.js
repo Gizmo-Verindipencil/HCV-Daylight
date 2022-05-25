@@ -1,8 +1,11 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // colorless-1:
-    it("colorless-1: 第1引数が色表現ではない/色表現を含まない場合は、そのまま返却される", () => {
+// colorless
+// 色を含まない表現に関するテスト
+
+describe("Daylight.getReflectionColor - colorless_", () => {
+    // colorless_1:
+    it("1: 第1引数が色表現ではない/色表現を含まない場合は、そのまま返却される", () => {
         // テストの準備
         const expression = "not color";
 

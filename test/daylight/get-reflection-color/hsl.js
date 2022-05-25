@@ -1,8 +1,11 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // hsl-1
-    it("hsl-1: 第1引数がHSLの色表現の場合は、調整した色のHSL表現が返却される", () => {
+// hsl
+// HSL表現(例: hsl(0, 0%, 0%) )に関するテスト
+
+describe("Daylight.getReflectionColor - hsl_", () => {
+    // hsl_1
+    it("1: 第1引数がHSLの色表現の場合は、調整した色のHSL表現が返却される", () => {
         // テストの準備
         const delimiters = [ ",", ", ", " ,", " , " ];
         const hue = 210;
@@ -26,8 +29,8 @@ describe("Daylight.getReflectionColor", () => {
         results.forEach(x => expect(x).toBe("hsl(210,92.9%,50.6%)"));
     });
 
-    // hsl-2
-    it("hsl-2: 第1引数がHSLの色表現を含む場合は、調整した色のHSL表現に置換した内容が返却される", () => {
+    // hsl_2
+    it("2: 第1引数がHSLの色表現を含む場合は、調整した色のHSL表現に置換した内容が返却される", () => {
         // テストの準備
         const delimiters = [ ",", ", ", " ,", " , " ];
         const hue = 210;
