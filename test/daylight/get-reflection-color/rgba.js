@@ -1,8 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // rgba-1:
-    it("rgba-1: 第1引数がRGBAの色表現の場合は、調整した色のRGBA表現が返却される", () => {
+describe("Daylight.getReflectionColor - rgba", () => {
+    // rgba_1:
+    it("1: 第1引数がRGBAの色表現の場合は、調整した色のRGBA表現が返却される", () => {
         // テストの準備
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
@@ -32,8 +32,8 @@ describe("Daylight.getReflectionColor", () => {
         }
     });
 
-    // rgba-2:
-    it("rgba-2: 第1引数がRGBAの色表現を含む場合は、調整した色のRGBA表現に置換した内容が返却される", () => {
+    // rgba_2:
+    it("2: 第1引数がRGBAの色表現を含む場合は、調整した色のRGBA表現に置換した内容が返却される", () => {
         // テストの準備
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];

@@ -1,8 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // rgba-percent-1:
-    it("rgba-percent-1: 第1引数がRGBA(%)の色表現の場合は、調整した色のRGBA(%)表現が返却される", () => {
+describe("Daylight.getReflectionColor - rgba-percent_", () => {
+    // rgba-percent_1:
+    it("1: 第1引数がRGBA(%)の色表現の場合は、調整した色のRGBA(%)表現が返却される", () => {
         // テストの準備
         const rgb = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
         const delimiters = [ ",", ", ", " ,", " , " ];
@@ -32,8 +32,8 @@ describe("Daylight.getReflectionColor", () => {
         }
     });
 
-    // rgba-percent-2:
-    it("rgba-percent-2: 第1引数がRGBA(%)の色表現を含む場合は、調整した色のRGBA(%)表現に置換した内容が返却される", () => {
+    // rgba-percent_2:
+    it("2: 第1引数がRGBA(%)の色表現を含む場合は、調整した色のRGBA(%)表現に置換した内容が返却される", () => {
         // テストの準備
         const rgb1 = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
         const rgb2 = [ 3*17, 4*17, 5*17 ].map(x => `${(x/255).toFixed(3)}%`);

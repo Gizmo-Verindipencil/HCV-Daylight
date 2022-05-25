@@ -1,8 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // hex4-1:
-    it("hex4-1: 第1引数が16進数(4桁)の色表現の場合は、調整した色の16進数(4桁)表現が返却される", () => {
+describe("Daylight.getReflectionColor - hex4_", () => {
+    // hex4_1:
+    it("1: 第1引数が16進数(4桁)の色表現の場合は、調整した色の16進数(4桁)表現が返却される", () => {
         // テストの準備
         const expression = "#012f";
         const config = {
@@ -25,8 +25,8 @@ describe("Daylight.getReflectionColor", () => {
         // hex4 の場合は、アルファ値に該当する4桁目が結果に付与
     });
 
-    // hex4-2:
-    it("hex4-2: 第1引数が16進数(4桁)の色表現を含む場合は、調整した色の16進数(4桁)表現に置換した内容が返却される", () => {
+    // hex4_2:
+    it("2: 第1引数が16進数(4桁)の色表現を含む場合は、調整した色の16進数(4桁)表現に置換した内容が返却される", () => {
         // テストの準備
         const expression = "linear-gradient(#012e, #345f);";
         const config = {

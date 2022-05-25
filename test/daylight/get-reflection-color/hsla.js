@@ -1,8 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // hsla-1
-    it("hsla-1: 第1引数がHSLAの色表現の場合は、調整した色のHSLA表現が返却される", () => {
+describe("Daylight.getReflectionColor - hsla_", () => {
+    // hsla_1
+    it("1: 第1引数がHSLAの色表現の場合は、調整した色のHSLA表現が返却される", () => {
         // テストの準備
         const delimiters = [ ",", ", ", " ,", " , " ];
         const hue = 210;
@@ -39,8 +39,8 @@ describe("Daylight.getReflectionColor", () => {
         }
     });
 
-    // hsla-2
-    it("hsl-with-a-2: 第1引数がHSLAの色表現を含む場合は、調整した色のHSLA表現に置換した内容が返却される", () => {
+    // hsla_2
+    it("2: 第1引数がHSLAの色表現を含む場合は、調整した色のHSLA表現に置換した内容が返却される", () => {
         // テストの準備
         const delimiters = [ ",", ", ", " ,", " , " ];
         const hue = 210;

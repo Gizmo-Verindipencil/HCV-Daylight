@@ -1,8 +1,8 @@
 import { Daylight } from "../../../src/daylight.js";
 
-describe("Daylight.getReflectionColor", () => {
-    // rgb-1:
-    it("rgb-1: 第1引数がRGBの色表現の場合は、調整した色のRGB表現が返却される", () => {
+describe("Daylight.getReflectionColor - rgb_", () => {
+    // rgb_1:
+    it("1: 第1引数がRGBの色表現の場合は、調整した色のRGB表現が返却される", () => {
         // テストの準備
         const rgb = [ 0*17, 1*17, 2*17 ];
         const delimiters = [ ",", ", ", " ,", " , " ];
@@ -23,8 +23,8 @@ describe("Daylight.getReflectionColor", () => {
         results.forEach(x => expect(x).toBe("rgb(12,30,48)"));
     });
 
-    // rgb-2:
-    it("rgb-2: 第1引数がRGBの色表現を含む場合は、調整した色のRGB表現に置換した内容が返却される", () => {
+    // rgb_2:
+    it("2: 第1引数がRGBの色表現を含む場合は、調整した色のRGB表現に置換した内容が返却される", () => {
         // テストの準備
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
