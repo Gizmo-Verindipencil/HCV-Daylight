@@ -25,4 +25,3 @@ class ExpressionType {
 }
 
 export { ExpressionType };
-export { Color };

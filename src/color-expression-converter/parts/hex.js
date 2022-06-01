@@ -1,4 +1,5 @@
-import { ExpressionType, Color } from "./expression-type.js";
+import { Color } from "./color.js";
+import { ExpressionType } from "./expression-type.js";
 
 /**
  * ヘックス表現に関連する処理を提供します。
