@@ -5,6 +5,7 @@
 class Converter {
     /**
      * 変換を実行します。
+     * @param {String} expression 色表現。
      * @param {ExpressionType} from ExpressionType を継承した色表現に関するクラスを想定しています。
      * @param {ExpressionType} to ExpressionType を継承した色表現に関するクラスを想定しています。
      * @returns {String} from の色表現から to に変換した色表現を返します。

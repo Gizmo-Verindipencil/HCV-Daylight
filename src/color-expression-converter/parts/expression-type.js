@@ -11,7 +11,7 @@ class ExpressionType {
      * @returns {Color} 色表現の情報を保持するクラスを返します。
      */
     toColor (expression) {
-        throw "need orerride.";
+        throw "need override.";
     }
 
     /**
@@ -20,9 +20,8 @@ class ExpressionType {
      * @returns {String} color から作成した色表現を返します。
      */
     createColorExpression (color) {
-        throw "need orerride.";
+        throw "need override.";
     }
 }
 
 export { ExpressionType };
-export { Color };
