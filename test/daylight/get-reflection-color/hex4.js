@@ -1,7 +1,7 @@
 import { Daylight } from "../../../src/daylight.js";
 
 // hex4
-// 数値3桁の16進数表現(例: #0000 )に関するテスト
+// 3桁の16進数表現(例: #0000 )に関するテスト
 
 describe("Daylight.getReflectionColor - hex4_", () => {
     // hex4_1:
