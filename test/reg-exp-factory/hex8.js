@@ -21,6 +21,7 @@ describe("Hex8RegExpFactory - hex8_", () => {
         }
     });
 
+    // hex8_2:
     it("2: アルファベット大文字8桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex8RegExpFactory();
@@ -37,6 +38,7 @@ describe("Hex8RegExpFactory - hex8_", () => {
         }
     });
 
+    // hex8_3:
     it("3: アルファベット小文字8桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex8RegExpFactory();
@@ -53,6 +55,7 @@ describe("Hex8RegExpFactory - hex8_", () => {
         }
     });
 
+    // hex8_4:
     it("4: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex8RegExpFactory();

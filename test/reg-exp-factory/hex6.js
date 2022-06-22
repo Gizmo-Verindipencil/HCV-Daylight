@@ -21,6 +21,7 @@ describe("Hex6RegExpFactory - hex6_", () => {
         }
     });
 
+    // hex6_2:
     it("2: アルファベット大文字6桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex6RegExpFactory();
@@ -37,6 +38,7 @@ describe("Hex6RegExpFactory - hex6_", () => {
         }
     });
 
+    // hex6_3:
     it("3: アルファベット小文字6桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex6RegExpFactory();
@@ -53,6 +55,7 @@ describe("Hex6RegExpFactory - hex6_", () => {
         }
     });
 
+    // hex6_4:
     it("4: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex6RegExpFactory();

@@ -21,6 +21,7 @@ describe("Hex3RegExpFactory - hex3_", () => {
         }
     });
 
+    // hex3_2:
     it("2: アルファベット大文字3桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex3RegExpFactory();
@@ -37,6 +38,7 @@ describe("Hex3RegExpFactory - hex3_", () => {
         }
     });
 
+    // hex3_3:
     it("3: アルファベット小文字3桁", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex3RegExpFactory();
@@ -53,6 +55,7 @@ describe("Hex3RegExpFactory - hex3_", () => {
         }
     });
 
+    // hex4_4:
     it("4: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex3RegExpFactory();
