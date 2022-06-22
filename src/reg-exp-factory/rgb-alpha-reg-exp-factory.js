@@ -7,9 +7,9 @@ class RgbAlphaRegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        const rgbValue = " {0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1} {0,}";
+        const rgbValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}\\s{0,}";
         const rgbValues = [1,2,3].map(x => rgbValue);
-        const alphaValue = " {0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}%{0,1} {0,}"
+        const alphaValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}%{0,1}\\s{0,}"
         return new RegExp(`^rgb\\(${rgbValues.join(",")},${alphaValue}\\)$`, "i");
     }
 }
