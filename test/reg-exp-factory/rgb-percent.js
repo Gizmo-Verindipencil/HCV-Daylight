@@ -1,6 +1,6 @@
 import { RgbPercentRegExpFactory } from "../../src/reg-exp-factory/rgb-percent-reg-exp-factory.js";
 
-// rgb
+// rgb-percent
 // %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
 
 describe("RgbPercentRegExpFactory - rgb-percent_", () => {
@@ -34,7 +34,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
         }
     });
 
-    // rgb_3:
+    // rgb-percent_3:
     it("3: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new RgbPercentRegExpFactory();

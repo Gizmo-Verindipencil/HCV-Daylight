@@ -1,5 +1,5 @@
 /**
- * RGB表現に関する正規表現の作成処理を提供します。
+ * %で指定したRGB表現に関する正規表現の作成処理を提供します。
  */
 class RgbPercentRegExpFactory {
     /**
