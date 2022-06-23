@@ -8,7 +8,7 @@ class RgbRegExpFactory {
      */
     create() {
         const value = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}\\s{0,}";
-        const values = [1,2,3].map(x => value);
+        const values = [...Array(3)].map(x => value);
         return new RegExp(`^rgb\\(${values.join(",")}\\)$`, "i");
     }
 }

@@ -12,7 +12,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
 
         // 結果を検証
         const values = [ "1%", " 2%", "3% " ];
-        const expressions = values.map(x => `rgb(${[1,2,3].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);
@@ -27,7 +27,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
 
         // 結果を検証
         const values = [ "0.1%", " 0.2%", "0.3% " ];
-        const expressions = values.map(x => `rgb(${[1,2,3].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);

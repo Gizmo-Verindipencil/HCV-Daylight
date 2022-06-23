@@ -8,7 +8,7 @@ class RgbAlphaRegExpFactory {
      */
     create() {
         const rgbValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}\\s{0,}";
-        const rgbValues = [1,2,3].map(x => rgbValue);
+        const rgbValues = [...Array(3)].map(x => rgbValue);
         const alphaValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}%{0,1}\\s{0,}"
         return new RegExp(`^rgb\\(${rgbValues.join(",")},${alphaValue}\\)$`, "i");
     }

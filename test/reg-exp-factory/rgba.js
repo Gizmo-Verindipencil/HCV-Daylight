@@ -12,7 +12,7 @@ describe("RgbWithAlphaRegExpFactory - rgba_", () => {
 
         // 結果を検証
         const values = [ "1", " 2", "3 " ];
-        const expressions = values.map(x => `rgba(${[1,2,3,4].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);
@@ -27,7 +27,7 @@ describe("RgbWithAlphaRegExpFactory - rgba_", () => {
 
         // 結果を検証
         const values = [ "0.1", " 0.2", "0.3 " ];
-        const expressions = values.map(x => `rgba(${[1,2,3,4].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);
@@ -43,7 +43,7 @@ describe("RgbWithAlphaRegExpFactory - rgba_", () => {
         // 結果を検証
         const values = [ "1", " 2", "3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgba(${[1,2,3].map(y => x).join(",")},${getAlpha(x)})`);
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);
@@ -59,7 +59,7 @@ describe("RgbWithAlphaRegExpFactory - rgba_", () => {
         // 結果を検証
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgba(${[1,2,3].map(y => x).join(",")},${getAlpha(x)})`);
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
         for (const expression of expressions) {
             const result = regExp.test(expression);
             expect(result).toBe(true);
