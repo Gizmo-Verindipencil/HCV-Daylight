@@ -86,7 +86,24 @@ describe("HslAlphaRegExpFactory - hsl-with-a_", () => {
     });
 
     // hsl-with-a_6:
-    it("6: その他アンマッチ", () => {
+    it("6: 値がマイナス", () => {
+        // テスト対象の正規表現を作成
+        const factory = new HslAlphaRegExpFactory();
+        const regExp = factory.create();
+
+        // 結果を検証
+        for (const expression of [
+            "hsl(-0,-0%,-0%,-0)",
+            "hsl(-1,-1%,-1%,-1)",
+            "hsl(-2,-2%,-2%,-2)"
+        ]) {
+            const result = regExp.test(expression);
+            expect(result).toBe(true);
+        }
+    });
+
+    // hsl-with-a_7:
+    it("7: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new HslAlphaRegExpFactory();
         const regExp = factory.create();
