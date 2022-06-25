@@ -1,7 +1,7 @@
 import { RgbAlphaRegExpFactory } from "../../src/reg-exp-factory/rgb-alpha-reg-exp-factory.js";
 
 // rgb-with-a
-// %で指定したRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
+// アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
 
 describe("RgbAlphaRegExpFactory - rgb-with-a_", () => {
     // rgb-with-a_1:
