@@ -3,20 +3,22 @@ import { NumberExpression } from "./number-expression.js";
 /**
  * アルファ値を含むHSL表現に関する正規表現の作成処理を提供します。
  */
-class HslAlphaRegExpFactory {
+class HslAlphaDetector {
     /**
-     * 正規表現を作成します。
-     * @returns {RegExp} 正規表現を返します。
+     * 表現を検査します。
+     * @param {String} expression 検査対象の表現。
+     * @returns {Boolean} 検証結果(true : 一致、false : 不一致)を返します。
      */
-    create() {
+    match(expression) {
         const values = [
             NumberExpression.numericWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.questionablePercentWithMargins
         ];
-        return new RegExp(`^\\s*hsl\\(${values.join(",")}\\)\\s*$`, "i");
+        const regExp = new RegExp(`^\\s*hsl\\(${values.join(",")}\\)\\s*$`, "i");
+        return regExp.test(expression);
     }
 }
 
-export { HslAlphaRegExpFactory };
+export { HslAlphaDetector };

@@ -1,20 +1,19 @@
-import { RgbPercentRegExpFactory } from "../../src/reg-exp-factory/rgb-percent-reg-exp-factory.js";
+import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector.js";
 
 // rgb-percent
 // %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
 
-describe("RgbPercentRegExpFactory - rgb-percent_", () => {
+describe("RgbPercentDetector - rgb-percent_", () => {
     // rgb-percent_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         const values = [ "1%", " 2%", "3% " ];
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
@@ -22,14 +21,13 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
     // rgb-percent_2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         const values = [ "0.1%", " 0.2%", "0.3% " ];
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
@@ -37,8 +35,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
     // rgb-percent_3:
     it("3: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         for (const expression of [
@@ -46,7 +43,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
             " rgb(1%,1%,1%)",
             "rgb(2%,2%,2%) "
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
@@ -54,8 +51,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
     // rgb-percent_4:
     it("4: 値がマイナス", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         for (const expression of [
@@ -63,7 +59,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
             "rgb(-1%,-1%,-1%)",
             "rgb(-2%,-2%,-2%)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
@@ -71,8 +67,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
     // rgb-percent_5:
     it("5: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         for (const expression of [
@@ -80,7 +75,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
             "rgb(.1%,.1%,.1%)",
             "rgb(.2%,.2%,.2%)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
@@ -88,8 +83,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
     // rgb-percent_6:
     it("6: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbPercentRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbPercentDetector();
 
         // 結果を検証
         for (const expression of [
@@ -106,7 +100,7 @@ describe("RgbPercentRegExpFactory - rgb-percent_", () => {
             "hsl(0,0%,0%,0)",
             "hsla(0,0%,0%,0)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(false);
         }
     });

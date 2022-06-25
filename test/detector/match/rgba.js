@@ -1,127 +1,119 @@
-import { RgbAlphaRegExpFactory } from "../../src/reg-exp-factory/rgb-alpha-reg-exp-factory.js";
+import { RgbaDetector } from "../../../src/detector/rgba-detector.js";
 
-// rgb-with-a
-// アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
+// rgba
+// RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト
 
-describe("RgbAlphaRegExpFactory - rgb-with-a_", () => {
-    // rgb-with-a_1:
+describe("RgbaDetector - rgba_", () => {
+    // rgba_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         const values = [ "1", " 2", "3 " ];
-        const expressions = values.map(x => `rgb(${[...Array(4)].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_2:
+    // rgba_2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         const values = [ "0.1", " 0.2", "0.3 " ];
-        const expressions = values.map(x => `rgb(${[...Array(4)].map(y => x).join(",")})`);
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_3:
+    // rgba_3:
     it("3: アルファ値が整数パーセント", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         const values = [ "1", " 2", "3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_4:
+    // rgba_4:
     it("4: アルファ値が小数パーセント", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
         for (const expression of expressions) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_5:
+    // rgba_5:
     it("5: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         for (const expression of [
-            " rgb(0,0,0,0) ",
-            " rgb(1,1,1,1)",
-            "rgb(2,2,2,2) "
+            " rgba(0,0,0,0) ",
+            " rgba(1,1,1,1)",
+            "rgba(2,2,2,2) "
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_6:
+    // rgba_6:
     it("6: 値がマイナス", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         for (const expression of [
-            "rgb(-0,-0,-0,-0)",
-            "rgb(-1,-1,-1,-1)",
-            "rgb(-2,-2,-2,-2)"
+            "rgba(-0,-0,-0,-0)",
+            "rgba(-1,-1,-1,-1)",
+            "rgba(-2,-2,-2,-2)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_7:
+    // rgba_7:
     it("7: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         for (const expression of [
-            "rgb(.0,.0,.0,.0)",
-            "rgb(.1,.1,.1,.1)",
-            "rgb(.2,.2,.2,.2)"
+            "rgba(.0,.0,.0,.0)",
+            "rgba(.1,.1,.1,.1)",
+            "rgba(.2,.2,.2,.2)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(true);
         }
     });
 
-    // rgb-with-a_8:
+    // rgba_8:
     it("8: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
-        const factory = new RgbAlphaRegExpFactory();
-        const regExp = factory.create();
+        const detector = new RgbaDetector();
 
         // 結果を検証
         for (const expression of [
@@ -133,12 +125,13 @@ describe("RgbAlphaRegExpFactory - rgb-with-a_", () => {
             "rgb(0,0,0)",
             "rgb(0%,0%,0%)",
             "rgb(0%,0%,0%,0)",
-            "rgba(0,0,0,0)",
+            "rgb(0,0,0,0)",
+            "rgba(0%,0%,0%,0)",
             "hsl(0,0%,0%)",
             "hsl(0,0%,0%,0)",
             "hsla(0,0%,0%,0)"
         ]) {
-            const result = regExp.test(expression);
+            const result = detector.match(expression);
             expect(result).toBe(false);
         }
     });
