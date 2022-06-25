@@ -1,9 +1,9 @@
 import { RgbaRegExpFactory } from "../../src/reg-exp-factory/rgba-reg-exp-factory.js";
 
 // rgba
-// %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
+// RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト
 
-describe("RgbWithAlphaRegExpFactory - rgba_", () => {
+describe("RgbaRegExpFactory - rgba_", () => {
     // rgba_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

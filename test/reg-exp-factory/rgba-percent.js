@@ -1,7 +1,7 @@
 import { RgbaPercentRegExpFactory } from "../../src/reg-exp-factory/rgba-percent-reg-exp-factory.js";
 
 // rgba-percent
-// %で指定したRGBA表現(例: rgb(0%, 0%, 0%) )に関するテスト
+// %で指定したRGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
 describe("RgbaPercentRegExpFactory - rgba-percent_", () => {
     // rgba-percent_1:
