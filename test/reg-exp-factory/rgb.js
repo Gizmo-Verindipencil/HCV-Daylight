@@ -35,7 +35,24 @@ describe("RgbRegExpFactory - rgb_", () => {
     });
 
     // rgb_3:
-    it("3: その他アンマッチ", () => {
+    it("3: 前後に空白あり", () => {
+        // テスト対象の正規表現を作成
+        const factory = new RgbRegExpFactory();
+        const regExp = factory.create();
+
+        // 結果を検証
+        for (const expression of [
+            " rgb(0,0,0) ",
+            " rgb(1,1,1)",
+            "rgb(2,2,2) "
+        ]) {
+            const result = regExp.test(expression);
+            expect(result).toBe(true);
+        }
+    });
+
+    // rgb_4:
+    it("4: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new RgbRegExpFactory();
         const regExp = factory.create();

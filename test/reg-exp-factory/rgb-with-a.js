@@ -3,7 +3,7 @@ import { RgbAlphaRegExpFactory } from "../../src/reg-exp-factory/rgb-alpha-reg-e
 // rgb-with-a
 // %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
 
-describe("RgbWithAlphaRegExpFactory - rgb-with-a_", () => {
+describe("RgbAlphaRegExpFactory - rgb-with-a_", () => {
     // rgb-with-a_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
@@ -67,7 +67,24 @@ describe("RgbWithAlphaRegExpFactory - rgb-with-a_", () => {
     });
 
     // rgb-with-a_5:
-    it("5: その他アンマッチ", () => {
+    it("5: 前後に空白あり", () => {
+        // テスト対象の正規表現を作成
+        const factory = new RgbAlphaRegExpFactory();
+        const regExp = factory.create();
+
+        // 結果を検証
+        for (const expression of [
+            " rgb(0,0,0,0) ",
+            " rgb(1,1,1,1)",
+            "rgb(2,2,2,2) "
+        ]) {
+            const result = regExp.test(expression);
+            expect(result).toBe(true);
+        }
+    });
+
+    // rgb-with-a_6:
+    it("6: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new RgbAlphaRegExpFactory();
         const regExp = factory.create();

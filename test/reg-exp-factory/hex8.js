@@ -56,7 +56,24 @@ describe("Hex8RegExpFactory - hex8_", () => {
     });
 
     // hex8_4:
-    it("4: その他アンマッチ", () => {
+    it("4: 前後に空白あり", () => {
+        // テスト対象の正規表現を作成
+        const factory = new Hex8RegExpFactory();
+        const regExp = factory.create();
+
+        // 結果を検証
+        for (const expression of [
+            " #00000000 ",
+            " #aaaaaaaa",
+            "#AAAAAAAA "
+        ]) {
+            const result = regExp.test(expression);
+            expect(result).toBe(true);
+        }
+    });
+
+    // hex8_5:
+    it("5: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const factory = new Hex8RegExpFactory();
         const regExp = factory.create();
