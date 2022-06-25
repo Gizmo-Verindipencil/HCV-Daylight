@@ -87,7 +87,11 @@ describe("Hex6RegExpFactory - hex6_", () => {
             "rgb(0,0,0)",
             "rgb(0%,0%,0%)",
             "rgb(0,0,0,0)",
-            "rgba(0,0,0,0)"
+            "rgba(0,0,0,0)",
+            "rgba(0%,0%,0%,0)",
+            "hsl(0,0%,0%)",
+            "hsl(0,0%,0%,0)",
+            "hsla(0,0%,0%,0)"
         ]) {
             const result = regExp.test(expression);
             expect(result).toBe(false);
