@@ -7,7 +7,7 @@ class HslAlphaRegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        const nonPercentValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}\\s{0,}";
+        const nonPercentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}\\s{0,}";
         const percentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%\\s{0,}";
         const alphaValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%{0,1}\\s{0,}";
         const values = [
