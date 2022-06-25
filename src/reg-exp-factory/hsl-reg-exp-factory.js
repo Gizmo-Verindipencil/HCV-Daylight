@@ -1,3 +1,5 @@
+import { NumberExpression } from "./number-expression.js";
+
 /**
  * HSL表現に関する正規表現の作成処理を提供します。
  */
@@ -7,10 +9,11 @@ class HslRegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        const nonPercentValue = "\\s*-?[0-9]+(\\.[0-9]+)?\\s*";
-        const percentValue = "\\s*-?[0-9]+(\\.[0-9]+)?%\\s*";
-        const percentValues = [...Array(2)].map(x => percentValue);
-        return new RegExp(`^\\s*hsl\\(${nonPercentValue},${percentValues.join(",")}\\)\\s*$`, "i");
+        const values = [
+            NumberExpression.numericWithMargins,
+            [...Array(2)].map(x => NumberExpression.percentWithMargins)
+        ].flat();
+        return new RegExp(`^\\s*hsl\\(${values.join(",")}\\)\\s*$`, "i");
     }
 }
 

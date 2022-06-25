@@ -1,3 +1,5 @@
+import { NumberExpression } from "./number-expression.js";
+
 /**
  * HSLA表現に関する正規表現の作成処理を提供します。
  */
@@ -7,15 +9,11 @@ class HslaRegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        const nonPercentValue = "\\s*-?[0-9]+(\\.[0-9]+)?\\s*";
-        const percentValue = "\\s*-?[0-9]+(\\.[0-9]+)?%\\s*";
-        const alphaValue = "\\s*-?[0-9]+(\\.[0-9]+)?%?\\s*";
         const values = [
-            nonPercentValue,
-            percentValue,
-            percentValue,
-            alphaValue
-        ];
+            NumberExpression.numericWithMargins,
+            [...Array(2)].map(x => NumberExpression.percentWithMargins),
+            NumberExpression.questionablePercentWithMargins
+        ].flat();
         return new RegExp(`^\\s*hsla\\(${values.join(",")}\\)\\s*$`, "i");
     }
 }
