@@ -7,7 +7,7 @@ class Hex8RegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        return new RegExp("^\\s{0,}#[0-9a-f]{8}\\s{0,}$", "i");
+        return new RegExp("^\\s*#[0-9a-f]{8}\\s*$", "i");
     }
 }
 

@@ -7,16 +7,16 @@ class HslaRegExpFactory {
      * @returns {RegExp} 正規表現を返します。
      */
     create() {
-        const nonPercentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}\\s{0,}";
-        const percentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%\\s{0,}";
-        const alphaValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%{0,1}\\s{0,}";
+        const nonPercentValue = "\\s*[0-9]+(\\.[0-9]+)??\\s*";
+        const percentValue = "\\s*[0-9]+(\\.[0-9]+)??%\\s*";
+        const alphaValue = "\\s*[0-9]+(\\.[0-9]+)??%??\\s*";
         const values = [
             nonPercentValue,
             percentValue,
             percentValue,
             alphaValue
         ];
-        return new RegExp(`^\\s{0,}hsla\\(${values.join(",")}\\)\\s{0,}$`, "i");
+        return new RegExp(`^\\s*hsla\\(${values.join(",")}\\)\\s*$`, "i");
     }
 }
 
