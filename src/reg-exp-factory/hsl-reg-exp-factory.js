@@ -8,7 +8,7 @@ class HslRegExpFactory {
      */
     create() {
         const nonPercentValue = "\\s{0,}([1-2]){0,1}([0-9]){1,2}(\\.[0-9]{1,}){0,1}\\s{0,}";
-        const percentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%{0,1}\\s{0,}";
+        const percentValue = "\\s{0,}[0-9]{1,}(\\.[0-9]{1,}){0,1}%\\s{0,}";
         const percentValues = [...Array(2)].map(x => percentValue);
         return new RegExp(`^\\s{0,}hsl\\(${nonPercentValue},${percentValues.join(",")}\\)\\s{0,}$`, "i");
     }
