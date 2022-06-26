@@ -11,6 +11,17 @@ class Hex6Detector {
         const regExp = new RegExp("^\\s*#[0-9a-f]{6}\\s*$", "i");
         return regExp.test(expression);
     }
+
+    /**
+     * 文字列中の該当表現を検出します。
+     * @param {String} expression 検査対象の表現。
+     * @returns {Array<String>} 検出した表現を返します。
+     */
+    detect(expression) {
+        const regExp = new RegExp("(\\b|\\s|^)#[0-9a-f]{6}(\\b|\\s|$)", "gi");
+        const results = (expression || "").match(regExp) || [];
+        return results.map(x => x.trim());
+    }
 }
 
 export { Hex6Detector };
