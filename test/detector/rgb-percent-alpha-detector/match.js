@@ -10,9 +10,9 @@ describe("RgbPercentAlphaDetector.detect - rgb-percent-with-a_", () => {
         const detector = new RgbPercentAlphaDetector();
 
         // 結果を検証
-        const values = [ "1", " 2", "3 " ];
-        const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => getAlpha(x)).join(",")},${x})`);
+        const values = [ "1%", " 2%", "3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
@@ -25,9 +25,9 @@ describe("RgbPercentAlphaDetector.detect - rgb-percent-with-a_", () => {
         const detector = new RgbPercentAlphaDetector();
 
         // 結果を検証
-        const values = [ "0.1", " 0.2", "0.3 " ];
-        const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => getAlpha(x)).join(",")},${x})`);
+        const values = [ "0.1%", " 0.2%", "0.3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
@@ -41,9 +41,9 @@ describe("RgbPercentAlphaDetector.detect - rgb-percent-with-a_", () => {
 
         // 結果を検証
         for (const expression of [
-            " rgb(0%,0%,0%,0%) ",
-            " rgb(1%,1%,1%,1%)",
-            "rgb(2%,2%,2%,2%) "
+            " rgb(0%,0%,0%,0) ",
+            " rgb(1%,1%,1%,1)",
+            "rgb(2%,2%,2%,2) "
         ]) {
             const result = detector.match(expression);
             expect(result).toBe(true);
