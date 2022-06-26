@@ -3,8 +3,8 @@ import { Hex6Detector } from "../../../src/detector/hex6-detector.js";
 // hex6
 // 6桁の16進数表現(例: #000000 )に関するテスト
 
-describe("Hex6Detector.detect - hex6_", () => {
-    // hex6_1:
+describe("Hex6Detector.detect - ", () => {
+    // 1:
     it("1: 数字6桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex6Detector();
@@ -20,7 +20,7 @@ describe("Hex6Detector.detect - hex6_", () => {
         }
     });
 
-    // hex6_2:
+    // 2:
     it("2: アルファベット大文字6桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex6Detector();
@@ -36,7 +36,7 @@ describe("Hex6Detector.detect - hex6_", () => {
         }
     });
 
-    // hex6_3:
+    // 3:
     it("3: アルファベット小文字6桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex6Detector();
@@ -52,7 +52,7 @@ describe("Hex6Detector.detect - hex6_", () => {
         }
     });
 
-    // hex6_4:
+    // 4:
     it("4: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex6Detector();
@@ -68,7 +68,7 @@ describe("Hex6Detector.detect - hex6_", () => {
         }
     });
 
-    // hex6_5:
+    // 5:
     it("5: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex6Detector();

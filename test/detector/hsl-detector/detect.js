@@ -4,8 +4,8 @@ import { HslDetector } from "../../../src/detector/hsl-detector.js";
 // hsl
 // HSL表現(例: hsl(0, 0%, 0%) )に関するテスト
 
-describe("HslDetector.detect - hsl_", () => {
-    // hsl_1:
+describe("HslDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new HslDetector();
@@ -18,7 +18,7 @@ describe("HslDetector.detect - hsl_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hsl_2:
+    // 2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new HslDetector();
@@ -31,7 +31,7 @@ describe("HslDetector.detect - hsl_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hsl_3:
+    // 3:
     it("3: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new HslDetector();
@@ -46,7 +46,7 @@ describe("HslDetector.detect - hsl_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hsl_4:
+    // 4:
     it("4: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new HslDetector();
@@ -61,7 +61,7 @@ describe("HslDetector.detect - hsl_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hsl_5:
+    // 5:
     it("5: その他", () => {
         // テスト対象の正規表現を作成
         const detector = new HslDetector();

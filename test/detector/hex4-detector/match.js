@@ -3,8 +3,8 @@ import { Hex4Detector } from "../../../src/detector/hex4-detector.js";
 // hex4
 // 4桁の16進数表現(例: #0000 )に関するテスト
 
-describe("Hex4Detector.detect - hex4_", () => {
-    // hex4_1:
+describe("Hex4Detector.detect - ", () => {
+    // 1:
     it("1: 数字4桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex4Detector();
@@ -20,7 +20,7 @@ describe("Hex4Detector.detect - hex4_", () => {
         }
     });
 
-    // hex4_2:
+    // 2:
     it("2: アルファベット大文字4桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex4Detector();
@@ -36,7 +36,7 @@ describe("Hex4Detector.detect - hex4_", () => {
         }
     });
 
-    // hex4_3:
+    // 3:
     it("3: アルファベット小文字4桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex4Detector();
@@ -52,7 +52,7 @@ describe("Hex4Detector.detect - hex4_", () => {
         }
     });
 
-    // hex4_4:
+    // 4:
     it("4: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex4Detector();
@@ -68,7 +68,7 @@ describe("Hex4Detector.detect - hex4_", () => {
         }
     });
 
-    // hex4_5:
+    // 5:
     it("5: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex4Detector();

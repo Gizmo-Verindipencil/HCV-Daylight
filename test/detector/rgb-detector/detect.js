@@ -4,8 +4,8 @@ import { RgbDetector } from "../../../src/detector/rgb-detector.js";
 // rgb
 // RGB表現(例: rgb(0, 0, 0) )に関するテスト
 
-describe("RgbDetector.detect - rgb_", () => {
-    // rgb_1:
+describe("RgbDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbDetector();
@@ -17,7 +17,7 @@ describe("RgbDetector.detect - rgb_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb_2:
+    // 2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbDetector();
@@ -29,7 +29,7 @@ describe("RgbDetector.detect - rgb_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb_3:
+    // 3:
     it("3: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbDetector();
@@ -44,7 +44,7 @@ describe("RgbDetector.detect - rgb_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb_4:
+    // 4:
     it("4: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbDetector();
@@ -59,7 +59,7 @@ describe("RgbDetector.detect - rgb_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb_5:
+    // 5:
     it("5: その他", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbDetector();

@@ -3,8 +3,8 @@ import { Hex3Detector } from "../../../src/detector/hex3-detector.js";
 // hex3
 // 3桁の16進数表現(例: #000 )に関するテスト
 
-describe("Hex3Detector.detect - hex3_", () => {
-    // hex3_1:
+describe("Hex3Detector.detect - ", () => {
+    // 1:
     it("1: 数字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex3Detector();
@@ -20,7 +20,7 @@ describe("Hex3Detector.detect - hex3_", () => {
         }
     });
 
-    // hex3_2:
+    // 2:
     it("2: アルファベット大文字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex3Detector();
@@ -36,7 +36,7 @@ describe("Hex3Detector.detect - hex3_", () => {
         }
     });
 
-    // hex3_3:
+    // 3:
     it("3: アルファベット小文字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex3Detector();
@@ -52,7 +52,7 @@ describe("Hex3Detector.detect - hex3_", () => {
         }
     });
 
-    // hex3_4:
+    // 4:
     it("4: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex3Detector();
@@ -68,7 +68,7 @@ describe("Hex3Detector.detect - hex3_", () => {
         }
     });
 
-    // hex3_5:
+    // 5:
     it("5: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex3Detector();

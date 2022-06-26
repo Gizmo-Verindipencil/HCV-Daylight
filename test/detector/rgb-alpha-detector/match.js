@@ -3,8 +3,8 @@ import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector.js";
 // rgb-with-a
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
 
-describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
-    // rgb-with-a_1:
+describe("RgbAlphaDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -18,7 +18,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_2:
+    // 2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -32,7 +32,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_3:
+    // 3:
     it("3: アルファ値が整数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -47,7 +47,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_4:
+    // 4:
     it("4: アルファ値が小数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -62,7 +62,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_5:
+    // 5:
     it("5: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -78,7 +78,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_6:
+    // 6:
     it("6: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -94,7 +94,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_7:
+    // 7:
     it("7: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();
@@ -110,7 +110,7 @@ describe("RgbAlphaDetector.detect - rgb-with-a_", () => {
         }
     });
 
-    // rgb-with-a_8:
+    // 8:
     it("8: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbAlphaDetector();

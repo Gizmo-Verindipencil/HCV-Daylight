@@ -4,8 +4,8 @@ import { RgbPercentAlphaDetector } from "../../../src/detector/rgb-percent-alpha
 // rgba
 // アルファ値を含む%指定RGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
-    // rgba-percent-with-a_1:
+describe("RgbaDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -18,7 +18,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_2:
+    // 2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -31,7 +31,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_3:
+    // 3:
     it("3: アルファ値が整数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -43,7 +43,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_4:
+    // 4:
     it("4: アルファ値が小数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -55,7 +55,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_5:
+    // 5:
     it("5: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -70,7 +70,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_6:
+    // 6:
     it("6: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();
@@ -85,7 +85,7 @@ describe("RgbaDetector.detect - rgba-percent-with-a_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgba-percent-with-a_7:
+    // 7:
     it("7: その他", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentAlphaDetector();

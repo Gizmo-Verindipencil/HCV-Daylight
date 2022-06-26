@@ -4,8 +4,8 @@ import { Hex8Detector } from "../../../src/detector/hex8-detector.js";
 // hex8
 // 8桁の16進数表現(例: #00000000 )に関するテスト
 
-describe("Hex8Detector.detect - hex8_", () => {
-    // hex8_1:
+describe("Hex8Detector.detect - ", () => {
+    // 1:
     it("1: 数字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex8Detector();
@@ -20,7 +20,7 @@ describe("Hex8Detector.detect - hex8_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hex8_2:
+    // 2:
     it("2: アルファベット大文字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex8Detector();
@@ -35,7 +35,7 @@ describe("Hex8Detector.detect - hex8_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hex8_3:
+    // 3:
     it("3: アルファベット小文字3桁", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex8Detector();
@@ -50,7 +50,7 @@ describe("Hex8Detector.detect - hex8_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // hex8_4:
+    // 4:
     it("4: その他", () => {
         // テスト対象の正規表現を作成
         const detector = new Hex8Detector();

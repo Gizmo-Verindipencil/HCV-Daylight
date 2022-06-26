@@ -4,8 +4,8 @@ import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector.j
 // rgb-percent
 // アルファ値を含まない%指定RGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
 
-describe("RgbPercentDetector.detect - rgb-percent_", () => {
-    // rgb-percent_1:
+describe("RgbPercentDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentDetector();
@@ -17,7 +17,7 @@ describe("RgbPercentDetector.detect - rgb-percent_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb-percent_2:
+    // 2:
     it("2: 値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentDetector();
@@ -29,7 +29,7 @@ describe("RgbPercentDetector.detect - rgb-percent_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb-percent_3:
+    // 3:
     it("3: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentDetector();
@@ -44,7 +44,7 @@ describe("RgbPercentDetector.detect - rgb-percent_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb-percent_4:
+    // 4:
     it("4: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentDetector();
@@ -59,7 +59,7 @@ describe("RgbPercentDetector.detect - rgb-percent_", () => {
         expect(result).toEqual(expressions);
     });
 
-    // rgb-percent_5:
+    // 5:
     it("5: その他", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbPercentDetector();

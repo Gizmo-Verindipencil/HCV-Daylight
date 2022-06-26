@@ -3,8 +3,8 @@ import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector
 // rgba-percent
 // %で指定したRGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbaPercentDetector.detect - rgba-percent_", () => {
-    // rgba-percent_1:
+describe("RgbaPercentDetector.detect - ", () => {
+    // 1:
     it("1: 値が整数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -18,7 +18,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_2:
+    // 2:
     it("2: 値が小数パーセント", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -32,7 +32,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_3:
+    // 3:
     it("3: アルファ値が整数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -47,7 +47,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_4:
+    // 4:
     it("4: アルファ値が小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -62,7 +62,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_5:
+    // 5:
     it("5: 前後に空白あり", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -78,7 +78,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_6:
+    // 6:
     it("6: 値がマイナス", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -94,7 +94,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_7:
+    // 7:
     it("7: ドット始まりの小数", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
@@ -110,7 +110,7 @@ describe("RgbaPercentDetector.detect - rgba-percent_", () => {
         }
     });
 
-    // rgba-percent_8:
+    // 8:
     it("8: その他アンマッチ", () => {
         // テスト対象の正規表現を作成
         const detector = new RgbaPercentDetector();
