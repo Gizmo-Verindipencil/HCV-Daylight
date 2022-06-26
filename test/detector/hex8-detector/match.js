@@ -1,7 +1,7 @@
 import { Hex8Detector } from "../../../src/detector/hex8-detector.js";
 
 // hex8
-// 8桁の16進数表現(例: #000000 )に関するテスト
+// 8桁の16進数表現(例: #00000000 )に関するテスト
 
 describe("Hex8Detector.detect - hex8_", () => {
     // hex8_1:

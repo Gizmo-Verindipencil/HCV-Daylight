@@ -1,7 +1,7 @@
 import { Hex4Detector } from "../../../src/detector/hex4-detector.js";
 
 // hex4
-// 4桁の16進数表現(例: #000000 )に関するテスト
+// 4桁の16進数表現(例: #0000 )に関するテスト
 
 describe("Hex4Detector.detect - hex4_", () => {
     // hex4_1:
