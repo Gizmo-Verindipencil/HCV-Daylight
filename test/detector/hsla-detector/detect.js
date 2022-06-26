@@ -2,7 +2,7 @@ import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { HslaDetector } from "../../../src/detector/hsla-detector.js";
 
 // hsla
-// HSLA表現(例: hsla(0, 0%, 0%, 0%) )に関するテスト
+// HSLA表現(例: hsla(0, 0%, 0%, 0) )に関するテスト
 
 describe("HslaDetector.detect - hsla_", () => {
     // hsla_1:

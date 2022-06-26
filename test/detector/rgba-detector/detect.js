@@ -2,7 +2,7 @@ import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { RgbaDetector } from "../../../src/detector/rgba-detector.js";
 
 // rgba
-// RGBA表現(例: rgba(0, 0, 0, 0%) )に関するテスト
+// RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト
 
 describe("RgbaDetector.detect - rgba_", () => {
     // rgba_1:

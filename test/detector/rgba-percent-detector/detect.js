@@ -2,7 +2,7 @@ import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector.js";
 
 // rgba
-// RGBA表現(例: rgba(0, 0, 0, 0%) )に関するテスト
+// RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト
 
 describe("RgbaDetector.detect - rgba-percent_", () => {
     // rgba-percent_1:

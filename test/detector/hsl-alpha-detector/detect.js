@@ -2,7 +2,7 @@ import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector.js";
 
 // hsl-with-a
-// アルファ値を含むHSL表現(例: hsl(0, 0%, 0%, 0%) )に関するテスト
+// アルファ値を含むHSL表現(例: hsl(0, 0%, 0%, 0) )に関するテスト
 
 describe("HslAlphaDetector.detect - hsl-with-a_", () => {
     // hsl-with-a_1:
