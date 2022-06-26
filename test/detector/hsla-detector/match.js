@@ -3,7 +3,7 @@ import { HslaDetector } from "../../../src/detector/hsla-detector.js";
 // hsla
 // HSLA表現(例: hsla(0, 0%, 0%, 0) )に関するテスト
 
-describe("HslaDetector - hsla_", () => {
+describe("HslaDetector.detect - hsla_", () => {
     // hsla_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

@@ -3,7 +3,7 @@ import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector.js";
 // hsl-with-a
 // アルファ値を含むHSL表現(例: hsl(0, 0, 0, 0) )に関するテスト
 
-describe("HslAlphaDetector - hsl-with-a_", () => {
+describe("HslAlphaDetector.detect - hsl-with-a_", () => {
     // hsl-with-a_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

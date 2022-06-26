@@ -3,7 +3,7 @@ import { Hex3Detector } from "../../../src/detector/hex3-detector.js";
 // hex3
 // 3桁の16進数表現(例: #000000 )に関するテスト
 
-describe("Hex3Detector - hex3_", () => {
+describe("Hex3Detector.detect - hex3_", () => {
     // hex3_1:
     it("1: 数字3桁", () => {
         // テスト対象の正規表現を作成

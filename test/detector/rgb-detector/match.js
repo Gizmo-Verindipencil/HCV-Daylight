@@ -3,7 +3,7 @@ import { RgbDetector } from "../../../src/detector/rgb-detector.js";
 // rgb
 // RGB表現(例: rgb(0, 0, 0) )に関するテスト
 
-describe("RgbDetector - rgb_", () => {
+describe("RgbDetector.detect - rgb_", () => {
     // rgb_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

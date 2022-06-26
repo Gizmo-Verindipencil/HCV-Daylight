@@ -3,7 +3,7 @@ import { RgbPercentAlphaDetector } from "../../../src/detector/rgb-percent-alpha
 // rgb-percent-alpha
 // %で指定したRGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbPercentAlphaDetector - rgb-percent-with-a_", () => {
+describe("RgbPercentAlphaDetector.detect - rgb-percent-with-a_", () => {
     // rgb-percent-with-a_1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

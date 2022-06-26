@@ -3,7 +3,7 @@ import { Hex6Detector } from "../../../src/detector/hex6-detector.js";
 // hex6
 // 6桁の16進数表現(例: #000000 )に関するテスト
 
-describe("Hex6Detector - hex6_", () => {
+describe("Hex6Detector.detect - hex6_", () => {
     // hex6_1:
     it("1: 数字6桁", () => {
         // テスト対象の正規表現を作成
