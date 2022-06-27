@@ -61,11 +61,9 @@ describe("RgbaDetector.detect - ", () => {
         const detector = new RgbaPercentDetector();
 
         // 結果を検証
-        const expressions = [
-            "rgba(-0%,-0%,-0%,-0)",
-            "rgba(-1%,-1%,-1%,-1)",
-            "rgba(-2%,-2%,-2%,-2)"
-        ];
+        const values = [ "-1%", " -2%", "-3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
         const result = detector.detect(expressions.join(" "));
         expect(result).toEqual(expressions);
     });
@@ -76,11 +74,9 @@ describe("RgbaDetector.detect - ", () => {
         const detector = new RgbaPercentDetector();
 
         // 結果を検証
-        const expressions = [
-            "rgba(.0%,.0%,.0%,.0)",
-            "rgba(.1%,.1%,.1%,.1)",
-            "rgba(.2%,.2%,.2%,.2)"
-        ];
+        const values = [ ".1%", " .2%", ".3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
         const result = detector.detect(expressions.join(" "));
         expect(result).toEqual(expressions);
     });

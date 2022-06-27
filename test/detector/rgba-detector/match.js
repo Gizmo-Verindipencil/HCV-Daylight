@@ -84,11 +84,9 @@ describe("RgbaDetector.detect - ", () => {
         const detector = new RgbaDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgba(-0,-0,-0,-0)",
-            "rgba(-1,-1,-1,-1)",
-            "rgba(-2,-2,-2,-2)"
-        ]) {
+        const values = [ "-1", " -2", "-3 " ];
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }
@@ -100,11 +98,9 @@ describe("RgbaDetector.detect - ", () => {
         const detector = new RgbaDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgba(.0,.0,.0,.0)",
-            "rgba(.1,.1,.1,.1)",
-            "rgba(.2,.2,.2,.2)"
-        ]) {
+        const values = [ ".1", " .2", ".3 " ];
+        const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }
