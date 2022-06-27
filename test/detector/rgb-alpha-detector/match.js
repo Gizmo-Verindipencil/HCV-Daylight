@@ -3,7 +3,7 @@ import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector.js";
 // rgb-with-a
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
 
-describe("RgbAlphaDetector.detect - ", () => {
+describe("RgbAlphaDetector.match - ", () => {
     // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成

@@ -4,7 +4,7 @@ import { RgbPercentAlphaDetector } from "../../../src/detector/rgb-percent-alpha
 // rgba
 // アルファ値を含む%指定RGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbaDetector.detect - ", () => {
+describe("RgbaPercentAlphaDetector.detect - ", () => {
     // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
