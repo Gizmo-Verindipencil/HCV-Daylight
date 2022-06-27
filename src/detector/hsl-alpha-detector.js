@@ -5,18 +5,27 @@ import { NumberExpression } from "./number-expression.js";
  */
 class HslAlphaDetector {
     /**
-     * 表現を検査します。
-     * @param {String} expression 検査対象の表現。
-     * @returns {Boolean} 検証結果(true : 一致、false : 不一致)を返します。
+     * 色表現の正規表現を取得します。
+     * @returns {String} 正規表現を返します。
      */
-    match(expression) {
+    _getColorExpression() {
         const values = [
             NumberExpression.numericWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.questionablePercentWithMargins
         ];
-        const regExp = new RegExp(`^\\s*hsl\\(${values.join(",")}\\)\\s*$`, "i");
+        return `hsl\\(${values.join(",")}\\)`;
+    }
+
+    /**
+     * 表現を検査します。
+     * @param {String} expression 検査対象の表現。
+     * @returns {Boolean} 検証結果(true : 一致、false : 不一致)を返します。
+     */
+    match(expression) {
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`^\\s*${color}\\s*$`, "i");
         return regExp.test(expression);
     }
 
@@ -26,13 +35,8 @@ class HslAlphaDetector {
      * @returns {Array<String>} 検出した表現を返します。
      */
     detect(expression) {
-        const values = [
-            NumberExpression.numericWithMargins,
-            NumberExpression.percentWithMargins,
-            NumberExpression.percentWithMargins,
-            NumberExpression.questionablePercentWithMargins
-        ];
-        const regExp = new RegExp(`(\\b|\\s|^)hsl\\(${values.join(",")}\\)(\\b|\\s|$)`, "gi");
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
         const results = (expression || "").match(regExp) || [];
         return results.map(x => x.trim());
     }

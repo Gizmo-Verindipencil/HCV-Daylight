@@ -3,12 +3,21 @@
  */
 class Hex6Detector {
     /**
+     * 色表現の正規表現を取得します。
+     * @returns {String} 正規表現を返します。
+     */
+    _getColorExpression() {
+        return "#[0-9a-f]{6}";
+    }
+
+    /**
      * 表現を検査します。
      * @param {String} expression 検査対象の表現。
      * @returns {Boolean} 検証結果(true : 一致、false : 不一致)を返します。
      */
     match(expression) {
-        const regExp = new RegExp("^\\s*#[0-9a-f]{6}\\s*$", "i");
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`^\\s*${color}\\s*$`, "i");
         return regExp.test(expression);
     }
 
@@ -18,7 +27,8 @@ class Hex6Detector {
      * @returns {Array<String>} 検出した表現を返します。
      */
     detect(expression) {
-        const regExp = new RegExp("(\\b|\\s|^)#[0-9a-f]{6}(\\b|\\s|$)", "gi");
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
         const results = (expression || "").match(regExp) || [];
         return results.map(x => x.trim());
     }
