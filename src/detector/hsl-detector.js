@@ -1,7 +1,7 @@
 import { NumberExpression } from "./number-expression.js";
 
 /**
- * HSL表現に関する正規表現の作成処理を提供します。
+ * HSL表現の検出処理を提供します。
  */
 class HslDetector {
     /**

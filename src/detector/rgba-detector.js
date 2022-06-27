@@ -1,7 +1,7 @@
 import { NumberExpression } from "./number-expression.js";
 
 /**
- * RGBA表現に関する正規表現の作成処理を提供します。
+ * RGBA表現の検出処理を提供します。
  */
 class RgbaDetector {
     /**

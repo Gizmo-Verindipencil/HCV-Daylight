@@ -1,7 +1,7 @@
 import { NumberExpression } from "./number-expression.js";
 
 /**
- * アルファ値を含むRGB表現に関する正規表現の作成処理を提供します。
+ * アルファ値を含むRGB表現の検出処理を提供します。
  */
 class RgbAlphaDetector {
     /**
