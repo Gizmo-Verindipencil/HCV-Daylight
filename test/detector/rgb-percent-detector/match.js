@@ -1,7 +1,7 @@
 import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector.js";
 
 // rgb-percent
-// %で指定したRGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
+// アルファ値を含まない%指定RGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
 
 describe("RgbPercentDetector.match - ", () => {
     // 1:

@@ -1,8 +1,8 @@
 import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector.js";
 
-// rgba
-// RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト
+// rgba-percent
+// RGBA表現(例: rgba(0%, 0%, 0%, 0) )に関するテスト
 
 describe("RgbaPercentDetector.detect - ", () => {
     // 1:
