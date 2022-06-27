@@ -38,7 +38,7 @@ describe("WebColorDetector.match - ", () => {
         const detector = new WebColorDetector();
 
         // 結果を検証
-        const i = 0;
+        let i = 0;
         const addMargins = x => {
             const result = i === 0 ? x :
                 i === 1 ? ` ${x}` :
