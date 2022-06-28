@@ -1,9 +1,9 @@
 import { RgbPercentAlphaDetector } from "../../../src/detector/rgb-percent-alpha-detector.js";
 
-// rgb-percent-alpha
-// %で指定したRGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
+// rgb-percent-with-a
+// アルファ値を含む%指定RGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbPercentAlphaDetector.detect - ", () => {
+describe("RgbPercentAlphaDetector.match - ", () => {
     // 1:
     it("1: 値が整数", () => {
         // テスト対象の正規表現を作成
@@ -56,11 +56,10 @@ describe("RgbPercentAlphaDetector.detect - ", () => {
         const detector = new RgbPercentAlphaDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgb(-0%,-0%,-0%,-0)",
-            "rgb(-1%,-1%,-1%,-1)",
-            "rgb(-2%,-2%,-2%,-2)"
-        ]) {
+        const values = [ "-1%", " -2%", "-3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }
@@ -72,11 +71,10 @@ describe("RgbPercentAlphaDetector.detect - ", () => {
         const detector = new RgbPercentAlphaDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgb(.0%,.0%,.0%,.0)",
-            "rgb(.1%,.1%,.1%,.1)",
-            "rgb(.2%,.2%,.2%,.2)"
-        ]) {
+        const values = [ ".1%", " .2%", ".3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }

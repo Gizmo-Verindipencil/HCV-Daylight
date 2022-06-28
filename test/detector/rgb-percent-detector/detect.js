@@ -35,11 +35,8 @@ describe("RgbPercentDetector.detect - ", () => {
         const detector = new RgbPercentDetector();
 
         // 結果を検証
-        const expressions = [
-            "rgb(-0%,-0%,-0%)",
-            "rgb(-1%,-1%,-1%)",
-            "rgb(-2%,-2%,-2%)"
-        ];
+        const values = [ "-1%", " -2%", "-3% " ];
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         const result = detector.detect(expressions.join(" "));
         expect(result).toEqual(expressions);
     });
@@ -50,11 +47,8 @@ describe("RgbPercentDetector.detect - ", () => {
         const detector = new RgbPercentDetector();
 
         // 結果を検証
-        const expressions = [
-            "rgb(.0%,.0%,.0%)",
-            "rgb(.1%,.1%,.1%)",
-            "rgb(.2%,.2%,.2%)"
-        ];
+        const values = [ ".1%", " .2%", ".3% " ];
+        const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")})`);
         const result = detector.detect(expressions.join(" "));
         expect(result).toEqual(expressions);
     });

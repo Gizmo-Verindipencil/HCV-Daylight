@@ -1,21 +1,30 @@
 import { NumberExpression } from "./number-expression.js";
 
 /**
- * HSLA表現に関する正規表現の作成処理を提供します。
+ * HSLA表現の検出処理を提供します。
  */
 class HslaDetector {
+    /**
+     * 色表現の正規表現を取得します。
+     * @returns {String} 正規表現を返します。
+     */
+    _getColorExpression() {
+        const values = [
+            NumberExpression.numericWithMargins,
+            [...Array(2)].map(x => NumberExpression.percentWithMargins),
+            NumberExpression.questionablePercentWithMargins
+        ].flat();
+        return `hsla\\(${values.join(",")}\\)`;
+    }
+
     /**
      * 表現を検査します。
      * @param {String} expression 検査対象の表現。
      * @returns {Boolean} 検証結果(true : 一致、false : 不一致)を返します。
      */
     match(expression) {
-        const values = [
-            NumberExpression.numericWithMargins,
-            [...Array(2)].map(x => NumberExpression.percentWithMargins),
-            NumberExpression.questionablePercentWithMargins
-        ].flat();
-        const regExp = new RegExp(`^\\s*hsla\\(${values.join(",")}\\)\\s*$`, "i");
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`^\\s*${color}\\s*$`, "i");
         return regExp.test(expression);
     }
 
@@ -25,12 +34,8 @@ class HslaDetector {
      * @returns {Array<String>} 検出した表現を返します。
      */
     detect(expression) {
-        const values = [
-            NumberExpression.numericWithMargins,
-            [...Array(2)].map(x => NumberExpression.percentWithMargins),
-            NumberExpression.questionablePercentWithMargins
-        ].flat();
-        const regExp = new RegExp(`(\\b|\\s|^)hsla\\(${values.join(",")}\\)(\\b|\\s|$)`, "gi");
+        const color = this._getColorExpression();
+        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
         const results = (expression || "").match(regExp) || [];
         return results.map(x => x.trim());
     }

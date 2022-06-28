@@ -3,7 +3,7 @@ import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector
 // rgba-percent
 // %で指定したRGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
-describe("RgbaPercentDetector.detect - ", () => {
+describe("RgbaPercentDetector.match - ", () => {
     // 1:
     it("1: 値が整数パーセント", () => {
         // テスト対象の正規表現を作成
@@ -84,11 +84,10 @@ describe("RgbaPercentDetector.detect - ", () => {
         const detector = new RgbaPercentDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgba(-0%,-0%,-0%,-0)",
-            "rgba(-1%,-1%,-1%,-1)",
-            "rgba(-2%,-2%,-2%,-2)"
-        ]) {
+        const values = [ "-1%", " -2%", "-3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }
@@ -100,11 +99,10 @@ describe("RgbaPercentDetector.detect - ", () => {
         const detector = new RgbaPercentDetector();
 
         // 結果を検証
-        for (const expression of [
-            "rgba(.0%,.0%,.0%,.0)",
-            "rgba(.1%,.1%,.1%,.1)",
-            "rgba(.2%,.2%,.2%,.2)"
-        ]) {
+        const values = [ ".1%", " .2%", ".3% " ];
+        const removePercent = x => x.replace("%", "");
+        const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
+        for (const expression of expressions) {
             const result = detector.match(expression);
             expect(result).toBe(true);
         }
