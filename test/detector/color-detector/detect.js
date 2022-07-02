@@ -172,7 +172,7 @@ describe("ColorDetector.detect - ", () => {
     });
 
     // 14
-    it("14: %で指定したRGBA表現", () => {
+    it("14: %指定RGBA表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 

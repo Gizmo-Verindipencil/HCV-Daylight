@@ -1,7 +1,7 @@
 import { NumberExpression } from "./number-expression.js";
 
 /**
- * %で指定したRGBA表現の検出処理を提供します。
+ * %指定RGBA表現の検出処理を提供します。
  */
 class RgbaPercentDetector {
     /**

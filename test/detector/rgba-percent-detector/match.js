@@ -1,7 +1,7 @@
 import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector.js";
 
 // rgba-percent
-// %で指定したRGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
+// %指定RGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
 describe("RgbaPercentDetector.match - ", () => {
     // 1:
