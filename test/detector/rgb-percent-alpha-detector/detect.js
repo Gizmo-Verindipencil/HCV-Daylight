@@ -1,7 +1,7 @@
 import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { RgbPercentAlphaDetector } from "../../../src/detector/rgb-percent-alpha-detector.js";
 
-// rgb-percent-with-a
+// rgb-percent-alpha
 // アルファ値を含む%指定RGB表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト
 
 describe("RgbaPercentAlphaDetector.detect - ", () => {
@@ -90,6 +90,6 @@ describe("RgbaPercentAlphaDetector.detect - ", () => {
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);
-        expect(result).toEqual(expressionSet.rgbPercentWithA);
+        expect(result).toEqual(expressionSet.rgbPercentAlpha);
     });
 });

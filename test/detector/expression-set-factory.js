@@ -40,7 +40,7 @@ class ExpressionSetFactory {
                 "rgb(2 ,2 ,2 )",
                 "rgb( 3 , 3 , 3 )"
             ],
-            rgbWithA : [
+            rgbAlpha : [
                 "rgb(0,0,0,0)",
                 "rgb( 1, 1, 1, 1)",
                 "rgb(2 ,2 ,2 ,2 )",
@@ -52,7 +52,7 @@ class ExpressionSetFactory {
                 "rgb(2% ,2% ,2% )", 
                 "rgb( 3% , 3% , 3% )"
             ],
-            rgbPercentWithA : [
+            rgbPercentAlpha : [
                 "rgb(0%,0%,0%,0)",
                 "rgb( 1%, 1%, 1%, 1)",
                 "rgb(2% ,2% ,2% ,2 )",
@@ -76,7 +76,7 @@ class ExpressionSetFactory {
                 "hsl(2 ,2% ,2% )",
                 "hsl( 3 , 3% , 3% )"
             ],
-            hslWithA : [
+            hslAlpha : [
                 "hsl(0,0%,0%,0)",
                 "hsl( 1, 1%, 1%, 1)",
                 "hsl(2 ,2% ,2% ,2 )",

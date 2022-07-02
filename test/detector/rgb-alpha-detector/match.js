@@ -1,6 +1,6 @@
 import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector.js";
 
-// rgb-with-a
+// rgb-alpha
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
 
 describe("RgbAlphaDetector.match - ", () => {

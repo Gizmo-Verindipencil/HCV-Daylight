@@ -1,7 +1,7 @@
 import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector.js";
 
-// hsl-with-a
+// hsl-alpha
 // アルファ値を含むHSL表現(例: hsl(0, 0%, 0%, 0) )に関するテスト
 
 describe("HslAlphaDetector.detect - ", () => {
@@ -92,6 +92,6 @@ describe("HslAlphaDetector.detect - ", () => {
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);
-        expect(result).toEqual(expressionSet.hslWithA);
+        expect(result).toEqual(expressionSet.hslAlpha);
     });
 });

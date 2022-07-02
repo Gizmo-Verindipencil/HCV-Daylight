@@ -74,9 +74,9 @@ describe("ColorDetector.detect - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        const expression = expressionSet.hslWithA.join(" ");
+        const expression = expressionSet.hslAlpha.join(" ");
         const result = detector.detect(expression);
-        const expectation = expressionSet.hslWithA.map(x => new ColorDetectorResult("hsl-alpha", x.trim()));
+        const expectation = expressionSet.hslAlpha.map(x => new ColorDetectorResult("hsl-alpha", x.trim()));
         expect(result).toEqual(expectation);
     });
 
@@ -113,9 +113,9 @@ describe("ColorDetector.detect - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        const expression = expressionSet.rgbWithA.join(" ");
+        const expression = expressionSet.rgbAlpha.join(" ");
         const result = detector.detect(expression);
-        const expectation = expressionSet.rgbWithA.map(x => new ColorDetectorResult("rgb-alpha", x.trim()));
+        const expectation = expressionSet.rgbAlpha.map(x => new ColorDetectorResult("rgb-alpha", x.trim()));
         expect(result).toEqual(expectation);
     });
 
@@ -139,9 +139,9 @@ describe("ColorDetector.detect - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        const expression = expressionSet.rgbPercentWithA.join(" ");
+        const expression = expressionSet.rgbPercentAlpha.join(" ");
         const result = detector.detect(expression);
-        const expectation = expressionSet.rgbPercentWithA.map(x => new ColorDetectorResult("rgb-percent-alpha", x.trim()));
+        const expectation = expressionSet.rgbPercentAlpha.map(x => new ColorDetectorResult("rgb-percent-alpha", x.trim()));
         expect(result).toEqual(expectation);
     });
 

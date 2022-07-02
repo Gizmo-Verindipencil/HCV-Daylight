@@ -1,7 +1,7 @@
 import { ExpressionSetFactory } from "../expression-set-factory.js";
 import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector.js";
 
-// rgb-with-a
+// rgb-alpha
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト
 
 describe("RgbAlphaDetector.detect - ", () => {
@@ -91,6 +91,6 @@ describe("RgbAlphaDetector.detect - ", () => {
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);
-        expect(result).toEqual(expressionSet.rgbWithA);
+        expect(result).toEqual(expressionSet.rgbAlpha);
     });
 });

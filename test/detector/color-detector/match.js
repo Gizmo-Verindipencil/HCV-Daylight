@@ -74,7 +74,7 @@ describe("ColorDetector.match - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        for (const expression of expressionSet.hslWithA) {
+        for (const expression of expressionSet.hslAlpha) {
             const result = detector.match(expression);
             expect(result).toBe("hsl-alpha");
         }
@@ -113,7 +113,7 @@ describe("ColorDetector.match - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        for (const expression of expressionSet.rgbWithA) {
+        for (const expression of expressionSet.rgbAlpha) {
             const result = detector.match(expression);
             expect(result).toBe("rgb-alpha");
         }
@@ -139,7 +139,7 @@ describe("ColorDetector.match - ", () => {
 
         // 結果を検証
         const expressionSet = ExpressionSetFactory.create();
-        for (const expression of expressionSet.rgbPercentWithA) {
+        for (const expression of expressionSet.rgbPercentAlpha) {
             const result = detector.match(expression);
             expect(result).toBe("rgb-percent-alpha");
         }
