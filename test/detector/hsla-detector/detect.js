@@ -7,7 +7,7 @@ import { HslaDetector } from "../../../src/detector/hsla-detector.js";
 describe("HslaDetector.detect - ", () => {
     // 1:
     it("1: 値が整数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -20,7 +20,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 2:
     it("2: 値が小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -33,7 +33,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 3:
     it("3: アルファ値が整数パーセント", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -46,7 +46,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 4:
     it("4: アルファ値が小数パーセント", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -59,7 +59,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 5:
     it("5: 値がマイナス", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -72,7 +72,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 6:
     it("6: ドット始まりの小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証
@@ -85,7 +85,7 @@ describe("HslaDetector.detect - ", () => {
 
     // 7:
     it("7: その他", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
         // 結果を検証

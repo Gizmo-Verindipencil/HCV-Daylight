@@ -8,7 +8,7 @@ import { WebColorNameList } from "./web-color-name-list.js";
 describe("WebColorDetector.match - ", () => {
     // 1:
     it("1: 大文字", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
         // 結果を検証
@@ -21,7 +21,7 @@ describe("WebColorDetector.match - ", () => {
 
     // 2:
     it("2: 小文字", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
         // 結果を検証
@@ -34,7 +34,7 @@ describe("WebColorDetector.match - ", () => {
 
     // 3:
     it("3: 前後マージン", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
         // 結果を検証
@@ -56,7 +56,7 @@ describe("WebColorDetector.match - ", () => {
 
     // 4:
     it("4: その他", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
         // 結果を検証

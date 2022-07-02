@@ -7,7 +7,7 @@ import { RgbDetector } from "../../../src/detector/rgb-detector.js";
 describe("RgbDetector.detect - ", () => {
     // 1:
     it("1: 値が整数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbDetector();
 
         // 結果を検証
@@ -19,7 +19,7 @@ describe("RgbDetector.detect - ", () => {
 
     // 2:
     it("2: 値が小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbDetector();
 
         // 結果を検証
@@ -31,7 +31,7 @@ describe("RgbDetector.detect - ", () => {
 
     // 3:
     it("3: 値がマイナス", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbDetector();
 
         // 結果を検証
@@ -43,7 +43,7 @@ describe("RgbDetector.detect - ", () => {
 
     // 4:
     it("4: ドット始まりの小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbDetector();
 
         // 結果を検証
@@ -55,7 +55,7 @@ describe("RgbDetector.detect - ", () => {
 
     // 5:
     it("5: その他", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbDetector();
 
         // 結果を検証

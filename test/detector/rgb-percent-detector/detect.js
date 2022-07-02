@@ -7,7 +7,7 @@ import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector.j
 describe("RgbPercentDetector.detect - ", () => {
     // 1:
     it("1: 値が整数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbPercentDetector();
 
         // 結果を検証
@@ -19,7 +19,7 @@ describe("RgbPercentDetector.detect - ", () => {
 
     // 2:
     it("2: 値が小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbPercentDetector();
 
         // 結果を検証
@@ -31,7 +31,7 @@ describe("RgbPercentDetector.detect - ", () => {
 
     // 3:
     it("3: 値がマイナス", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbPercentDetector();
 
         // 結果を検証
@@ -43,7 +43,7 @@ describe("RgbPercentDetector.detect - ", () => {
 
     // 4:
     it("4: ドット始まりの小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbPercentDetector();
 
         // 結果を検証
@@ -55,7 +55,7 @@ describe("RgbPercentDetector.detect - ", () => {
 
     // 5:
     it("5: その他", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new RgbPercentDetector();
 
         // 結果を検証

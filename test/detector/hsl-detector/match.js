@@ -6,7 +6,7 @@ import { HslDetector } from "../../../src/detector/hsl-detector.js";
 describe("HslDetector.match - ", () => {
     // 1:
     it("1: 値が整数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証
@@ -21,7 +21,7 @@ describe("HslDetector.match - ", () => {
 
     // 2:
     it("2: 値が小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証
@@ -36,7 +36,7 @@ describe("HslDetector.match - ", () => {
 
     // 3:
     it("3: 前後に空白あり", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証
@@ -52,7 +52,7 @@ describe("HslDetector.match - ", () => {
 
     // 4:
     it("4: 値がマイナス", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証
@@ -67,7 +67,7 @@ describe("HslDetector.match - ", () => {
 
     // 5:
     it("5: ドット始まりの小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証
@@ -82,7 +82,7 @@ describe("HslDetector.match - ", () => {
 
     // 6:
     it("6: その他アンマッチ", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
         // 結果を検証

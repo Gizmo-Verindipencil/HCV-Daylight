@@ -6,7 +6,7 @@ import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector.js";
 describe("HslAlphaDetector.match - ", () => {
     // 1:
     it("1: 値が整数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -21,7 +21,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 2:
     it("2: 値が小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -36,7 +36,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 3:
     it("3: アルファ値が整数パーセント", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -51,7 +51,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 4:
     it("4: アルファ値が小数パーセント", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -66,7 +66,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 5:
     it("5: 前後に空白あり", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -82,7 +82,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 6:
     it("6: 値がマイナス", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -97,7 +97,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 7:
     it("7: ドット始まりの小数", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
@@ -112,7 +112,7 @@ describe("HslAlphaDetector.match - ", () => {
 
     // 8:
     it("8: その他アンマッチ", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 
         // 結果を検証
