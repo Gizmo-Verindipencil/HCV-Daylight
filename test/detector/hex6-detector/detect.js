@@ -7,7 +7,7 @@ import { Hex6Detector } from "../../../src/detector/hex6-detector.js";
 describe("Hex6Detector.detect - ", () => {
     // 1:
     it("1: 数字3桁", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
         // 結果を検証
@@ -22,7 +22,7 @@ describe("Hex6Detector.detect - ", () => {
 
     // 2:
     it("2: アルファベット大文字3桁", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
         // 結果を検証
@@ -37,7 +37,7 @@ describe("Hex6Detector.detect - ", () => {
 
     // 3:
     it("3: アルファベット小文字3桁", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
         // 結果を検証
@@ -52,7 +52,7 @@ describe("Hex6Detector.detect - ", () => {
 
     // 4:
     it("4: その他", () => {
-        // テスト対象の正規表現を作成
+        // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
         // 結果を検証
