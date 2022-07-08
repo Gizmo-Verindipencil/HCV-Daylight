@@ -10,23 +10,16 @@
     padding: 25px 10px 5px 30px;
     position: relative;
     ">
-    <div style="color: #ccc;
-        content: open-quote;
-        font-size: 3rem;
-        font-style: italic;
-        line-height: 0.3rem;
-        margin-left: -1.5rem;
-        ">‘‘</div>
     <p>
-        What people should do at night is sleep, not work.
+        ‘‘ What people should do at night is sleep, not work.
     </p>
-    <cite align="right" style="
+    <p align="right" style="
         color: #aaa;
         display: block;
         font-size: 0.8rem;
         ">
         tatiuo the fishing enthusiast ( 1992 - )
-    </cite>
+    </p>
 </blockquote>
 <br>
 
