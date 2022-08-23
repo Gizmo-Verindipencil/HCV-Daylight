@@ -1,3 +1,4 @@
+import { ColorExpressionType } from "../color-expression-type.js";
 import { ColorDetectorResult } from "./color-detector-result.js";
 import { Hex3Detector } from "./hex3-detector.js";
 import { Hex4Detector } from "./hex4-detector.js";
@@ -13,7 +14,6 @@ import { RgbPercentDetector } from "./rgb-percent-detector.js";
 import { RgbaDetector } from "./rgba-detector.js";
 import { RgbaPercentDetector } from "./rgba-percent-detector.js";
 import { WebColorDetector } from "./web-color-detector.js";
-import { ColorExpressionType } from "../color-expression-type.js";
 
 /**
  * 色表現の検出処理を提供します。
