@@ -99,11 +99,11 @@ class ColorExpressionType {
     }
 
     /**
-     * アルファ値を含まない%指定RGB表現の種類を取得します。
+     * %指定RGBA表現の種類を取得します。
      * @return {String} 色表現の種類を返します。
      */
-    static get rgbPercent() {
-        return "rgb-percent";
+    static get rgbaPercent() {
+        return "rgba-percent";
     }
 
     /**
