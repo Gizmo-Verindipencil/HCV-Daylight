@@ -13,6 +13,7 @@ import { RgbPercentDetector } from "./rgb-percent-detector.js";
 import { RgbaDetector } from "./rgba-detector.js";
 import { RgbaPercentDetector } from "./rgba-percent-detector.js";
 import { WebColorDetector } from "./web-color-detector.js";
+import { ColorExpressionType } from "../color-expression-type.js";
 
 /**
  * 色表現の検出処理を提供します。
@@ -24,20 +25,20 @@ class ColorDetector {
      */
     getTypeSet() {
         return {
-            hex3            : "hex3"              ,
-            hex4            : "hex4"              ,
-            hex6            : "hex6"              ,
-            hex8            : "hex8"              ,
-            hslAlpha        : "hsl-alpha"         ,
-            hsl             : "hsl"               ,
-            hsla            : "hsla"              ,
-            rgbAlpha        : "rgb-alpha"         ,
-            rgb             : "rgb"               ,
-            rgbPercentAlpha : "rgb-percent-alpha" ,
-            rgbPercent      : "rgb-percent"       ,
-            rgba            : "rgba"              ,
-            rgbaPercent     : "rgba-percent"      ,
-            webColor        : "web-color"         ,
+            hex3            : ColorExpressionType.hex3            ,
+            hex4            : ColorExpressionType.hex4            ,
+            hex6            : ColorExpressionType.hex6            ,
+            hex8            : ColorExpressionType.hex8            ,
+            hslAlpha        : ColorExpressionType.hslAlpha        ,
+            hsl             : ColorExpressionType.hsl             ,
+            hsla            : ColorExpressionType.hsla            ,
+            rgbAlpha        : ColorExpressionType.rgbAlpha        ,
+            rgb             : ColorExpressionType.rgb             ,
+            rgbPercentAlpha : ColorExpressionType.rgbPercentAlpha ,
+            rgbPercent      : ColorExpressionType.rgbPercent      ,
+            rgba            : ColorExpressionType.rgba            ,
+            rgbaPercent     : ColorExpressionType.rgbaPercent     ,
+            webColor        : ColorExpressionType.webColor        ,
         };
     }
 
