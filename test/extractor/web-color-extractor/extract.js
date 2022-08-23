@@ -3,7 +3,7 @@ import { Color } from "../../../src/color.js";
 import { WebColor } from "../../../src/web-color.js";
 
 describe("WebColorExtractor.extract - ", () => {
-    // 1
+    // 1:
     it("1: WEBカラー", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
@@ -23,7 +23,7 @@ describe("WebColorExtractor.extract - ", () => {
         }
     });
 
-    // 2
+    // 2:
     it("2: 非WEBカラー", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
