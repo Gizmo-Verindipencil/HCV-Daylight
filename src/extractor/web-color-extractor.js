@@ -1,4 +1,5 @@
 import { Color } from "../color.js";
+import { WebColorDetector } from "../detector/web-color-detector.js";
 import { WebColor } from "../web-color.js";
 
 /**
@@ -11,8 +12,10 @@ class WebColorExtractor {
      * @return {Color} 抽出結果を返します。
      */
     extract(expression) {
+        const detector = new WebColorDetector();
+        if (!detector.match(expression)) return null;
+
         const color = WebColor[expression];
-        if (!color) return null;
         return new Color(color.r, color.g, color.b, null);
     }
 }
