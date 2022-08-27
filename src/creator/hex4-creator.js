@@ -25,7 +25,7 @@ class Hex4Creator {
 
         // 色表現を生成
         const hex = x => (Number(x).toString(16)).slice(0, 1);
-        const rgb = [ color.r, color.g, color.b, color.a ?? 100 ].map(x => approximation(x)).map(x => hex(x));
+        const rgb = [ color.r, color.g, color.b, color.a || 100 ].map(x => approximation(x)).map(x => hex(x));
         return `#${rgb.join("")}`;
     }
 }
