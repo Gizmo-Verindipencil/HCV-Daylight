@@ -11,8 +11,8 @@ class Hex3Creator {
      */
     create(color) {
         // 利用可能な近似値の算出
+        const available = [...Array(16).keys()].map(x => x.toString(16)).map(x => parseInt(String(x).repeat(2), 16));
         const approximation = value => {
-            const available = [...Array(16).keys()].map(x => x.toString(16)).map(x => parseInt(String(x).repeat(2), 16));
             let match = available[0];
             for (const v of available.slice(1)) {
                 const currentDistance = Math.abs(match - value);
