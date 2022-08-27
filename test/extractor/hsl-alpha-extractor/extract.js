@@ -30,7 +30,7 @@ describe("HslAlphaExtractor.extract - ", () => {
         const extractor = new HslAlphaExtractor();
 
         // 結果を検証
-        const result = extractor.extract("not hsl-slpha");
+        const result = extractor.extract("not hsl-alpha");
         expect(result).toBeNull();
     });
 });
