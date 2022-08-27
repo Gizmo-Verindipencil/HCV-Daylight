@@ -7,6 +7,7 @@ class Hex4Creator {
     /**
      * 色表現を作成します。
      * @param {Color} color 生成元の色情報。
+     * @return {String} 色表現。
      */
     create(color) {
         // 利用可能な近似値の算出

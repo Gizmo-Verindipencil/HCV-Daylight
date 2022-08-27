@@ -7,6 +7,7 @@ class Hex8Creator {
     /**
      * 色表現を作成します。
      * @param {Color} color 生成元の色情報。
+     * @return {String} 色表現。
      */
     create(color) {
         const hex = x => ("0"+(Number(x).toString(16))).slice(-2);
