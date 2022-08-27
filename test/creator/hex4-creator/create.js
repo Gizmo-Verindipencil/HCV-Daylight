@@ -8,8 +8,8 @@ describe("Hex4Creator.create - ", () => {
         const creator = new Hex4Creator();
 
         // 結果を検証
-        const result = creator.create(new Color(0, 17, 34, 51));
-        expect(result).toEqual("#0123");
+        const result = creator.create(new Color(0, 17, 34, 3));
+        expect(result).toEqual("#0120");
     });
 
     // 2:
@@ -18,7 +18,17 @@ describe("Hex4Creator.create - ", () => {
         const creator = new Hex4Creator();
 
         // 結果を検証
-        const result1 = creator.create(new Color(8, 9, 10, 11));
+        const result1 = creator.create(new Color(8, 9, 10, 4));
         expect(result1).toEqual("#0111");
+    });
+
+    // 3:
+    it("3: アルファ値補完", () => {
+        // テスト対象のインスタンスを作成
+        const creator = new Hex4Creator();
+
+        // 結果を検証
+        const result1 = creator.create(new Color(8, 9, 10, null));
+        expect(result1).toEqual("#011f");
     });
 });

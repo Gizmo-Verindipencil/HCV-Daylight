@@ -12,7 +12,7 @@ class Hex4Creator {
     create(color) {
         // 利用可能な近似値の算出
         const approximation = value => {
-            const available = [...Array(16).keys()].map(x => parseInt(String(x).repeat(2), 16));
+            const available = [...Array(16).keys()].map(x => x.toString(16)).map(x => parseInt(String(x).repeat(2), 16));
             let match = available[0];
             for (const v of available.slice(1)) {
                 const currentDistance = Math.abs(match - value);
@@ -26,8 +26,9 @@ class Hex4Creator {
 
         // 色表現を生成
         const hex = x => (Number(x).toString(16)).slice(0, 1);
-        const rgb = [ color.r, color.g, color.b, color.a || 100 ].map(x => approximation(x)).map(x => hex(x));
-        return `#${rgb.join("")}`;
+        const alpha = Math.round((color.a || 100) / 100 * 255);
+        const rgba = [ color.r, color.g, color.b, alpha ].map(x => approximation(x)).map(x => hex(x));
+        return `#${rgba.join("")}`;
     }
 }
 

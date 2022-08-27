@@ -35,7 +35,7 @@ class HslaCreator {
         /* ---------------------------------------------------------------------- */
 
         const hsl = rgbToHsl(color.r, color.g, color.b).map(x => Math.round(x));
-        return `hsla(${hsl[0]},${hsl[1]}%,${hsl[2]}%,${color.a}%)`;
+        return `hsla(${hsl[0]},${hsl[1]}%,${hsl[2]}%,${color.a || 100}%)`;
     }
 }
 
