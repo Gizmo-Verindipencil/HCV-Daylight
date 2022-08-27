@@ -1,3 +1,4 @@
+import { ColorExpressionType } from "../color-expression-type.js";
 import { ColorDetectorResult } from "./color-detector-result.js";
 import { Hex3Detector } from "./hex3-detector.js";
 import { Hex4Detector } from "./hex4-detector.js";
@@ -24,20 +25,20 @@ class ColorDetector {
      */
     getTypeSet() {
         return {
-            hex3            : "hex3"              ,
-            hex4            : "hex4"              ,
-            hex6            : "hex6"              ,
-            hex8            : "hex8"              ,
-            hslAlpha        : "hsl-alpha"         ,
-            hsl             : "hsl"               ,
-            hsla            : "hsla"              ,
-            rgbAlpha        : "rgb-alpha"         ,
-            rgb             : "rgb"               ,
-            rgbPercentAlpha : "rgb-percent-alpha" ,
-            rgbPercent      : "rgb-percent"       ,
-            rgba            : "rgba"              ,
-            rgbaPercent     : "rgba-percent"      ,
-            webColor        : "web-color"         ,
+            hex3            : ColorExpressionType.hex3            ,
+            hex4            : ColorExpressionType.hex4            ,
+            hex6            : ColorExpressionType.hex6            ,
+            hex8            : ColorExpressionType.hex8            ,
+            hslAlpha        : ColorExpressionType.hslAlpha        ,
+            hsl             : ColorExpressionType.hsl             ,
+            hsla            : ColorExpressionType.hsla            ,
+            rgbAlpha        : ColorExpressionType.rgbAlpha        ,
+            rgb             : ColorExpressionType.rgb             ,
+            rgbPercentAlpha : ColorExpressionType.rgbPercentAlpha ,
+            rgbPercent      : ColorExpressionType.rgbPercent      ,
+            rgba            : ColorExpressionType.rgba            ,
+            rgbaPercent     : ColorExpressionType.rgbaPercent     ,
+            webColor        : ColorExpressionType.webColor        ,
         };
     }
 

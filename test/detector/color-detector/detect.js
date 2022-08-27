@@ -15,7 +15,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual([]);
     });
 
-    // 2
+    // 2:
     it("2: 3桁の16進数表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -28,7 +28,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 3
+    // 3:
     it("3: 4桁の16進数表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -41,7 +41,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
     
-    // 4
+    // 4:
     it("4: 6桁の16進数表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -54,7 +54,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
     
-    // 5
+    // 5:
     it("5: 8桁の16進数表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -67,7 +67,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 6
+    // 6:
     it("6: アルファ値を含むHSL表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -80,7 +80,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 7
+    // 7:
     it("7: HSL表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -93,7 +93,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 8
+    // 8:
     it("8: HSLA表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -106,7 +106,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 9
+    // 9:
     it("9: アルファ値を含むRGB表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -119,7 +119,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 10
+    // 10:
     it("10: RGB表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -132,7 +132,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 11
+    // 11:
     it("11: アルファ値を含む%指定RGB表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -145,7 +145,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 12
+    // 12:
     it("12: アルファ値を含まない%指定RGB表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -158,7 +158,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 13
+    // 13:
     it("13: RGBA表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
@@ -171,7 +171,7 @@ describe("ColorDetector.detect - ", () => {
         expect(result).toEqual(expectation);
     });
 
-    // 14
+    // 14:
     it("14: %指定RGBA表現", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
