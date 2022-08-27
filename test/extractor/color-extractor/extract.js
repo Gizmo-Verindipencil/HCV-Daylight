@@ -223,7 +223,23 @@ describe("Hex3Extractor.extract - ", () => {
     });
 
     // 21:
-    it("21: 変換不可", () => {
+    it("21: WEBカラー", () => {
+        // テスト対象のインスタンスを作成
+        const extractor = new ColorExtractor();
+
+        // 結果を検証
+        for (const pair of [
+            [ "red"   , new Color(255 ,   0 ,   0 , null) ],
+            [ "green" , new Color(  0 , 128 ,   0 , null) ],
+            [ "blue"  , new Color(  0 ,   0 , 255 , null) ],
+        ]) {
+            const result = extractor.extract(pair[0]);
+            expect(result).toEqual(pair[1]);
+        }
+    });
+
+    // 22:
+    it("22: 変換不可", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
