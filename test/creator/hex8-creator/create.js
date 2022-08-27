@@ -9,6 +9,6 @@ describe("Hex8Creator.create - ", () => {
 
         // 結果を検証
         const result = creator.create(new Color(1, 2, 3, 4));
-        expect(result).toEqual("#01020304");
+        expect(result).toEqual("#0102030a");
     });
 });
