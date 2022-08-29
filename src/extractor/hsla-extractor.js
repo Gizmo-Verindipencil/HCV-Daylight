@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { HslaDetector } from "../detector/hsla-detector.js";
+import { Color } from "../color";
+import { HslaDetector } from "../detector/hsla-detector";
 
 /**
  * HSLA表現の抽出処理を提供します。

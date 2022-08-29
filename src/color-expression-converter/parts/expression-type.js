@@ -1,4 +1,4 @@
-import { Color } from "./color.js";
+import { Color } from "./color";
 
 /**
  * 色表現に関連する処理を提供します。

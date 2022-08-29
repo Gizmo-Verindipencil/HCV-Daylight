@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbPercentAlphaDetector } from "../detector/rgb-percent-alpha-detector.js";
+import { Color } from "../color";
+import { RgbPercentAlphaDetector } from "../detector/rgb-percent-alpha-detector";
 
 /**
  * アルファ値を含む%指定RGB表現の抽出処理を提供します。

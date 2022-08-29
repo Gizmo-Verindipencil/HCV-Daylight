@@ -1,4 +1,4 @@
-import { Config } from "./config.js";
+import { Config } from "./config";
 
 /**
  * 日の満ち欠けをページに反映する処理を提供します。

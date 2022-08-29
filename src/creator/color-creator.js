@@ -1,19 +1,19 @@
-import { Color } from "../color.js";
-import { Hex3Creator } from "./hex3-creator.js";
-import { Hex4Creator } from "./hex4-creator.js";
-import { Hex6Creator } from "./hex6-creator.js";
-import { Hex8Creator } from "./hex8-creator.js";
-import { HslAlphaCreator } from "./hsl-alpha-creator.js";
-import { HslCreator } from "./hsl-creator.js";
-import { HslaCreator } from "./hsla-creator.js";
-import { RgbAlphaCreator } from "./rgb-alpha-creator.js";
-import { RgbCreator } from "./rgb-creator.js";
-import { RgbPercentAlphaCreator } from "./rgb-percent-alpha-creator.js";
-import { RgbPercentCreator } from "./rgb-percent-creator.js";
-import { RgbaCreator } from "./rgba-creator.js";
-import { RgbaPercentCreator } from "./rgba-percent-creator.js";
-import { WebColorCreator } from "./web-color-creator.js";
-import { ColorExpressionType } from "../color-expression-type.js";
+import { Color } from "../color";
+import { Hex3Creator } from "./hex3-creator";
+import { Hex4Creator } from "./hex4-creator";
+import { Hex6Creator } from "./hex6-creator";
+import { Hex8Creator } from "./hex8-creator";
+import { HslAlphaCreator } from "./hsl-alpha-creator";
+import { HslCreator } from "./hsl-creator";
+import { HslaCreator } from "./hsla-creator";
+import { RgbAlphaCreator } from "./rgb-alpha-creator";
+import { RgbCreator } from "./rgb-creator";
+import { RgbPercentAlphaCreator } from "./rgb-percent-alpha-creator";
+import { RgbPercentCreator } from "./rgb-percent-creator";
+import { RgbaCreator } from "./rgba-creator";
+import { RgbaPercentCreator } from "./rgba-percent-creator";
+import { WebColorCreator } from "./web-color-creator";
+import { ColorExpressionType } from "../color-expression-type";
 
 /**
  * RGBA表現の作成処理を提供します。

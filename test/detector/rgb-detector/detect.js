@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { RgbDetector } from "../../../src/detector/rgb-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { RgbDetector } from "../../../src/detector/rgb-detector";
 
 // rgb
 // RGB表現(例: rgb(0, 0, 0) )に関するテスト

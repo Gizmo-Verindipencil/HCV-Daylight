@@ -1,4 +1,4 @@
-import { WebColor } from "../web-color.js";
+import { WebColor } from "../web-color";
 
 /**
  * WEBカラー表現の検出処理を提供します。

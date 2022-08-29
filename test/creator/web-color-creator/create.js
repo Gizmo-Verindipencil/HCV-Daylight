@@ -1,5 +1,5 @@
-import { Color } from "../../../src/color.js";
-import { WebColorCreator } from "../../../src/creator/web-color-creator.js";
+import { Color } from "../../../src/color";
+import { WebColorCreator } from "../../../src/creator/web-color-creator";
 
 describe("WebColorCreator.create - ", () => {
     // 1:

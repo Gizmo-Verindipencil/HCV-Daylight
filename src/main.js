@@ -1,5 +1,5 @@
-import { Config } from "./config.js";
-import { Daylight } from "./daylight.js";
+import { Config } from "./config";
+import { Daylight } from "./daylight";
 
 // 反映処理の設定を作成(任意)
 const option = new Config();

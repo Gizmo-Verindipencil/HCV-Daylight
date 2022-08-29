@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { Hex3Detector } from "../../../src/detector/hex3-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { Hex3Detector } from "../../../src/detector/hex3-detector";
 
 // hex3
 // 3桁の16進数表現(例: #000 )に関するテスト

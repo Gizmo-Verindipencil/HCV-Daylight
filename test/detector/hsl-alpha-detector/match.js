@@ -1,4 +1,4 @@
-import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector.js";
+import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector";
 
 // hsl-alpha
 // アルファ値を含むHSL表現(例: hsl(0, 0, 0, 0) )に関するテスト

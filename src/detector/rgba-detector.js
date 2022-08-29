@@ -1,4 +1,4 @@
-import { NumberExpression } from "./number-expression.js";
+import { NumberExpression } from "./number-expression";
 
 /**
  * RGBA表現の検出処理を提供します。

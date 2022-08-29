@@ -1,5 +1,5 @@
-import { HslExtractor } from "../../../src/extractor/hsl-extractor.js";
-import { Color } from "../../../src/color.js";
+import { HslExtractor } from "../../../src/extractor/hsl-extractor";
+import { Color } from "../../../src/color";
 
 describe("HslExtractor.extract - ", () => {
     // 1:

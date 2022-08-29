@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbaPercentDetector } from "../detector/rgba-percent-detector.js";
+import { Color } from "../color";
+import { RgbaPercentDetector } from "../detector/rgba-percent-detector";
 
 /**
  * %指定RGBA表現の抽出処理を提供します。

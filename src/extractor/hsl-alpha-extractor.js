@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { HslAlphaDetector } from "../detector/hsl-alpha-detector.js";
+import { Color } from "../color";
+import { HslAlphaDetector } from "../detector/hsl-alpha-detector";
 
 /**
  * アルファ値を含むHSL表現の抽出処理を提供します。

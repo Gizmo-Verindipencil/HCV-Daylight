@@ -1,4 +1,4 @@
-import { NumberExpression } from "./number-expression.js";
+import { NumberExpression } from "./number-expression";
 
 /**
  * アルファ値を含まない%指定RGB表現の検出処理を提供します。

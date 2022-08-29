@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { Hex8Detector } from "../detector/hex8-detector.js";
+import { Color } from "../color";
+import { Hex8Detector } from "../detector/hex8-detector";
 
 /**
  * 8桁の16進数表現の抽出処理を提供します。

@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector";
 
 // rgba-percent
 // RGBA表現(例: rgba(0%, 0%, 0%, 0) )に関するテスト

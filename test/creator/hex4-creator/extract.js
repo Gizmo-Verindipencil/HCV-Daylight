@@ -1,5 +1,5 @@
-import { Color } from "../../../src/color.js";
-import { Hex4Creator } from "../../../src/creator/hex4-creator.js";
+import { Color } from "../../../src/color";
+import { Hex4Creator } from "../../../src/creator/hex4-creator";
 
 describe("Hex4Creator.extract - ", () => {
     // 1:

@@ -1,4 +1,4 @@
-import { Color } from "../color.js";
+import { Color } from "../color";
 
 /**
  * 6桁の16進数表現の作成処理を提供します。

@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbaDetector } from "../detector/rgba-detector.js";
+import { Color } from "../color";
+import { RgbaDetector } from "../detector/rgba-detector";
 
 /**
  * RGBA表現の抽出処理を提供します。

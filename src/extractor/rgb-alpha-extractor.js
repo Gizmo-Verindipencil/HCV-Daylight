@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbAlphaDetector } from "../detector/rgb-alpha-detector.js";
+import { Color } from "../color";
+import { RgbAlphaDetector } from "../detector/rgb-alpha-detector";
 
 /**
  * アルファ値を含むRGB表現の抽出処理を提供します。
