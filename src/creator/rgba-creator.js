@@ -10,7 +10,7 @@ class RgbaCreator {
      * @return {String} 色表現。
      */
     create(color) {
-        return `rgba(${color.r},${color.g},${color.b},${color.a || 100}%)`;
+        return `rgba(${color.r},${color.g},${color.b},${color.a != null ? color.a : 100}%)`;
     }
 }
 

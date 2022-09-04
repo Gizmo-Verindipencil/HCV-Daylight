@@ -11,7 +11,7 @@ class RgbaPercentCreator {
      */
     create(color) {
         const rgb = [ color.r, color.g, color.b ].map(x => Math.round(x / 255 * 100)).map(x => `${x}%`);
-        return `rgba(${rgb.join(",")},${color.a || 100}%)`;
+        return `rgba(${rgb.join(",")},${color.a != null ? color.a : 100}%)`;
     }
 }
 

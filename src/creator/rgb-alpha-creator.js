@@ -10,7 +10,7 @@ class RgbAlphaCreator {
      * @return {String} 色表現。
      */
     create(color) {
-        return `rgb(${color.r},${color.g},${color.b},${color.a || 100}%)`;
+        return `rgb(${color.r},${color.g},${color.b},${color.a != null ? color.a : 100}%)`;
     }
 }
 
