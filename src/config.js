@@ -1,3 +1,5 @@
+import { ColorExtractor } from "./extractor/color-extractor";
+
 /**
  * 日の満ち欠けの反映処理の設定を提供します。
  */
@@ -56,9 +58,17 @@ class Config {
         const distances = [];
         for(const time of times) {
             const themeTime = new Date(`${date} ${time}`);
+
+            // 秒数差の計算
+            const getSecondDifference = (date1, date2) => {
+                const secondMilliseconds = 1000;
+                return Math.abs(Math.ceil((date1 - date2) / secondMilliseconds));
+            }
+
+            // 時間毎の距離を記録
             distances.push({
                 time: time,
-                distance: this._getSecondDifference(themeTime, this.now)
+                distance: getSecondDifference(themeTime, this.now)
             });
         }
 
@@ -77,9 +87,13 @@ class Config {
         [ 0, 1 ].forEach(x => distances[x].distance = Math.round((distances[x].distance / amount * 100)));
 
         // 2つの時間帯の中間色を算出
+        const extractor = new ColorExtractor();
         const [ color1, color2 ] = [ 0, 1 ]
             .map(x => this.brightness[distances[x].time])
-            .map(x => [ x.slice(1, 3), x.slice(3, 5), x.slice(5, 7) ].map(x => parseInt(x, 16)));
+            .map(x => {
+                const c = extractor.extract(x);
+                return [ c.r, c.g, c.b ];
+            });
         const midColor = [ 0, 1, 2 ].map(x => {
             const gap = color1[x] - color2[x];
             return color2[x] + Math.round(gap * distances[0].distance / 100);

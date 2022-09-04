@@ -33,11 +33,11 @@ class Daylight {
         const detected = this._detector.detect(color);
 
         // 単一の色表現の調整
-        const getSingle = () => {
+        const getSingle = e => {
             // 色表現を抽出
-            const source = this._extractor.extract(color.expression);
+            const source = this._extractor.extract(e.expression);
             if (!source) return null;
-            
+
             // 日付の傾きを反映
             const themeColor = config.getThemeColor();
             const reflect = (value1, value2) => {
@@ -56,13 +56,13 @@ class Daylight {
             );
 
             // 変換結果を返す
-            return this._creator.create(reflected, color.type);
+            return this._creator.create(reflected, e.type);
         };
 
         // 調整した色を取得
         const replacement = {};
         for(const result of detected) {
-            const modified = getSingle(result, config);
+            const modified = getSingle(result);
             if (modified == null) continue;
             replacement[result.expression] = modified;
         }
@@ -92,16 +92,7 @@ class Daylight {
         return config;
     }
 
-    /**
-     * 日付間の日数差を取得します。
-     * @param {Date} date1 日付1。
-     * @param {Date} date2 日付2。
-     * @returns {Number} 日数差を返します。
-     */
-    _getSecondDifference(date1, date2) {
-        const secondMilliseconds = 1000;
-        return Math.abs(Math.ceil((date1 - date2) / secondMilliseconds));
-    }
+    
 
     /**
      * 要素に色を反映します。
