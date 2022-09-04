@@ -1,4 +1,5 @@
 import { Daylight } from "../../../src/daylight";
+import { ExpressionConverter } from "./expression-converter";
 
 // rgb-alpha
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0%) )に関するテスト
@@ -31,7 +32,7 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`rgb(12,30,48,${alpha})`);
+            expect(result).toBe(`rgb(12,30,48,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -66,7 +67,7 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(15,32,50${alpha}),rgba(60,78,96,${alpha}))`);
+            expect(result).toBe(`linear-gradient(rgba(15,32,50${ExpressionConverter.getPercent(alpha)}),rgba(60,78,96,${ExpressionConverter.getPercent(alpha)}))`);
         }
     });
 });

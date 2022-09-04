@@ -1,4 +1,5 @@
 import { Daylight } from "../../../src/daylight";
+import { ExpressionConverter } from "./expression-converter";
 
 // rgba-percent
 // %で指定したRGBA表現(例: rgb(0%, 0%, 0%, 0%) )に関するテスト
@@ -34,7 +35,7 @@ describe("Daylight.getReflectionColor - rgba-percent_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`rgb(4.7%,11.8%,18.8%,${alpha})`);
+            expect(result).toBe(`rgb(4.7%,11.8%,18.8%,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -69,7 +70,7 @@ describe("Daylight.getReflectionColor - rgba-percent_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(5.9%,12.5%,19.6%,${alpha}),rgba(23.5%,30.6%,37.6%,${alpha}))`);
+            expect(result).toBe(`linear-gradient(rgba(5.9%,12.5%,19.6%,${ExpressionConverter.getPercent(alpha)}),rgba(23.5%,30.6%,37.6%,${ExpressionConverter.getPercent(alpha)}))`);
         }
     });
 });
