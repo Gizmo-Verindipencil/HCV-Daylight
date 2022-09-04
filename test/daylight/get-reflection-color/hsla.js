@@ -39,7 +39,7 @@ describe("Daylight.getReflectionColor - hsla_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`hsla(210,92.9%,50.6%,${ExpressionConverter.getPercent(alpha)})`);
+            expect(result).toBe(`hsla(210,93%,51%,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -89,8 +89,8 @@ describe("Daylight.getReflectionColor - hsla_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            const hsla1 = `hsla(220,93.7%,62.9%,${ExpressionConverter.getPercent(alpha1)})`;
-            const hsla2 = `hsla(211,40.2%,24.9%,${ExpressionConverter.getPercent(alpha2)})`;
+            const hsla1 = `hsla(220,94%,63%,${ExpressionConverter.getPercent(alpha1)})`;
+            const hsla2 = `hsla(211,40%,25%,${ExpressionConverter.getPercent(alpha2)})`;
             expect(result).toBe(`linear-gradient(${hsla1}, ${hsla2})`);
         }
     });

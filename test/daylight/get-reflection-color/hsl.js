@@ -26,7 +26,7 @@ describe("Daylight.getReflectionColor - hsl_", () => {
         const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
-        results.forEach(x => expect(x).toBe("hsl(210,92.9%,50.6%)"));
+        results.forEach(x => expect(x).toBe("hsl(210,93%,51%)"));
     });
 
     // hsl_2
@@ -58,8 +58,8 @@ describe("Daylight.getReflectionColor - hsl_", () => {
         const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
-        const hsl1 = "hsl(220,93.7%,62.9%)";
-        const hsl2 = "hsl(211,40.2%,24.9%)";
+        const hsl1 = "hsl(220,94%,63%)";
+        const hsl2 = "hsl(211,40%,25%)";
         results.forEach(x => expect(x).toBe(`linear-gradient(${hsl1}, ${hsl2})`));
     });
 });

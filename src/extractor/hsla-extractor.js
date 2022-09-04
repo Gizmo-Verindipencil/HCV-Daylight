@@ -22,7 +22,7 @@ class HslaExtractor {
         const hue = Number(values[0].trim());
         const saturation = Number(values[1].replace(/[^0-9.]/g, ""));
         const lightness = Number(values[2].replace(/[^0-9.]/g, ""));
-        const alpha = Number(values[3].replace(/[^0-9.]/g, "")) * (values[3].indexOf("%") > 0 ? 1 : 100);
+        const alpha = Number(values[3].replace(/[^0-9.]/g, "")) * (values[3].indexOf("%") > -1 ? 1 : 100);
 
         /* ---------------------------------------------------------------------- */
         // 30-seconds-of-code (Licensed under CC BY 4.0)

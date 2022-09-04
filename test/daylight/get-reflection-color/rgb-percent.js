@@ -26,7 +26,7 @@ describe("Daylight.getReflectionColor - rgb-percent_", () => {
         const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
-        results.forEach(x => expect(x).toBe("rgb(4.7%,11.8%,18.8%)"));
+        results.forEach(x => expect(x).toBe("rgb(5%,12%,19%)"));
     });
 
     // rgb-percent_2:
@@ -49,6 +49,6 @@ describe("Daylight.getReflectionColor - rgb-percent_", () => {
         const results = expressions.map(x => Daylight.getReflectionColor(x, config));
 
         // 結果を検証
-        results.forEach(x => expect(x).toBe("linear-gradient(rgb(5.9%,12.5%,19.6%), rgb(23.5%,30.6%,37.6%))"));
+        results.forEach(x => expect(x).toBe("linear-gradient(rgb(6%,13%,20%), rgb(24%,31%,38%))"));
     });
 });

@@ -32,7 +32,7 @@ describe("Daylight.getReflectionColor - rgba", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`rgb(12,30,48,${ExpressionConverter.getPercent(alpha)})`);
+            expect(result).toBe(`rgba(12,30,48,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
