@@ -13,7 +13,7 @@ describe("Daylight.getReflectionColor - rgb_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  3*17,  4*17,  5*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }
@@ -36,7 +36,7 @@ describe("Daylight.getReflectionColor - rgb_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  6*17,  7*17,  8*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }

@@ -11,7 +11,7 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#334455",
                 "13:00:00": "#bbddff"
             }
@@ -31,7 +31,7 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#667788",
                 "13:00:00": "#bbddff"
             }

@@ -16,7 +16,7 @@ describe("Daylight.getReflectionColor - hsl_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `hsl(210, 25.0%, 26.7%)`,
                 "13:00:00": `hsl(210, 100.0%, 86.7%)`
             }
@@ -48,7 +48,7 @@ describe("Daylight.getReflectionColor - hsl_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `hsl(210, 14.3%, 46.7%)`,
                 "13:00:00": `hsl(210, 100.0%, 86.7%)`
             }
