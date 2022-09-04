@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // rgb
 // RGB表現(例: rgb(0, 0, 0) )に関するテスト

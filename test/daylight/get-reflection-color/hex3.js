@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // hex3
 // 3桁の16進数表現(例: #000 )に関するテスト

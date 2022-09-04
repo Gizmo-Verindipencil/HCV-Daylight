@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // hsla
 // HSLA表現(例: hsla(0, 0%, 0%, 0%) )に関するテスト
