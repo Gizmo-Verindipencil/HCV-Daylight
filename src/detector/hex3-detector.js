@@ -7,7 +7,7 @@ class Hex3Detector {
      * @returns {String} 正規表現を返します。
      */
     _getColorExpression() {
-        return "#[0-9a-f]{3}";
+        return "#[0-9a-f]{3}([^0-9a-f]|$)";
     }
 
     /**
@@ -28,9 +28,9 @@ class Hex3Detector {
      */
     detect(expression) {
         const color = this._getColorExpression();
-        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
+        const regExp = new RegExp(color, "gi");
         const results = (expression || "").match(regExp) || [];
-        return results.map(x => x.trim());
+        return results.map(x => x.length > 4 ? x.slice(0, -1) : x);
     }
 }
 

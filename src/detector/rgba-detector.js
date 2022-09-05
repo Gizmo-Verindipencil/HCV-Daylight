@@ -34,7 +34,7 @@ class RgbaDetector {
      */
     detect(expression) {
         const color = this._getColorExpression();
-        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
+        const regExp = new RegExp(color, "gi");
         const results = (expression || "").match(regExp) || [];
         return results.map(x => x.trim());
     }
