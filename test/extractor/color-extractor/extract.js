@@ -1,7 +1,7 @@
 import { ColorExtractor } from "../../../src/extractor/color-extractor";
 import { Color } from "../../../src/color";
 
-describe("Hex3Extractor.extract - ", () => {
+describe("ColorExtractor.extract - ", () => {
     // 1:
     it("1: 3桁の16進数", () => {
         // テスト対象のインスタンスを作成
