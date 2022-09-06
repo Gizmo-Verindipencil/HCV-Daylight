@@ -70,7 +70,7 @@ describe("Daylight.getReflectionColor - rgba-percent_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(6%,13%,20%,${ExpressionConverter.getPercent(alpha)}),rgba(24%,31%,38%,${ExpressionConverter.getPercent(alpha)}))`);
+            expect(result).toBe(`linear-gradient(rgba(6%,13%,20%,${ExpressionConverter.getPercent(alpha)}), rgba(24%,31%,38%,${ExpressionConverter.getPercent(alpha)}))`);
         }
     });
 });

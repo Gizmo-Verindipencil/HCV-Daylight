@@ -61,13 +61,13 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
             const createRgba = (rgb, a, delimiter) => `rgb(${rgb.join(delimiter)}${delimiter}${a})`;
             const rgba1 = createRgba(rgb1, alpha, delimiter);
             const rgba2 = createRgba(rgb2, alpha, delimiter);
-            const expression = `linear-gradient(${rgba1}, ${rgba2}`;
+            const expression = `linear-gradient(${rgba1}, ${rgba2})`;
 
             // テスト対象の処理を実行
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(15,32,50${ExpressionConverter.getPercent(alpha)}),rgba(60,78,96,${ExpressionConverter.getPercent(alpha)}))`);
+            expect(result).toBe(`linear-gradient(rgba(15,32,50${ExpressionConverter.getPercent(alpha)}), rgba(60,78,96,${ExpressionConverter.getPercent(alpha)}))`);
         }
     });
 });

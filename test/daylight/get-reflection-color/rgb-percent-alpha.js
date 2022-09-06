@@ -61,7 +61,7 @@ describe("Daylight.getReflectionColor - rgb-percent-alpha_", () => {
             const createRgba = (rgb, a, delimiter) => `rgb(${rgb.join(delimiter)}${delimiter}${a})`;
             const rgba1 = createRgba(rgb1, alpha, delimiter);
             const rgba2 = createRgba(rgb2, alpha, delimiter);
-            const expression = `linear-gradient(${rgba1}, ${rgba2}`;
+            const expression = `linear-gradient(${rgba1}, ${rgba2})`;
 
             // テスト対象の処理を実行
             const result = Daylight.getReflectionColor(expression, config);

@@ -41,6 +41,6 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(result).toBe("linear-gradient(#0f2032ee, #3c4e60ff);");
+        expect(result).toBe("linear-gradient(#0f2032ed, #3c4e60ff);");
     });
 });

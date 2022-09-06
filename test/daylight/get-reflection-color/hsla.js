@@ -39,7 +39,7 @@ describe("Daylight.getReflectionColor - hsla_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`hsla(210,93%,51%,${ExpressionConverter.getPercent(alpha)})`);
+            expect(result).toBe(`hsla(210,94%,51%,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -80,7 +80,7 @@ describe("Daylight.getReflectionColor - hsla_", () => {
             const lightness2 = set[1][2];
             const alpha1 = set[0][3];
             const alpha2 = set[1][3];
-            const createExpression = (h, s, l, a, d) => `hsl(${[h, s, l, a].join(d)})`;
+            const createExpression = (h, s, l, a, d) => `hsla(${[h, s, l, a].join(d)})`;
             const expression1 = createExpression(hue, saturation1, lightness1, alpha1, delimiter1);
             const expression2 = createExpression(hue, saturation2, lightness2, alpha2, delimiter2);
             const expression = `linear-gradient(${expression1}, ${expression2})`;
@@ -89,7 +89,7 @@ describe("Daylight.getReflectionColor - hsla_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            const hsla1 = `hsla(220,94%,63%,${ExpressionConverter.getPercent(alpha1)})`;
+            const hsla1 = `hsla(210,94%,51%,${ExpressionConverter.getPercent(alpha1)})`;
             const hsla2 = `hsla(211,40%,25%,${ExpressionConverter.getPercent(alpha2)})`;
             expect(result).toBe(`linear-gradient(${hsla1}, ${hsla2})`);
         }
