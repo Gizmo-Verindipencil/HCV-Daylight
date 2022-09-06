@@ -19,7 +19,7 @@ class Hex8Extractor {
         const g = getValue(expression.slice(3, 5));
         const b = getValue(expression.slice(5, 7));
         const a = getValue(expression.slice(7, 9));
-        return new Color(r, g, b, a);
+        return new Color(r, g, b, Math.round(a / 255 * 100));
     }
 }
 

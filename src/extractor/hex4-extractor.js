@@ -19,7 +19,7 @@ class Hex4Extractor {
         const g = getValue(expression.slice(2, 3));
         const b = getValue(expression.slice(3, 4));
         const a = getValue(expression.slice(4, 5));
-        return new Color(r, g, b, a);
+        return new Color(r, g, b, Math.round(a / 255 * 100));
     }
 }
 
