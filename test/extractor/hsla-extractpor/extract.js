@@ -1,5 +1,5 @@
-import { HslaExtractor } from "../../../src/extractor/hsla-extractor.js";
-import { Color } from "../../../src/color.js";
+import { HslaExtractor } from "../../../src/extractor/hsla-extractor";
+import { Color } from "../../../src/color";
 
 describe("HslaExtractor.extract - ", () => {
     // 1:

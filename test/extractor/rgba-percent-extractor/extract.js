@@ -1,5 +1,5 @@
-import { RgbaPercentExtractor } from "../../../src/extractor/rgba-percent-extractor.js";
-import { Color } from "../../../src/color.js";
+import { RgbaPercentExtractor } from "../../../src/extractor/rgba-percent-extractor";
+import { Color } from "../../../src/color";
 
 describe("RgbaPercentExtractor.extract - ", () => {
     // 1:

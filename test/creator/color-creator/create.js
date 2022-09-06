@@ -1,6 +1,6 @@
-import { ColorExpressionType } from "../../../src/color-expression-type.js";
-import { Color } from "../../../src/color.js";
-import { ColorCreator } from "../../../src/creator/color-creator.js";
+import { ColorExpressionType } from "../../../src/color-expression-type";
+import { Color } from "../../../src/color";
+import { ColorCreator } from "../../../src/creator/color-creator";
 
 describe("ColorCreator.create - ", () => {
     // 1:

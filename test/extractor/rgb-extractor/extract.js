@@ -1,5 +1,5 @@
-import { RgbExtractor } from "../../../src/extractor/rgb-extractor.js";
-import { Color } from "../../../src/color.js";
+import { RgbExtractor } from "../../../src/extractor/rgb-extractor";
+import { Color } from "../../../src/color";
 
 describe("RgbExtractor.extract - ", () => {
     // 1:

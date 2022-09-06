@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // hex3
 // 3桁の16進数表現(例: #000 )に関するテスト
@@ -11,7 +11,7 @@ describe("Daylight.getReflectionColor hex3_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#345",
                 "13:00:00": "#bdf"
             }
@@ -41,7 +41,7 @@ describe("Daylight.getReflectionColor hex3_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#678",
                 "13:00:00": "#bdf"
             }

@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { Hex4Detector } from "../../../src/detector/hex4-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { Hex4Detector } from "../../../src/detector/hex4-detector";
 
 // hex4
 // 4桁の16進数表現(例: #0000 )に関するテスト

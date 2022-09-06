@@ -1,5 +1,5 @@
-import { Color } from "../../../src/color.js";
-import { Hex8Creator } from "../../../src/creator/hex8-creator.js";
+import { Color } from "../../../src/color";
+import { Hex8Creator } from "../../../src/creator/hex8-creator";
 
 describe("Hex8Creator.create - ", () => {
     // 1:

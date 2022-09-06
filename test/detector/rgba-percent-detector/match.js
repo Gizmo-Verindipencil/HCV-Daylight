@@ -1,4 +1,4 @@
-import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector.js";
+import { RgbaPercentDetector } from "../../../src/detector/rgba-percent-detector";
 
 // rgba-percent
 // %指定RGBA表現(例: rgb(0%, 0%, 0%, 0) )に関するテスト

@@ -1,4 +1,4 @@
-import { Color } from "../color.js";
+import { Color } from "../color";
 
 /**
  * RGB表現の作成処理を提供します。

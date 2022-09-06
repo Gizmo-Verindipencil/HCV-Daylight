@@ -1,4 +1,5 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
+import { ExpressionConverter } from "./expression-converter";
 
 // hsl-alpha
 // アルファ値を含むHSL表現(例: hsl(0, 0%, 0%, 0%) )に関するテスト
@@ -19,7 +20,7 @@ describe("Daylight.getReflectionColor - hsl-alpha_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `hsl(210, 25.0%, 26.7%)`,
                 "13:00:00": `hsl(210, 100.0%, 86.7%)`
             }
@@ -38,7 +39,7 @@ describe("Daylight.getReflectionColor - hsl-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`hsl(210,92.9%,50.6%,${alpha})`);
+            expect(result).toBe(`hsl(210,94%,51%,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -62,7 +63,7 @@ describe("Daylight.getReflectionColor - hsl-alpha_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `hsl(210, 14.3%, 46.7%)`,
                 "13:00:00": `hsl(210, 100.0%, 86.7%)`
             }
@@ -88,15 +89,9 @@ describe("Daylight.getReflectionColor - hsl-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            const hsl1 = `hsl(220,93.7%,62.9%,${alpha1})`;
-            const hsl2 = `hsl(211,40.2%,24.9%,${alpha2})`;
+            const hsl1 = `hsl(210,95%,52%,${ExpressionConverter.getPercent(alpha1)})`;
+            const hsl2 = `hsl(211,40%,25%,${ExpressionConverter.getPercent(alpha2)})`;
             expect(result).toBe(`linear-gradient(${hsl1}, ${hsl2})`);
         }
-
-        // テスト対象の処理を実行
-        const results = expressions.map(x => Daylight.getReflectionColor(x, config));
-
-        // 結果を検証
-        results.forEach(x => expect(x).toBe(`linear-gradient(${hsl1}, ${hsl2})`));
     });
 });

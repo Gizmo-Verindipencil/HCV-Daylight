@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // hex8
 // 8桁の16進数表現(例: #00000000 )に関するテスト
@@ -11,7 +11,7 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#334455",
                 "13:00:00": "#bbddff"
             }
@@ -31,7 +31,7 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": "#667788",
                 "13:00:00": "#bbddff"
             }
@@ -41,6 +41,6 @@ describe("Daylight.getReflectionColor - hex8_", () => {
         const result = Daylight.getReflectionColor(expression, config);
 
         // 結果を検証
-        expect(result).toBe("linear-gradient(#0f2032ee, #3c4e60ff);");
+        expect(result).toBe("linear-gradient(#0f2032ed, #3c4e60ff);");
     });
 });

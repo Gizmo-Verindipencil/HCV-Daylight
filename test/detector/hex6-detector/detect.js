@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { Hex6Detector } from "../../../src/detector/hex6-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { Hex6Detector } from "../../../src/detector/hex6-detector";
 
 // hex6
 // 6桁の16進数表現(例: #000000 )に関するテスト
