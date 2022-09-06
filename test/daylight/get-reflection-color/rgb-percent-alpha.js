@@ -8,7 +8,7 @@ describe("Daylight.getReflectionColor - rgb-percent-alpha_", () => {
     // rgb-percent-alpha_1:
     it("1: 第1引数がアルファ値ありRGB(%)の色表現の場合は、調整した色のアルファ値ありRGB表現(%)が返却される", () => {
         // テストの準備
-        const rgb = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
+        const rgb = [ 0*17, 1*17, 2*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
         const delimiters = [ ",", ", ", " ,", " , " ];
         const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));
@@ -39,8 +39,8 @@ describe("Daylight.getReflectionColor - rgb-percent-alpha_", () => {
     // rgb-percent-alpha_2:
     it("2: 第1引数がアルファ値ありRGB(%)の色表現を含む場合は、調整した色のアルファ値ありRGB表現(%)に置換した内容が返却される", () => {
         // テストの準備
-        const rgb1 = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
-        const rgb2 = [ 3*17, 4*17, 5*17 ].map(x => `${(x/255).toFixed(3)}%`);
+        const rgb1 = [ 0*17, 1*17, 2*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
+        const rgb2 = [ 3*17, 4*17, 5*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
         const delimiters = [ ",", ", ", " ,", " , " ];
         const alphas = [ "0", "0.5", "1", "0%", "50%", "100%", "0.0%", "50.0%", "100.0%", ".5", ".5%" ];
         const combinations = delimiters.flatMap(x => alphas.map(y => [x, y]));

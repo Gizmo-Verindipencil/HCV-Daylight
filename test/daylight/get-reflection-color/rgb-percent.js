@@ -10,7 +10,7 @@ describe("Daylight.getReflectionColor - rgb-percent_", () => {
     // rgb-percent_1
     it("1: 第1引数がRGB(%)の色表現の場合は、調整した色のRGB(%)表現が返却される", () => {
         // テストの準備
-        const rgb = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
+        const rgb = [ 0*17, 1*17, 2*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
         const delimiters = [ ",", ", ", " ,", " , " ];
         const expressions = delimiters.map(x => `rgb(${rgb.join(x)})`);
         const config = {
@@ -32,10 +32,10 @@ describe("Daylight.getReflectionColor - rgb-percent_", () => {
     // rgb-percent_2:
     it("2: 第1引数がRGB(%)の色表現を含む場合は、調整した色のRGB(%)表現に置換した内容が返却される", () => {
         // テストの準備
-        const rgb1 = [ 0*17, 1*17, 2*17 ].map(x => `${(x/255).toFixed(3)}%`);
-        const rgb2 = [ 3*17, 4*17, 5*17 ].map(x => `${(x/255).toFixed(3)}%`);
+        const rgb1 = [ 0*17, 1*17, 2*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
+        const rgb2 = [ 3*17, 4*17, 5*17 ].map(x => `${(x / 255 * 100).toFixed(3)}%`);
         const delimiters = [",", ", ", " ,", " , "];
-        const expressions = delimiters.map(x => `linear-gradient(rgb(${rgb1.join(x)}, rgb(${rgb2.join(x)}))`);
+        const expressions = delimiters.map(x => `linear-gradient(rgb(${rgb1.join(x)}), rgb(${rgb2.join(x)}))`);
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
