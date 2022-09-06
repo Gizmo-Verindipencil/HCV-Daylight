@@ -89,7 +89,7 @@ describe("Daylight.getReflectionColor - hsl-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            const hsl1 = `hsl(210,94%,51%,${ExpressionConverter.getPercent(alpha1)})`;
+            const hsl1 = `hsl(210,95%,52%,${ExpressionConverter.getPercent(alpha1)})`;
             const hsl2 = `hsl(211,40%,25%,${ExpressionConverter.getPercent(alpha2)})`;
             expect(result).toBe(`linear-gradient(${hsl1}, ${hsl2})`);
         }
