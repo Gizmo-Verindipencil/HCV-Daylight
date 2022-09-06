@@ -9,7 +9,7 @@ describe("Hex4Extractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#1234");
-        const expected = new Color(17, 34, 51, 68);
+        const expected = new Color(17, 34, 51, 27);
         expect(result).toEqual(expected);
     });
 

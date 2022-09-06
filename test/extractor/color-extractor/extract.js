@@ -20,7 +20,7 @@ describe("ColorExtractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#1234");
-        const expected = new Color(17, 34, 51, 68);
+        const expected = new Color(17, 34, 51, 27);
         expect(result).toEqual(expected);
     });
 
@@ -42,7 +42,7 @@ describe("ColorExtractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#12345678");
-        const expected = new Color(18, 52, 86, 120);
+        const expected = new Color(18, 52, 86, 47);
         expect(result).toEqual(expected);
     });
 

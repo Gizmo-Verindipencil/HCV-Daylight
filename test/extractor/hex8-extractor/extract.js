@@ -9,7 +9,7 @@ describe("Hex8Extractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#12345678");
-        const expected = new Color(18, 52, 86, 120);
+        const expected = new Color(18, 52, 86, 47);
         expect(result).toEqual(expected);
     });
 
