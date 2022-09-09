@@ -8,7 +8,7 @@ module.exports = {
     },
     output: {
         libraryTarget: "umd",
-        library: "daylight",
+        library: "Daylight",
     },
     resolve: {
         extensions: [
