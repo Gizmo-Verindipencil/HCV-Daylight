@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { WebColor } from "../web-color.js";
+import { Color } from "../color";
+import { WebColor } from "../web-color";
 
 /**
  * RGBA表現の作成処理を提供します。

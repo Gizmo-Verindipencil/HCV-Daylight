@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { RgbAlphaDetector } from "../../../src/detector/rgb-alpha-detector";
 
 // rgb-alpha
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0) )に関するテスト

@@ -1,4 +1,4 @@
-import { RgbaDetector } from "../../../src/detector/rgba-detector.js";
+import { RgbaDetector } from "../../../src/detector/rgba-detector";
 
 // rgba
 // RGBA表現(例: rgba(0, 0, 0, 0) )に関するテスト

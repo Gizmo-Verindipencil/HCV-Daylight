@@ -1,4 +1,4 @@
-import { NumberExpression } from "./number-expression.js";
+import { NumberExpression } from "./number-expression";
 
 /**
  * アルファ値を含まない%指定RGB表現の検出処理を提供します。
@@ -31,7 +31,7 @@ class RgbPercentDetector {
      */
     detect(expression) {
         const color = this._getColorExpression();
-        const regExp = new RegExp(`(\\b|\\s|^)${color}(\\b|\\s|$)`, "gi");
+        const regExp = new RegExp(color, "gi");
         const results = (expression || "").match(regExp) || [];
         return results.map(x => x.trim());
     }

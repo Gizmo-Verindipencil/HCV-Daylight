@@ -1,4 +1,4 @@
-import { Color } from "../color.js";
+import { Color } from "../color";
 
 /**
  * 8桁の16進数表現の作成処理を提供します。
@@ -11,7 +11,7 @@ class Hex8Creator {
      */
     create(color) {
         const hex = x => ("0"+(Number(x).toString(16))).slice(-2);
-        const alpha = Math.round((color.a || 100) / 100 * 255);
+        const alpha = Math.round((color.a != null ? color.a : 100) / 100 * 255);
         const rgba = [ color.r, color.g, color.b, alpha ].map(x => hex(x));
         return `#${rgba.join("")}`;
     }

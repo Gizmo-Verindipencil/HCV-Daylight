@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbPercentDetector } from "../detector/rgb-percent-detector.js";
+import { Color } from "../color";
+import { RgbPercentDetector } from "../detector/rgb-percent-detector";
 
 /**
  * %指定RGB表現の抽出処理を提供します。

@@ -1,5 +1,5 @@
-import { Hex4Extractor } from "../../../src/extractor/hex4-extractor.js";
-import { Color } from "../../../src/color.js";
+import { Hex4Extractor } from "../../../src/extractor/hex4-extractor";
+import { Color } from "../../../src/color";
 
 describe("Hex4Extractor.extract - ", () => {
     // 1:
@@ -9,7 +9,7 @@ describe("Hex4Extractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#1234");
-        const expected = new Color(17, 34, 51, 68);
+        const expected = new Color(17, 34, 51, 27);
         expect(result).toEqual(expected);
     });
 

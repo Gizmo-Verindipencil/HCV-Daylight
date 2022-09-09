@@ -1,5 +1,5 @@
-import { Hex3Extractor } from "../../../src/extractor/hex3-extractor.js";
-import { Color } from "../../../src/color.js";
+import { Hex3Extractor } from "../../../src/extractor/hex3-extractor";
+import { Color } from "../../../src/color";
 
 describe("Hex3Extractor.extract - ", () => {
     // 1:

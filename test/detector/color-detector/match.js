@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { ColorDetector } from "../../../src/detector/color-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { ColorDetector } from "../../../src/detector/color-detector";
 
 describe("ColorDetector.match - ", () => {
     // 1:

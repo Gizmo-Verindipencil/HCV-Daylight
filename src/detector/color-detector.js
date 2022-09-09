@@ -1,19 +1,19 @@
-import { ColorExpressionType } from "../color-expression-type.js";
-import { ColorDetectorResult } from "./color-detector-result.js";
-import { Hex3Detector } from "./hex3-detector.js";
-import { Hex4Detector } from "./hex4-detector.js";
-import { Hex6Detector } from "./hex6-detector.js";
-import { Hex8Detector } from "./hex8-detector.js";
-import { HslAlphaDetector } from "./hsl-alpha-detector.js";
-import { HslDetector } from "./hsl-detector.js";
-import { HslaDetector } from "./hsla-detector.js";
-import { RgbAlphaDetector } from "./rgb-alpha-detector.js";
-import { RgbDetector } from "./rgb-detector.js";
-import { RgbPercentAlphaDetector } from "./rgb-percent-alpha-detector.js";
-import { RgbPercentDetector } from "./rgb-percent-detector.js";
-import { RgbaDetector } from "./rgba-detector.js";
-import { RgbaPercentDetector } from "./rgba-percent-detector.js";
-import { WebColorDetector } from "./web-color-detector.js";
+import { ColorExpressionType } from "../color-expression-type";
+import { ColorDetectorResult } from "./color-detector-result";
+import { Hex3Detector } from "./hex3-detector";
+import { Hex4Detector } from "./hex4-detector";
+import { Hex6Detector } from "./hex6-detector";
+import { Hex8Detector } from "./hex8-detector";
+import { HslAlphaDetector } from "./hsl-alpha-detector";
+import { HslDetector } from "./hsl-detector";
+import { HslaDetector } from "./hsla-detector";
+import { RgbAlphaDetector } from "./rgb-alpha-detector";
+import { RgbDetector } from "./rgb-detector";
+import { RgbPercentAlphaDetector } from "./rgb-percent-alpha-detector";
+import { RgbPercentDetector } from "./rgb-percent-detector";
+import { RgbaDetector } from "./rgba-detector";
+import { RgbaPercentDetector } from "./rgba-percent-detector";
+import { WebColorDetector } from "./web-color-detector";
 
 /**
  * 色表現の検出処理を提供します。

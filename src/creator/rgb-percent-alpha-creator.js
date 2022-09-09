@@ -1,4 +1,4 @@
-import { Color } from "../color.js";
+import { Color } from "../color";
 
 /**
  * アルファ値を含む%指定RGB表現の作成処理を提供します。
@@ -11,7 +11,7 @@ class RgbPercentAlphaCreator {
      */
     create(color) {
         const rgb = [ color.r, color.g, color.b ].map(x => Math.round(x / 255 * 100)).map(x => `${x}%`);
-        return `rgb(${rgb.join(",")},${color.a || 100}%)`;
+        return `rgb(${rgb.join(",")},${color.a != null ? Math.round(color.a) : 100}%)`;
     }
 }
 

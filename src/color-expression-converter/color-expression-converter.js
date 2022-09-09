@@ -1,10 +1,10 @@
-import { Converter } from "./parts/converter.js";
-import { Hex } from "./parts/hex.js";
-import { Rgb } from "./parts/rgb.js";
-import { Rgba } from "./parts/rgba.js";
-import { Hsl } from "./parts/hsl.js";
-import { Hsla } from "./parts/hsla.js";
-import { ColorName } from "./parts/color-name.js";
+import { Converter } from "./parts/converter";
+import { Hex } from "./parts/hex";
+import { Rgb } from "./parts/rgb";
+import { Rgba } from "./parts/rgba";
+import { Hsl } from "./parts/hsl";
+import { Hsla } from "./parts/hsla";
+import { ColorName } from "./parts/color-name";
 
 /**
  * 色表現を変換する処理を提供します。

@@ -1,6 +1,6 @@
-import { WebColorExtractor } from "../../../src/extractor/web-color-extractor.js";
-import { Color } from "../../../src/color.js";
-import { WebColor } from "../../../src/web-color.js";
+import { WebColorExtractor } from "../../../src/extractor/web-color-extractor";
+import { Color } from "../../../src/color";
+import { WebColor } from "../../../src/web-color";
 
 describe("WebColorExtractor.extract - ", () => {
     // 1:

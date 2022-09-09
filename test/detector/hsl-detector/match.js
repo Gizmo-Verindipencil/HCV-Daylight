@@ -1,4 +1,4 @@
-import { HslDetector } from "../../../src/detector/hsl-detector.js";
+import { HslDetector } from "../../../src/detector/hsl-detector";
 
 // hsl
 // HSL表現(例: hsl(0, 0%, 0%) )に関するテスト

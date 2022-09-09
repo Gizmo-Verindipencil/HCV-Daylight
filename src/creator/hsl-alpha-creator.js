@@ -1,4 +1,4 @@
-import { Color } from "../color.js";
+import { Color } from "../color";
 
 /**
  * アルファ値を含むHSL表現の作成処理を提供します。
@@ -35,7 +35,7 @@ class HslAlphaCreator {
         /* ---------------------------------------------------------------------- */
 
         const hsl = rgbToHsl(color.r, color.g, color.b).map(x => Math.round(x));
-        return `hsl(${hsl[0]},${hsl[1]}%,${hsl[2]}%,${color.a || 100}%)`;
+        return `hsl(${hsl[0]},${hsl[1]}%,${hsl[2]}%,${color.a != null ? Math.round(color.a) : 100}%)`;
     }
 }
 

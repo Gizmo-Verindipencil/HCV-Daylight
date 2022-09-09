@@ -1,5 +1,5 @@
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector.js";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector";
 
 // rgb-percent
 // アルファ値を含まない%指定RGB表現(例: rgb(0%, 0%, 0%) )に関するテスト

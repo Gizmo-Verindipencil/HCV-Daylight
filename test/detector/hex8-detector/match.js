@@ -1,4 +1,4 @@
-import { Hex8Detector } from "../../../src/detector/hex8-detector.js";
+import { Hex8Detector } from "../../../src/detector/hex8-detector";
 
 // hex8
 // 8桁の16進数表現(例: #00000000 )に関するテスト

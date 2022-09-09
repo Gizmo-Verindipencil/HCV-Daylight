@@ -1,4 +1,4 @@
-import { HslaDetector } from "../../../src/detector/hsla-detector.js";
+import { HslaDetector } from "../../../src/detector/hsla-detector";
 
 // hsla
 // HSLA表現(例: hsla(0, 0%, 0%, 0) )に関するテスト

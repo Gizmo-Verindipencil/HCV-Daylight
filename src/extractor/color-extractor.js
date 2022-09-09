@@ -1,18 +1,18 @@
-import { Color } from "../color.js";
-import { Hex3Extractor } from "./hex3-extractor.js";
-import { Hex4Extractor } from "./hex4-extractor.js";
-import { Hex6Extractor } from "./hex6-extractor.js";
-import { Hex8Extractor } from "./hex8-extractor.js";
-import { HslAlphaExtractor } from "./hsl-alpha-extractor.js";
-import { HslExtractor } from "./hsl-extractor.js";
-import { HslaExtractor } from "./hsla-extractor.js";
-import { RgbAlphaExtractor } from "./rgb-alpha-extractor.js";
-import { RgbExtractor } from "./rgb-extractor.js";
-import { RgbPercentAlphaExtractor } from "./rgb-percent-alpha-extractor.js";
-import { RgbPercentExtractor } from "./rgb-percent-extractor.js";
-import { RgbaExtractor } from "./rgba-extractor.js";
-import { RgbaPercentExtractor } from "./rgba-percent-extractor.js";
-import { WebColorExtractor } from "./web-color-extractor.js";
+import { Color } from "../color";
+import { Hex3Extractor } from "./hex3-extractor";
+import { Hex4Extractor } from "./hex4-extractor";
+import { Hex6Extractor } from "./hex6-extractor";
+import { Hex8Extractor } from "./hex8-extractor";
+import { HslAlphaExtractor } from "./hsl-alpha-extractor";
+import { HslExtractor } from "./hsl-extractor";
+import { HslaExtractor } from "./hsla-extractor";
+import { RgbAlphaExtractor } from "./rgb-alpha-extractor";
+import { RgbExtractor } from "./rgb-extractor";
+import { RgbPercentAlphaExtractor } from "./rgb-percent-alpha-extractor";
+import { RgbPercentExtractor } from "./rgb-percent-extractor";
+import { RgbaExtractor } from "./rgba-extractor";
+import { RgbaPercentExtractor } from "./rgba-percent-extractor";
+import { WebColorExtractor } from "./web-color-extractor";
 
 /**
  * 色表現の抽出処理を提供します。
