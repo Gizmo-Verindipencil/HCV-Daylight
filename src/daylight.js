@@ -99,6 +99,12 @@ class Daylight {
      * @param {Config} config 設定情報。
      */
     reflectToElement(element, property, config) {
+        // 最大適用回数を超えていれば処理終了
+        const reflectionCount = "numberOfDaylightAlteration";
+        if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
+            return;
+        }
+
         // 色表現を抽出
         let target = element[property];
         const detected = this._detector.detect(target);
