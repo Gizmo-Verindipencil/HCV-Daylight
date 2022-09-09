@@ -1,5 +1,5 @@
-import { Color } from "../../../src/color.js";
-import { HslCreator } from "../../../src/creator/hsl-creator.js";
+import { Color } from "../../../src/color";
+import { HslCreator } from "../../../src/creator/hsl-creator";
 
 describe("HslCreator.create - ", () => {
     // 1:

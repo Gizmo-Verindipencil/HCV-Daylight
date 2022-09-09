@@ -1,5 +1,5 @@
-import { Color } from "../../../src/color.js";
-import { RgbPercentAlphaCreator } from "../../../src/creator/rgb-percent-alpha-creator.js";
+import { Color } from "../../../src/color";
+import { RgbPercentAlphaCreator } from "../../../src/creator/rgb-percent-alpha-creator";
 
 describe("RgbPercentAlphaCreator.create - ", () => {
     // 1:

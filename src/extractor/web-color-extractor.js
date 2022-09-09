@@ -1,6 +1,6 @@
-import { Color } from "../color.js";
-import { WebColorDetector } from "../detector/web-color-detector.js";
-import { WebColor } from "../web-color.js";
+import { Color } from "../color";
+import { WebColorDetector } from "../detector/web-color-detector";
+import { WebColor } from "../web-color";
 
 /**
  * WEBカラー表現の抽出処理を提供します。

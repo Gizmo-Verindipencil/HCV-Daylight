@@ -1,4 +1,5 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
+import { ExpressionConverter } from "./expression-converter";
 
 // rgb-alpha
 // アルファ値を含むRGB表現(例: rgb(0, 0, 0, 0%) )に関するテスト
@@ -14,7 +15,7 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  3*17,  4*17,  5*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }
@@ -31,7 +32,7 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`rgb(12,30,48,${alpha})`);
+            expect(result).toBe(`rgb(12,30,48,${ExpressionConverter.getPercent(alpha)})`);
         }
     });
 
@@ -46,7 +47,7 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  6*17,  7*17,  8*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }
@@ -60,13 +61,13 @@ describe("Daylight.getReflectionColor - rgb-alpha_", () => {
             const createRgba = (rgb, a, delimiter) => `rgb(${rgb.join(delimiter)}${delimiter}${a})`;
             const rgba1 = createRgba(rgb1, alpha, delimiter);
             const rgba2 = createRgba(rgb2, alpha, delimiter);
-            const expression = `linear-gradient(${rgba1}, ${rgba2}`;
+            const expression = `linear-gradient(${rgba1}, ${rgba2})`;
 
             // テスト対象の処理を実行
             const result = Daylight.getReflectionColor(expression, config);
 
             // 結果を検証
-            expect(result).toBe(`linear-gradient(rgba(15,32,50${alpha}),rgba(60,78,96,${alpha}))`);
+            expect(result).toBe(`linear-gradient(rgb(15,32,50,${ExpressionConverter.getPercent(alpha)}), rgb(60,78,96,${ExpressionConverter.getPercent(alpha)}))`);
         }
     });
 });

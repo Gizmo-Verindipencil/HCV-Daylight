@@ -1,7 +1,7 @@
-import { ColorExtractor } from "../../../src/extractor/color-extractor.js";
-import { Color } from "../../../src/color.js";
+import { ColorExtractor } from "../../../src/extractor/color-extractor";
+import { Color } from "../../../src/color";
 
-describe("Hex3Extractor.extract - ", () => {
+describe("ColorExtractor.extract - ", () => {
     // 1:
     it("1: 3桁の16進数", () => {
         // テスト対象のインスタンスを作成
@@ -20,7 +20,7 @@ describe("Hex3Extractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#1234");
-        const expected = new Color(17, 34, 51, 68);
+        const expected = new Color(17, 34, 51, 27);
         expect(result).toEqual(expected);
     });
 
@@ -42,7 +42,7 @@ describe("Hex3Extractor.extract - ", () => {
 
         // 結果を検証
         const result = extractor.extract("#12345678");
-        const expected = new Color(18, 52, 86, 120);
+        const expected = new Color(18, 52, 86, 47);
         expect(result).toEqual(expected);
     });
 

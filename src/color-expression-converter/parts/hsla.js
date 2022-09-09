@@ -1,5 +1,5 @@
-import { Color } from "./color.js";
-import { ExpressionType } from "./expression-type.js";
+import { Color } from "./color";
+import { ExpressionType } from "./expression-type";
 
 /**
  * HSLA表現に関連する処理を提供します。

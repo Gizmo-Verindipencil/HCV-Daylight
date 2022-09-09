@@ -4,10 +4,10 @@
 class Color {
     /**
      * インスタンスを初期化します。
-     * @param {Number} r レッド値。
-     * @param {Number} g グリーン値。
-     * @param {Number} b ブルー値
-     * @param {Number} a アルファ値。
+     * @param {Number} r レッド値(0-255)。
+     * @param {Number} g グリーン値(0-255)。
+     * @param {Number} b ブルー値(0-255)。
+     * @param {Number} a アルファ値(0-100)。
      */
      constructor(r, g, b, a) {
         this.r = r;

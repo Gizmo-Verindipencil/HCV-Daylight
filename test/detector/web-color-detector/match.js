@@ -1,6 +1,6 @@
-import { WebColorDetector } from "../../../src/detector/web-color-detector.js";
-import { ExpressionSetFactory } from "../expression-set-factory.js";
-import { WebColorNameList } from "./web-color-name-list.js";
+import { WebColorDetector } from "../../../src/detector/web-color-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
+import { WebColorNameList } from "./web-color-name-list";
 
 // web-color
 // WEBカラー表現(例: red )に関するテスト

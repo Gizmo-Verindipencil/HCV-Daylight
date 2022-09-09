@@ -1,4 +1,4 @@
-import { Daylight } from "../../../src/daylight.js";
+import { Daylight } from "../../../src/daylight";
 
 // rgb
 // RGB表現(例: rgb(0, 0, 0) )に関するテスト
@@ -13,7 +13,7 @@ describe("Daylight.getReflectionColor - rgb_", () => {
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  3*17,  4*17,  5*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }
@@ -32,11 +32,11 @@ describe("Daylight.getReflectionColor - rgb_", () => {
         const rgb1 = [ 0*17, 1*17, 2*17 ];
         const rgb2 = [ 3*17, 4*17, 5*17 ];
         const delimiters = [",", ", ", " ,", " , "];
-        const expressions = delimiters.map(x => `linear-gradient(rgb(${rgb1.join(delimiter)}, rgb(${rgb2.join(delimiter)}))`);
+        const expressions = delimiters.map(x => `linear-gradient(rgb(${rgb1.join(x)}), rgb(${rgb2.join(x)}))`);
         const config = {
             now: new Date(2000, 0, 1, 12, 0, 0),
             impact: 0.1,
-            theme: {
+            brightness: {
                 "11:00:00": `rgb(${[  6*17,  7*17,  8*17 ].join(",")})`,
                 "13:00:00": `rgb(${[ 11*17, 13*17, 15*17 ].join(",")})`
             }

@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { HslDetector } from "../detector/hsl-detector.js";
+import { Color } from "../color";
+import { HslDetector } from "../detector/hsl-detector";
 
 /**
  * HSL表現の抽出処理を提供します。

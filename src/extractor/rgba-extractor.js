@@ -1,5 +1,5 @@
-import { Color } from "../color.js";
-import { RgbaDetector } from "../detector/rgba-detector.js";
+import { Color } from "../color";
+import { RgbaDetector } from "../detector/rgba-detector";
 
 /**
  * RGBA表現の抽出処理を提供します。
@@ -22,7 +22,7 @@ class RgbaExtractor {
         const red = Number(values[0].replace(/[^0-9.]/g, ""));
         const green = Number(values[1].replace(/[^0-9.]/g, ""));
         const blue = Number(values[2].replace(/[^0-9.]/g, ""));
-        const alpha = Number(values[3].replace(/[^0-9.]/g, "")) * (values[3].indexOf("%") > 0 ? 1 : 100);
+        const alpha = Number(values[3].replace(/[^0-9.]/g, "")) * (values[3].indexOf("%") > -1 ? 1 : 100);
 
         return new Color(red, green, blue, alpha);
     }
