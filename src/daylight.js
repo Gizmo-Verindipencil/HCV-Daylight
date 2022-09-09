@@ -61,14 +61,14 @@ class Daylight {
 
         // 調整した色を取得
         const replacement = {};
-        for(const result of detected) {
+        for (const result of detected) {
             const modified = getSingle(result);
             if (modified == null) continue;
             replacement[result.expression] = modified;
         }
 
         // 色情報を置換
-        for(const key of Object.keys(replacement)) {
+        for (const key of Object.keys(replacement)) {
             const value = replacement[key];
             color = color.replaceAll(key, value);
         }
@@ -105,14 +105,14 @@ class Daylight {
 
         // 調整した色を取得
         const replacement = {};
-        for(const result of detected) {
+        for (const result of detected) {
             const modified = this.getReflectionColor(result, config);
             if (modified == null) continue;
             replacement[result.expression] = modified;
         }
 
         // 色情報を置換
-        for(const key of Object.keys(replacement)) {
+        for (const key of Object.keys(replacement)) {
             const value = replacement[key];
             target = target.replaceAll(key, value);
         }
