@@ -91,9 +91,7 @@ class Daylight {
 
         return config;
     }
-
     
-
     /**
      * 要素に色を反映します。
      * @param {HTMLElement} element 要素。
