@@ -122,11 +122,18 @@ class Daylight {
      * 全ての要素に色を反映します。
      * @param {String} property 色を反映するプロパティ。
      * @param {Config} config 設定情報。
+     * @param {Array<HTMLElement>} ignore 無視対象。
      */
-    reflectToPage(property, config) {
+    reflectToPage(property, config, ignore=[]) {
         const all = document.getElementsByTagName("*");
-        for (const e of all) {
-            this.reflectToElement(e, property, config);
+        for (let i = 0; i < all.length; i++) {
+            // 無視対象であればスキップ
+            if (ignore.some(x => x.isEqualNode(all[i]))) {
+                continue;
+            }
+
+            // 変更を適用
+            this.reflectToElement(all[i], property, config);
         }
     }
 }
