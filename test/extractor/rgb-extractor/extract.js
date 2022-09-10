@@ -7,9 +7,12 @@ describe("RgbExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbExtractor();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = extractor.extract("rgb(10, 20, 30)");
         const expected = new Color(10, 20, 30, null);
+        
+        // 結果確認
+        // RGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -18,8 +21,11 @@ describe("RgbExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbExtractor();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = extractor.extract("not rgb");
+        
+        // 結果確認
+        // RGB表現以外からは何も抽出されないこと
         expect(result).toBeNull();
     });
 });
