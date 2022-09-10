@@ -7,7 +7,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.none) {
             const result = detector.match(expression);
@@ -23,7 +23,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex3) {
             const result = detector.match(expression);
@@ -39,7 +39,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex4) {
             const result = detector.match(expression);
@@ -55,7 +55,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex6) {
             const result = detector.match(expression);
@@ -71,7 +71,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex8) {
             const result = detector.match(expression);
@@ -87,7 +87,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hslAlpha) {
             const result = detector.match(expression);
@@ -103,7 +103,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hsl) {
             const result = detector.match(expression);
@@ -119,7 +119,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hsla) {
             const result = detector.match(expression);
@@ -135,7 +135,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbAlpha) {
             const result = detector.match(expression);
@@ -151,7 +151,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgb) {
             const result = detector.match(expression);
@@ -167,7 +167,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbPercentAlpha) {
             const result = detector.match(expression);
@@ -183,7 +183,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbPercent) {
             const result = detector.match(expression);
@@ -199,7 +199,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgba) {
             const result = detector.match(expression);
@@ -215,7 +215,7 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbaPercent) {
             const result = detector.match(expression);

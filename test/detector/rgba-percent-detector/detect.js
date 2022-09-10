@@ -10,7 +10,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "1%", " 2%", "3% " ];
         const removePercent = x => x.replace("%", "");
         const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
@@ -26,7 +26,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "0.1%", " 0.2%", "0.3% " ];
         const removePercent = x => x.replace("%", "");
         const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
@@ -42,7 +42,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "1%", " 2%", "3% " ];
         const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         const result = detector.detect(expressions.join(" "));
@@ -57,7 +57,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "0.1%", " 0.2%", "0.3% " ];
         const expressions = values.map(x => `rgba(${[...Array(4)].map(y => x).join(",")})`);
         const result = detector.detect(expressions.join(" "));
@@ -72,7 +72,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "-1%", " -2%", "-3% " ];
         const removePercent = x => x.replace("%", "");
         const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
@@ -88,7 +88,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ ".1%", " .2%", ".3% " ];
         const removePercent = x => x.replace("%", "");
         const expressions = values.map(x => `rgba(${[...Array(3)].map(y => x).join(",")},${removePercent(x)})`);
@@ -104,7 +104,7 @@ describe("RgbaPercentDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbaPercentDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);

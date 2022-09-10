@@ -7,7 +7,7 @@ describe("RgbExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30)");
         const expected = new Color(10, 20, 30, null);
         
@@ -21,7 +21,7 @@ describe("RgbExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not rgb");
         
         // 結果確認

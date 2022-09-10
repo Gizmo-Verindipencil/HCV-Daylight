@@ -9,7 +9,7 @@ describe("Hex8Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#00000000",
             "#12345678",
@@ -28,7 +28,7 @@ describe("Hex8Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#AAAAAAAA",
             "#ABCDEFAB",
@@ -47,7 +47,7 @@ describe("Hex8Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#aaaaaaaa",
             "#abcdefab",
@@ -66,7 +66,7 @@ describe("Hex8Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             " #00000000 ",
             " #aaaaaaaa",
@@ -85,7 +85,7 @@ describe("Hex8Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",

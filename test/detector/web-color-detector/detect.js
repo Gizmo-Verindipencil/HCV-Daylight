@@ -11,7 +11,7 @@ describe("WebColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toUpperCase());
         const result = detector.detect(expressions.join(" "));
 
@@ -25,7 +25,7 @@ describe("WebColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toLowerCase());
         const result = detector.detect(expressions.join(" "));
 
@@ -39,7 +39,7 @@ describe("WebColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [].concat(
             WebColorNameList.getNames().map(x => x + "x"),
             Object.values(ExpressionSetFactory.create()).flat()

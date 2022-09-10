@@ -7,7 +7,7 @@ describe("Hex3Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex3Extractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#123");
         const expected = new Color(17, 34, 51, null);
 
@@ -21,7 +21,7 @@ describe("Hex3Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex3Extractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not hex3");
 
         // 結果確認

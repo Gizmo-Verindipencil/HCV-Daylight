@@ -10,7 +10,7 @@ describe("Hex6Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#000000",
             "#123456",
@@ -28,7 +28,7 @@ describe("Hex6Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#AAAAAA",
             "#ABCDEF",
@@ -46,7 +46,7 @@ describe("Hex6Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#aaaaaa",
             "#abcdef",
@@ -64,7 +64,7 @@ describe("Hex6Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#12345612",
             "#abcdef12",
@@ -82,7 +82,7 @@ describe("Hex6Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);

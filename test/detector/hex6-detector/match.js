@@ -9,7 +9,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#000000",
             "#123456",
@@ -28,7 +28,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#AAAAAA",
             "#ABCDEF",
@@ -47,7 +47,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#aaaaaa",
             "#abcdef",
@@ -66,7 +66,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             " #000000 ",
             " #aaaaaa",
@@ -85,7 +85,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",

@@ -10,7 +10,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#0000",
             "#1234",
@@ -28,7 +28,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#AAAA",
             "#ABCD",
@@ -46,7 +46,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#aaaa",
             "#abcd",
@@ -64,7 +64,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#123456",
             "#abcdef",
@@ -82,7 +82,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#12345612",
             "#abcdef12",
@@ -100,7 +100,7 @@ describe("Hex4Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);

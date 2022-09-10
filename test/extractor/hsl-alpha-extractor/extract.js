@@ -7,7 +7,7 @@ describe("HslAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new HslAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 40%)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -21,7 +21,7 @@ describe("HslAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new HslAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 0.4)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -35,7 +35,7 @@ describe("HslAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new HslAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not hsl-alpha");
         
         // 結果確認

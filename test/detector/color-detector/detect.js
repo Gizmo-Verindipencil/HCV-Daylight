@@ -8,7 +8,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.none.join(" ");
         const result = detector.detect(expression);
@@ -23,7 +23,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hex3.join(" ");
         const result = detector.detect(expression);
@@ -39,7 +39,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hex4.join(" ");
         const result = detector.detect(expression);
@@ -55,7 +55,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hex6.join(" ");
         const result = detector.detect(expression);
@@ -71,7 +71,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hex8.join(" ");
         const result = detector.detect(expression);
@@ -87,7 +87,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hslAlpha.join(" ");
         const result = detector.detect(expression);
@@ -103,7 +103,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hsl.join(" ");
         const result = detector.detect(expression);
@@ -119,7 +119,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.hsla.join(" ");
         const result = detector.detect(expression);
@@ -135,7 +135,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgbAlpha.join(" ");
         const result = detector.detect(expression);
@@ -151,7 +151,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgb.join(" ");
         const result = detector.detect(expression);
@@ -167,7 +167,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgbPercentAlpha.join(" ");
         const result = detector.detect(expression);
@@ -183,7 +183,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgbPercent.join(" ");
         const result = detector.detect(expression);
@@ -199,7 +199,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgba.join(" ");
         const result = detector.detect(expression);
@@ -215,7 +215,7 @@ describe("ColorDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = expressionSet.rgbaPercent.join(" ");
         const result = detector.detect(expression);

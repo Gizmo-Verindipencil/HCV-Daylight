@@ -7,7 +7,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#123");
         const expected = new Color(17, 34, 51, null);
 
@@ -21,7 +21,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#1234");
         const expected = new Color(17, 34, 51, 27);
         
@@ -35,7 +35,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#123456");
         const expected = new Color(18, 52, 86, null);
         
@@ -49,7 +49,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#12345678");
         const expected = new Color(18, 52, 86, 47);
         
@@ -63,7 +63,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 40%)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -77,7 +77,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 0.4)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -91,7 +91,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%)");
         const expected = new Color(92, 66, 61, null);
         
@@ -105,7 +105,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsla(10, 20%, 30%, 40%)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -119,7 +119,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsla(10, 20%, 30%, 0.4)");
         const expected = new Color(92, 66, 61, 40);
         
@@ -133,7 +133,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 40%)");
         const expected = new Color(10, 20, 30, 40);
         
@@ -147,7 +147,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 0.4)");
         const expected = new Color(10, 20, 30, 40);
         
@@ -161,7 +161,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30)");
         const expected = new Color(10, 20, 30, null);
         
@@ -175,7 +175,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -189,7 +189,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -203,7 +203,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%)");
         const expected = new Color(26, 51, 77, null);
         
@@ -217,7 +217,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10, 20, 30, 40%)");
         const expected = new Color(10, 20, 30, 40);
         
@@ -231,7 +231,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10, 20, 30, 0.4)");
         const expected = new Color(10, 20, 30, 40);
         
@@ -245,7 +245,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -259,7 +259,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -273,7 +273,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -287,7 +287,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const pair of [
             [ "red"   , new Color(255 ,   0 ,   0 , null) ],
             [ "green" , new Color(  0 , 128 ,   0 , null) ],
@@ -306,7 +306,7 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not color");
 
         // 結果確認

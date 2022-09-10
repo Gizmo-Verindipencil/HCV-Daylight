@@ -7,7 +7,7 @@ describe("HslExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new HslExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%)");
         const expected = new Color(92, 66, 61, null);
 
@@ -21,7 +21,7 @@ describe("HslExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new HslExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not hsl");
         
         // 結果確認

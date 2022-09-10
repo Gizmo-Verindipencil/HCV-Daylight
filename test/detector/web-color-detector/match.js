@@ -11,7 +11,7 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toUpperCase());
         for (const expression of expressions) {
             const result = detector.match(expression);
@@ -27,7 +27,7 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toLowerCase());
         for (const expression of expressions) {
             const result = detector.match(expression);
@@ -43,7 +43,7 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         let i = 0;
         const addMargins = x => {
             const result = i === 0 ? x :
@@ -68,7 +68,7 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [].concat(
             WebColorNameList.getNames().map(x => x + "x"),
             Object.values(ExpressionSetFactory.create()).flat()

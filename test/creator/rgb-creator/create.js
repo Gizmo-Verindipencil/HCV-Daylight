@@ -7,7 +7,7 @@ describe("RgbCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new RgbCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
         
         // 結果確認

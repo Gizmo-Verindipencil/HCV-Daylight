@@ -7,7 +7,7 @@ describe("Hex8Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex8Extractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("#12345678");
         const expected = new Color(18, 52, 86, 47);
         
@@ -21,7 +21,7 @@ describe("Hex8Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex8Extractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not hex8");
         
         // 結果確認

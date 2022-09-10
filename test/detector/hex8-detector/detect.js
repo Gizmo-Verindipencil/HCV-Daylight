@@ -10,7 +10,7 @@ describe("Hex8Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#00000000",
             "#12345678",
@@ -28,7 +28,7 @@ describe("Hex8Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#AAAAAAAA",
             "#ABCDEFAB",
@@ -46,7 +46,7 @@ describe("Hex8Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#aaaaaaaa",
             "#abcdefab",
@@ -64,7 +64,7 @@ describe("Hex8Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex8Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);

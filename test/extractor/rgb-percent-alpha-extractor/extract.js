@@ -7,7 +7,7 @@ describe("RgbPercentAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbPercentAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -21,7 +21,7 @@ describe("RgbPercentAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbPercentAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
         
@@ -35,7 +35,7 @@ describe("RgbPercentAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbPercentAlphaExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("not rgb-percent-alpha");
         
         // 結果確認

@@ -9,7 +9,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#0000",
             "#1234",
@@ -28,7 +28,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#AAAA",
             "#ABCD",
@@ -47,7 +47,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#aaaa",
             "#abcd",
@@ -66,7 +66,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             " #0000 ",
             " #aaaa",
@@ -85,7 +85,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",

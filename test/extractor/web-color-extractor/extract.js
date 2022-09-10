@@ -8,7 +8,7 @@ describe("WebColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const colors = Object.keys(WebColor);
         for (const color of colors) {
             const expected = WebColor[color];
@@ -30,7 +30,7 @@ describe("WebColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = extractor.extract("unknown color");
 
         // 結果確認

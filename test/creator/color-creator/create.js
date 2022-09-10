@@ -8,7 +8,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(0, 17, 34, null), ColorExpressionType.hex3);
 
         // 結果確認
@@ -21,7 +21,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(8, 9, 10, null), ColorExpressionType.hex3);
         
         // 結果確認
@@ -34,7 +34,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(8, 9, 10, 4), ColorExpressionType.hex4);
         
         // 結果確認
@@ -47,7 +47,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(8, 9, 10, 4), ColorExpressionType.hex4);
         
         // 結果確認
@@ -60,7 +60,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(8, 9, 10, null), ColorExpressionType.hex4);
         
         // 結果確認
@@ -73,7 +73,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hex6);
         
         // 結果確認
@@ -86,7 +86,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hex8);
         
         // 結果確認
@@ -99,7 +99,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hex8);
         
         // 結果確認
@@ -112,7 +112,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hslAlpha);
         
         // 結果確認
@@ -136,7 +136,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hsl);
         
         // 結果確認
@@ -149,7 +149,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hsla);
         
         // 結果確認
@@ -162,7 +162,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hsla);
         
         // 結果確認
@@ -175,7 +175,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbAlpha);
         
         // 結果確認
@@ -188,7 +188,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbAlpha);
         
         // 結果確認
@@ -201,7 +201,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgb);
         
         // 結果確認
@@ -214,7 +214,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbPercentAlpha);
 
         // 結果確認
@@ -227,7 +227,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbPercentAlpha);
         
         // 結果確認
@@ -240,7 +240,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbPercent);
         
         // 結果確認
@@ -253,7 +253,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgba);
         
         // 結果確認
@@ -266,7 +266,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgba);
         
         // 結果確認
@@ -279,7 +279,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbaPercent);
         
         // 結果確認
@@ -292,7 +292,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbaPercent);
         
         // 結果確認
@@ -305,7 +305,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(255, 0, 0, null), ColorExpressionType.webColor);
 
         // 結果確認
@@ -318,7 +318,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.webColor);
 
         // 結果確認
@@ -331,7 +331,7 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(1, 2, 3, 4), "unknown type");
 
         // 結果確認

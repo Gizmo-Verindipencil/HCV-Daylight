@@ -9,7 +9,7 @@ describe("Hex3Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#000",
             "#123",
@@ -28,7 +28,7 @@ describe("Hex3Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#AAA",
             "#ABC",
@@ -47,7 +47,7 @@ describe("Hex3Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "#aaa",
             "#abc",
@@ -66,7 +66,7 @@ describe("Hex3Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             " #000 ",
             " #aaa",
@@ -85,7 +85,7 @@ describe("Hex3Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#0000",

@@ -9,7 +9,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const expressions = values.map(x => `rgb(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
@@ -26,7 +26,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const expressions = values.map(x => `rgb(${[...Array(4)].map(y => x).join(",")})`);
         for (const expression of expressions) {
@@ -43,7 +43,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
@@ -61,7 +61,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
@@ -79,7 +79,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             " rgb(0,0,0,0) ",
             " rgb(1,1,1,1)",
@@ -98,7 +98,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ "-1", " -2", "-3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
@@ -116,7 +116,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const values = [ ".1", " .2", ".3 " ];
         const getAlpha = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `rgb(${[...Array(3)].map(y => x).join(",")},${getAlpha(x)})`);
@@ -134,7 +134,7 @@ describe("RgbAlphaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new RgbAlphaDetector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",

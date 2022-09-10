@@ -10,7 +10,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#000",
             "#123",
@@ -28,7 +28,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#AAA",
             "#ABC",
@@ -46,7 +46,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#aaa",
             "#abc",
@@ -64,7 +64,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#1234",
             "#abcd",
@@ -82,7 +82,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#123456",
             "#abcdef",
@@ -100,7 +100,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressions = [
             "#12345612",
             "#abcdef12",
@@ -118,7 +118,7 @@ describe("Hex3Detector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex3Detector();
 
-        // テスト対象処理を実行
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);
