@@ -96,54 +96,52 @@ class Daylight {
     /**
      * 要素に色を反映します。
      * @param {HTMLElement} element 要素。
-     * @param {String} property 色を反映するプロパティ。
+     * @param {Array<String>} properties 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
-    reflectToElement(element, property, config) {
+    reflectToElement(element, properties=[], config) {
         // 最大適用回数を超えていれば処理終了
         const reflectionCount = "numberOfDaylightReflection";
         if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
             return;
         }
 
-        // 対象のスタイルを取得
-        let style;
-        style = style || window.getComputedStyle(element, "");              // 全般
-        style = style || element.currentStyle;                              // IE6
-        style = style || document.defaultView.getComputedStyle(element, "") // Safari
+        // 各種プロパティ毎に反映
+        for (const property of properties) {
+            // プロパティの設定がなければ処理を終了
+            let style = window.getComputedStyle(element, "");
+            if (!style[property]) {
+                return;
+            }
 
-        // プロパティがなければ処理を終了
-        if (!style[property]) {
-            return;
+            // 色表現を抽出
+            let target = style[property];
+            const detected = this._detector.detect(target);
+
+            // 調整した色を取得
+            const replacement = {};
+            for (const result of detected) {
+                const modified = this.getReflectionColor(result.expression, config);
+                if (modified == null) continue;
+                replacement[result.expression] = modified;
+            }
+
+            // 色情報を置換
+            for (const key of Object.keys(replacement)) {
+                const value = replacement[key];
+                target = target.replaceAll(key, value);
+            }
+            element.style[property] = target;
         }
-
-        // 色表現を抽出
-        let target = style[property];
-        const detected = this._detector.detect(target);
-
-        // 調整した色を取得
-        const replacement = {};
-        for (const result of detected) {
-            const modified = this.getReflectionColor(result.expression, config);
-            if (modified == null) continue;
-            replacement[result.expression] = modified;
-        }
-
-        // 色情報を置換
-        for (const key of Object.keys(replacement)) {
-            const value = replacement[key];
-            target = target.replaceAll(key, value);
-        }
-        element.style[property] = target;
     }
 
     /**
      * 全ての要素に色を反映します。
-     * @param {String} property 色を反映するプロパティ。
+     * @param {Array<String>} properties 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      * @param {Array<HTMLElement>} ignore 無視対象。
      */
-    reflectToPage(property, config, ignore=[]) {
+    reflectToPage(properties=[], config, ignore=[]) {
         const all = document.getElementsByTagName("*");
         for (let i = 0; i < all.length; i++) {
             // 無視対象であればスキップ
@@ -152,7 +150,7 @@ class Daylight {
             }
 
             // 変更を適用
-            this.reflectToElement(all[i], property, config);
+            this.reflectToElement(all[i], properties, config);
         }
     }
 }
