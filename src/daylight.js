@@ -20,17 +20,17 @@ class Daylight {
 
     /**
      * 日の満ち欠けを反映した色を取得します。
-     * @param {ColorDetectorResult} color 色情報。
+     * @param {String} expression 色表現。
      * @param {Config} config 設定情報。
      * @returns {String} 日の満ち欠けを反映した色を返します。色表現は expression と同種類になります。例えば、expression がヘックス表現の場
      *                   合は、返却される色表現もヘックス表現です。expression が色を含む表現の場合は、その色表現のみが変更された
      */
-    getReflectionColor (color, config) {
+    getReflectionColor (expression, config) {
         // デフォルト設定を補完
         config = this._createConfig(config);
 
         // 色表現を抽出
-        const detected = this._detector.detect(color);
+        const detected = this._detector.detect(expression);
 
         // 単一の色表現の調整
         const getSingle = e => {
@@ -68,11 +68,12 @@ class Daylight {
         }
 
         // 色情報を置換
+        let newExpression = expression;
         for (const key of Object.keys(replacement)) {
             const value = replacement[key];
-            color = color.replaceAll(key, value);
+            newExpression = newExpression.replaceAll(key, value);
         }
-        return color;
+        return newExpression;
     }
 
     /**
@@ -100,19 +101,30 @@ class Daylight {
      */
     reflectToElement(element, property, config) {
         // 最大適用回数を超えていれば処理終了
-        const reflectionCount = "numberOfDaylightAlteration";
+        const reflectionCount = "numberOfDaylightReflection";
         if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
             return;
         }
 
+        // 対象のスタイルを取得
+        let style;
+        style = style || window.getComputedStyle(element, "");              // 全般
+        style = style || element.currentStyle;                              // IE6
+        style = style || document.defaultView.getComputedStyle(element, "") // Safari
+
+        // プロパティがなければ処理を終了
+        if (!style[property]) {
+            return;
+        }
+
         // 色表現を抽出
-        let target = element[property];
+        let target = style[property];
         const detected = this._detector.detect(target);
 
         // 調整した色を取得
         const replacement = {};
         for (const result of detected) {
-            const modified = this.getReflectionColor(result, config);
+            const modified = this.getReflectionColor(result.expression, config);
             if (modified == null) continue;
             replacement[result.expression] = modified;
         }
@@ -122,6 +134,7 @@ class Daylight {
             const value = replacement[key];
             target = target.replaceAll(key, value);
         }
+        element.style[property] = target;
     }
 
     /**
