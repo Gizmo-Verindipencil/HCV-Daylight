@@ -20,17 +20,17 @@ class Daylight {
 
     /**
      * 日の満ち欠けを反映した色を取得します。
-     * @param {ColorDetectorResult} color 色情報。
+     * @param {String} expression 色表現。
      * @param {Config} config 設定情報。
      * @returns {String} 日の満ち欠けを反映した色を返します。色表現は expression と同種類になります。例えば、expression がヘックス表現の場
      *                   合は、返却される色表現もヘックス表現です。expression が色を含む表現の場合は、その色表現のみが変更された
      */
-    getReflectionColor (color, config) {
+    getReflectionColor (expression, config) {
         // デフォルト設定を補完
         config = this._createConfig(config);
 
         // 色表現を抽出
-        const detected = this._detector.detect(color);
+        const detected = this._detector.detect(expression);
 
         // 単一の色表現の調整
         const getSingle = e => {
@@ -68,11 +68,12 @@ class Daylight {
         }
 
         // 色情報を置換
+        let newExpression = expression;
         for (const key of Object.keys(replacement)) {
             const value = replacement[key];
-            color = color.replaceAll(key, value);
+            newExpression = newExpression.replaceAll(key, value);
         }
-        return color;
+        return newExpression;
     }
 
     /**
@@ -95,42 +96,52 @@ class Daylight {
     /**
      * 要素に色を反映します。
      * @param {HTMLElement} element 要素。
-     * @param {String} property 色を反映するプロパティ。
+     * @param {Array<String>} properties 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      */
-    reflectToElement(element, property, config) {
+    reflectToElement(element, properties=[], config) {
         // 最大適用回数を超えていれば処理終了
-        const reflectionCount = "numberOfDaylightAlteration";
+        const reflectionCount = "numberOfDaylightReflection";
         if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
             return;
         }
 
-        // 色表現を抽出
-        let target = element[property];
-        const detected = this._detector.detect(target);
+        // 各種プロパティ毎に反映
+        for (const property of properties) {
+            // プロパティの設定がなければ処理を終了
+            let style = window.getComputedStyle(element, "");
+            if (!style[property]) {
+                return;
+            }
 
-        // 調整した色を取得
-        const replacement = {};
-        for (const result of detected) {
-            const modified = this.getReflectionColor(result, config);
-            if (modified == null) continue;
-            replacement[result.expression] = modified;
-        }
+            // 色表現を抽出
+            let target = style[property];
+            const detected = this._detector.detect(target);
 
-        // 色情報を置換
-        for (const key of Object.keys(replacement)) {
-            const value = replacement[key];
-            target = target.replaceAll(key, value);
+            // 調整した色を取得
+            const replacement = {};
+            for (const result of detected) {
+                const modified = this.getReflectionColor(result.expression, config);
+                if (modified == null) continue;
+                replacement[result.expression] = modified;
+            }
+
+            // 色情報を置換
+            for (const key of Object.keys(replacement)) {
+                const value = replacement[key];
+                target = target.replaceAll(key, value);
+            }
+            element.style[property] = target;
         }
     }
 
     /**
      * 全ての要素に色を反映します。
-     * @param {String} property 色を反映するプロパティ。
+     * @param {Array<String>} properties 色を反映するプロパティ。
      * @param {Config} config 設定情報。
      * @param {Array<HTMLElement>} ignore 無視対象。
      */
-    reflectToPage(property, config, ignore=[]) {
+    reflectToPage(properties=[], config, ignore=[]) {
         const all = document.getElementsByTagName("*");
         for (let i = 0; i < all.length; i++) {
             // 無視対象であればスキップ
@@ -139,7 +150,7 @@ class Daylight {
             }
 
             // 変更を適用
-            this.reflectToElement(all[i], property, config);
+            this.reflectToElement(all[i], properties, config);
         }
     }
 }
