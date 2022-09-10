@@ -7,8 +7,11 @@ describe("RgbPercentCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new RgbPercentCreator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+
+        // 結果確認
+        // アルファ値を含まない%指定のRGB表現が生成されること
         expect(result).toEqual("rgb(0%,1%,1%)");
     });
 });

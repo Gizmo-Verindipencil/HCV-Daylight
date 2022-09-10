@@ -7,8 +7,11 @@ describe("Hex6Creator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new Hex6Creator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+
+        // 結果確認
+        // 6桁の16進数表現が生成されること
         expect(result).toEqual("#010203");
     });
 });

@@ -7,8 +7,11 @@ describe("WebColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new WebColorCreator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = creator.create(new Color(255, 0, 0, null));
+
+        // 結果確認
+        // 該当するWEBカラーが生成されること
         expect(result).toEqual("red");
     });
 
@@ -17,8 +20,11 @@ describe("WebColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new WebColorCreator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+
+        // 結果確認
+        // 該当するWEBカラーがなければ何も生成されないこと
         expect(result).toBeNull();
     });
 });

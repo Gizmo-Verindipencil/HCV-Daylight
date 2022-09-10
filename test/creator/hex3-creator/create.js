@@ -7,8 +7,11 @@ describe("Hex3Creator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new Hex3Creator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result = creator.create(new Color(0, 17, 34, null));
+
+        // 結果確認
+        // 3桁の16進数表現が生成されること
         expect(result).toEqual("#012");
     });
 
@@ -17,8 +20,11 @@ describe("Hex3Creator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new Hex3Creator();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const result1 = creator.create(new Color(8, 9, 10, null));
+
+        // 結果確認
+        // 近似値が生成されること
         expect(result1).toEqual("#011");
     });
 });
