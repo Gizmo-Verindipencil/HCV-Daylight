@@ -9,12 +9,15 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 整数のHSL表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -24,12 +27,15 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 小数のHSL表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -39,13 +45,16 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             " hsl(0,0%,0%) ",
             " hsl(1,1%,1%)",
             "hsl(2,2%,2%) "
         ]) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 前後の空白は無視されること
             expect(result).toBe(true);
         }
     });
@@ -55,12 +64,15 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "-1", " -2", "-3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 負数のHSL表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -70,12 +82,15 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ ".1", " .2", ".3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 整数部が省略された小数のHSL表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -85,7 +100,7 @@ describe("HslDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",
@@ -101,6 +116,9 @@ describe("HslDetector.match - ", () => {
             "hsla(0,0%,0%,0)"
         ]) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 該当以外の色表現は不一致判定されること
             expect(result).toBe(false);
         }
     });

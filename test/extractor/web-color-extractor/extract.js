@@ -8,12 +8,14 @@ describe("WebColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const colors = Object.keys(WebColor);
         for (const color of colors) {
             const expected = WebColor[color];
             const result = extractor.extract(color);
 
+            // 結果確認
+            // WEBカラーが抽出されること
             expect(result).toEqual(new Color(
                 expected.r,
                 expected.g,
@@ -28,8 +30,11 @@ describe("WebColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new WebColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("unknown color");
+
+        // 結果確認
+        // WEBカラー以外からは何も抽出されないこと
         expect(result).toBeNull();
     });
 });

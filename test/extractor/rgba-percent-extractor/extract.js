@@ -7,9 +7,12 @@ describe("RgbaPercentExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbaPercentExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
+
+        // 結果確認
+        // アルファ値が整数のRGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -18,9 +21,12 @@ describe("RgbaPercentExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbaPercentExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // アルファ値が小数のRGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -29,8 +35,11 @@ describe("RgbaPercentExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbaPercentExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("not rgba-percent");
+        
+        // 結果確認
+        // %指定のRGBA表現以外からは何も抽出されないこと
         expect(result).toBeNull();
     });
 });

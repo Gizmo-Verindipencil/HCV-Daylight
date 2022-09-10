@@ -8,8 +8,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(0, 17, 34, null), ColorExpressionType.hex3);
+
+        // 結果確認
+        // 3桁の16進数表現が生成されること
         expect(result).toEqual("#012");
     });
 
@@ -18,8 +21,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(8, 9, 10, null), ColorExpressionType.hex3);
+        
+        // 結果確認
+        // 近似値の3桁の16進数表現が生成されること
         expect(result1).toEqual("#011");
     });
 
@@ -28,8 +34,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(8, 9, 10, 4), ColorExpressionType.hex4);
+        
+        // 結果確認
+        // 4桁の16進数表現が生成されること
         expect(result).toEqual("#0111");
     });
 
@@ -38,8 +47,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(8, 9, 10, 4), ColorExpressionType.hex4);
+        
+        // 結果確認
+        // 近似値の4桁の16進数表現が生成されること
         expect(result1).toEqual("#0111");
     });
 
@@ -48,8 +60,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
-        const result1 = creator.create(new Color(8, 9, 10, 4), ColorExpressionType.hex4);
+        // テスト対象の処理を実行
+        const result1 = creator.create(new Color(8, 9, 10, null), ColorExpressionType.hex4);
+        
+        // 結果確認
+        // 4桁の16進数表現が生成されること
         expect(result1).toEqual("#0111");
     });
 
@@ -58,8 +73,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hex6);
+        
+        // 結果確認
+        // 6桁の16進数表現が生成されること
         expect(result).toEqual("#010203");
     });
 
@@ -68,8 +86,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hex8);
+        
+        // 結果確認
+        // 8桁の16進数表現が生成されること
         expect(result).toEqual("#0102030a");
     });
 
@@ -78,8 +99,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hex8);
+        
+        // 結果確認
+        // 8桁の16進数表現が生成されること
         expect(result).toEqual("#010203ff");
     });
 
@@ -88,8 +112,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hslAlpha);
+        
+        // 結果確認
+        // アルファ値を含むHSL表現が生成されること
         expect(result).toEqual("hsl(210,50%,1%,4%)");
     });
 
@@ -98,7 +125,8 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // 結果確認
+        // アルファ値を含むHSL表現が生成されること
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hslAlpha);
         expect(result).toEqual("hsl(210,50%,1%,100%)");
     });
@@ -108,8 +136,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hsl);
+        
+        // 結果確認
+        // アルファ値を含まないHSL表現が生成されること
         expect(result).toEqual("hsl(210,50%,1%)");
     });
 
@@ -118,8 +149,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.hsla);
+        
+        // 結果確認
+        // HSLA表現が生成されること
         expect(result).toEqual("hsla(210,50%,1%,4%)");
     });
 
@@ -128,8 +162,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.hsla);
+        
+        // 結果確認
+        // HSLA表現が生成されること
         expect(result).toEqual("hsla(210,50%,1%,100%)");
     });
 
@@ -138,8 +175,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbAlpha);
+        
+        // 結果確認
+        // アルファ値を含むRGB表現が生成されること
         expect(result).toEqual("rgb(1,2,3,4%)");
     });
 
@@ -148,8 +188,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbAlpha);
+        
+        // 結果確認
+        // アルファ値を含むRGB表現が生成されること
         expect(result).toEqual("rgb(1,2,3,100%)");
     });
 
@@ -158,8 +201,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgb);
+        
+        // 結果確認
+        // アルファ値を含まないRGB表現が生成されること
         expect(result).toEqual("rgb(1,2,3)");
     });
 
@@ -168,8 +214,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbPercentAlpha);
+
+        // 結果確認
+        // アルファ値を含む%指定のRGB表現が生成されること
         expect(result).toEqual("rgb(0%,1%,1%,4%)");
     });
 
@@ -178,8 +227,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbPercentAlpha);
+        
+        // 結果確認
+        // アルファ値を含む%指定のRGB表現が生成されること
         expect(result).toEqual("rgb(0%,1%,1%,100%)");
     });
 
@@ -188,8 +240,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbPercent);
+        
+        // 結果確認
+        // アルファ値を含む%指定のRGB表現が生成されること
         expect(result).toEqual("rgb(0%,1%,1%)");
     });
 
@@ -198,8 +253,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgba);
+        
+        // 結果確認
+        // RGBA表現が生成されること
         expect(result).toEqual("rgba(1,2,3,4%)");
     });
 
@@ -208,8 +266,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgba);
+        
+        // 結果確認
+        // RGBA表現が生成されること
         expect(result).toEqual("rgba(1,2,3,100%)");
     });
 
@@ -218,8 +279,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.rgbaPercent);
+        
+        // 結果確認
+        // %指定のRGBA表現が生成されること
         expect(result).toEqual("rgba(0%,1%,1%,4%)");
     });
 
@@ -228,8 +292,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.rgbaPercent);
+        
+        // 結果確認
+        // %指定のRGBA表現が生成されること
         expect(result).toEqual("rgba(0%,1%,1%,100%)");
     });
 
@@ -238,8 +305,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(255, 0, 0, null), ColorExpressionType.webColor);
+
+        // 結果確認
+        // WEBカラーが生成されること
         expect(result).toEqual("red");
     });
 
@@ -248,8 +318,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.webColor);
+
+        // 結果確認
+        // 該当するWEBカラーがない場合、6桁の16進数表現が生成されること
         expect(result).toEqual("#010203");
     });
 
@@ -258,8 +331,11 @@ describe("ColorCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result1 = creator.create(new Color(1, 2, 3, 4), "unknown type");
+
+        // 結果確認
+        // 未定義の色表現種類の場合、何も生成されないこと
         expect(result1).toBeNull();
     });
 });

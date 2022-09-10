@@ -7,8 +7,11 @@ describe("RgbCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new RgbCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+        
+        // 結果確認
+        // アルファ値を含まないRGB表現が生成されること
         expect(result).toEqual("rgb(1,2,3)");
     });
 });

@@ -11,10 +11,13 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toUpperCase());
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 大文字表記のWEBカラーが一致判定されること
             expect(result).toEqual(true);
         }
     });
@@ -24,10 +27,13 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const expressions = WebColorNameList.getNames().map(x => x.toLowerCase());
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 小文字表記のWEBカラーが一致判定されること
             expect(result).toEqual(true);
         }
     });
@@ -37,7 +43,7 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         let i = 0;
         const addMargins = x => {
             const result = i === 0 ? x :
@@ -50,6 +56,9 @@ describe("WebColorDetector.match - ", () => {
         const expressions = WebColorNameList.getNames().map(x => addMargins(x));
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 前後の空白は無視されること
             expect(result).toEqual(true);
         }
     });
@@ -59,13 +68,16 @@ describe("WebColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new WebColorDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const expressions = [].concat(
             WebColorNameList.getNames().map(x => x + "x"),
             Object.values(ExpressionSetFactory.create()).flat()
         );
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 該当以外の色表現は不一致判定されること
             expect(result).toEqual(false);
         }
     });

@@ -7,9 +7,12 @@ describe("Hex3Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex3Extractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("#123");
         const expected = new Color(17, 34, 51, null);
+
+        // 結果確認
+        // 3桁の16進数表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -18,8 +21,11 @@ describe("Hex3Extractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new Hex3Extractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("not hex3");
+
+        // 結果確認
+        // 3桁の16進数表現以外からは何も抽出されないこと
         expect(result).toBeNull();
     });
 });
