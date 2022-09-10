@@ -51,7 +51,22 @@ describe("Hex6Detector.detect - ", () => {
     });
 
     // 4:
-    it("4: その他", () => {
+    it("4: 数値8桁", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new Hex6Detector();
+
+        // 結果を検証
+        const expressions = [
+            "#12345612",
+            "#abcdef12",
+            "#ABCDEF12"
+        ];
+        const result = detector.detect(expressions.join(" "));
+        expect(result).toEqual([]);
+    });
+
+    // 5:
+    it("5: その他", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
