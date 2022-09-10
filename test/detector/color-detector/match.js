@@ -7,10 +7,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.none) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 色表現以外の文字列は該当なしとして判別されること
             expect(result).toBe("");
         }
     });
@@ -20,10 +23,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex3) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 3桁の16進数表現として判別されること
             expect(result).toBe("hex3");
         }
     });
@@ -33,10 +39,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex4) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 4桁の16進数表現として判別されること
             expect(result).toBe("hex4");
         }
     });
@@ -46,10 +55,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex6) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 6桁の16進数表現として判別されること
             expect(result).toBe("hex6");
         }
     });
@@ -59,10 +71,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hex8) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 8桁の16進数表現として判別されること
             expect(result).toBe("hex8");
         }
     });
@@ -72,10 +87,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hslAlpha) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含むHSL表現として判別されること
             expect(result).toBe("hsl-alpha");
         }
     });
@@ -85,10 +103,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hsl) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含まないHSL表現として判別されること
             expect(result).toBe("hsl");
         }
     });
@@ -98,10 +119,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.hsla) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含まないHSL表現として判別されること
             expect(result).toBe("hsla");
         }
     });
@@ -111,10 +135,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbAlpha) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含むRGB表現として判別されること
             expect(result).toBe("rgb-alpha");
         }
     });
@@ -124,10 +151,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgb) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含まないRGB表現として判別されること
             expect(result).toBe("rgb");
         }
     });
@@ -137,10 +167,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbPercentAlpha) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含む%指定のRGB表現として判別されること
             expect(result).toBe("rgb-percent-alpha");
         }
     });
@@ -150,10 +183,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbPercent) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値を含まない%指定のRGB表現として判別されること
             expect(result).toBe("rgb-percent");
         }
     });
@@ -163,10 +199,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgba) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // RGBA表現として判別されること
             expect(result).toBe("rgba");
         }
     });
@@ -176,10 +215,13 @@ describe("ColorDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new ColorDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const expressionSet = ExpressionSetFactory.create();
         for (const expression of expressionSet.rgbaPercent) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // %指定のRGBA表現として判別されること
             expect(result).toBe("rgba-percent");
         }
     });

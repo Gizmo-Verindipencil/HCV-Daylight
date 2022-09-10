@@ -9,13 +9,16 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             "#0000",
             "#1234",
             "#9876"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 4文字の数値で構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -25,13 +28,16 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             "#AAAA",
             "#ABCD",
             "#FEDC"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 4文字の大文字アルファベットで構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -41,13 +47,16 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             "#aaaa",
             "#abcd",
             "#fedc"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 4文字の小文字アルファベットで構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -57,13 +66,16 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             " #0000 ",
             " #aaaa",
             "#AAAA "
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 前後の空白は無視されること
             expect(result).toBe(true);
         }
     });
@@ -73,7 +85,7 @@ describe("Hex4Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex4Detector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             "abc",
             "#000",
@@ -90,6 +102,9 @@ describe("Hex4Detector.match - ", () => {
             "hsla(0,0%,0%,0)"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 該当以外の色表現は不一致判定されること
             expect(result).toBe(false);
         }
     });

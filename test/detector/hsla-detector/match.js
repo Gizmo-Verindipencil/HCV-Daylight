@@ -9,12 +9,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 整数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -24,12 +27,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 小数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -39,12 +45,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // アルファ値が整数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -54,12 +63,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // アルファ値が小数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -69,13 +81,16 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             " hsla(0,0%,0%,0) ",
             " hsla(1,1%,1%,1)",
             "hsla(2,2%,2%,2) "
         ]) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 前後の空白は無視されること
             expect(result).toBe(true);
         }
     });
@@ -85,12 +100,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ "-1", " -2", "-3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 負数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -100,12 +118,15 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         const values = [ ".1", " .2", ".3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 整数部が省略された小数のHSLA表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -115,7 +136,7 @@ describe("HslaDetector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslaDetector();
 
-        // 結果を検証
+        // テスト対象処理を実行
         for (const expression of [
             "abc",
             "#000",
@@ -131,6 +152,9 @@ describe("HslaDetector.match - ", () => {
             "hsl(0,0%,0%,0)"
         ]) {
             const result = detector.match(expression);
+            
+            // 結果確認
+            // 該当以外の色表現は不一致判定されること
             expect(result).toBe(false);
         }
     });
