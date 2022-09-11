@@ -53,6 +53,13 @@ class Config {
         const times = Object.keys(this.brightness);
         const format = n => ("00" + n).slice(-2);
         const date = `${this.now.getFullYear()}/${format(this.now.getMonth() + 1)}/${format(this.now.getDate())}`;
+
+        // 色情報を抽出する処理
+        const extractor = new ColorExtractor();
+        const getColor = expression => {
+            const color = extractor.extract(expression);
+            return [ color.r, color.g, color.b ];
+        }
         
         // 設定された季節
         const distances = [];
@@ -65,10 +72,14 @@ class Config {
                 return Math.abs(Math.ceil((date1 - date2) / secondMilliseconds));
             }
 
+            // 対象時間の設定色があれば、そちらを利用
+            const distance = getSecondDifference(themeTime, this.now);
+            if (distance === 0) return getColor(this.brightness[time]);
+
             // 時間毎の距離を記録
             distances.push({
                 time: time,
-                distance: getSecondDifference(themeTime, this.now)
+                distance: distance
             });
         }
 
@@ -87,13 +98,9 @@ class Config {
         [ 0, 1 ].forEach(x => distances[x].distance = Math.round((distances[x].distance / amount * 100)));
 
         // 2つの時間帯の中間色を算出
-        const extractor = new ColorExtractor();
         const [ color1, color2 ] = [ 0, 1 ]
             .map(x => this.brightness[distances[x].time])
-            .map(x => {
-                const c = extractor.extract(x);
-                return [ c.r, c.g, c.b ];
-            });
+            .map(x => getColor(x));
         const midColor = [ 0, 1, 2 ].map(x => {
             const gap = color1[x] - color2[x];
             return color2[x] + Math.round(gap * distances[0].distance / 100);
