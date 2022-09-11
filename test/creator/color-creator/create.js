@@ -65,7 +65,7 @@ describe("ColorCreator.create - ", () => {
         
         // 結果確認
         // 4桁の16進数表現が生成されること
-        expect(result1).toEqual("#0111");
+        expect(result1).toEqual("#011f");
     });
 
     // 6:
