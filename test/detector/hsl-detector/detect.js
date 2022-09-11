@@ -10,11 +10,14 @@ describe("HslDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // 整数のHSL表現が検出されること
         expect(result).toEqual(expressions);
     });
 
@@ -23,11 +26,14 @@ describe("HslDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // 小数のHSL表現が検出されること
         expect(result).toEqual(expressions);
     });
 
@@ -36,11 +42,14 @@ describe("HslDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ "-1", " -2", "-3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // 負数のHSL表現が検出されること
         expect(result).toEqual(expressions);
     });
 
@@ -49,11 +58,14 @@ describe("HslDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const values = [ ".1", " .2", ".3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
         const expressions = values.map(x => `hsl(${x},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
         const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // 整数部が省略された小数のHSL表現が検出されること
         expect(result).toEqual(expressions);
     });
 
@@ -62,10 +74,13 @@ describe("HslDetector.detect - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const expressionSet = ExpressionSetFactory.create();
         const expression = Object.values(expressionSet).flat().join(" ");
         const result = detector.detect(expression);
+
+        // 結果確認
+        // アルファ値を含まないHSL表現のみが検出されること
         expect(result).toEqual(expressionSet.hsl);
     });
 });

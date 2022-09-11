@@ -7,8 +7,11 @@ describe("Hex8Creator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new Hex8Creator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4));
+
+        // 結果確認
+        // 8桁の16進数表現が生成されること
         expect(result).toEqual("#0102030a");
     });
 
@@ -17,8 +20,11 @@ describe("Hex8Creator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new Hex8Creator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+        
+        // 結果確認
+        // アルファ値が100%で補完されること
         expect(result).toEqual("#010203ff");
     });
 });

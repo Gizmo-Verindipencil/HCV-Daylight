@@ -7,9 +7,12 @@ describe("RgbAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbAlphaExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 40%)");
         const expected = new Color(10, 20, 30, 40);
+
+        // 結果確認
+        // アルファ値が百分率のRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -18,9 +21,12 @@ describe("RgbAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbAlphaExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 0.4)");
         const expected = new Color(10, 20, 30, 40);
+        
+        // 結果確認
+        // アルファ値が小数のRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -29,8 +35,11 @@ describe("RgbAlphaExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new RgbAlphaExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("not rgb-alpha");
+        
+        // 結果確認
+        // RGB表現以外からは何も抽出されないこと
         expect(result).toBeNull();
     });
 });

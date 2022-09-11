@@ -9,13 +9,16 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             "#000000",
             "#123456",
             "#987654"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 6文字の数値で構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -25,13 +28,16 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             "#AAAAAA",
             "#ABCDEF",
             "#FEDCBA"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 6文字の大文字アルファベットで構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -41,13 +47,16 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             "#aaaaaa",
             "#abcdef",
             "#fedcba"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 6文字の小文字アルファベットで構成される16進数表現が一致判定されること
             expect(result).toBe(true);
         }
     });
@@ -57,13 +66,16 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             " #000000 ",
             " #aaaaaa",
             "#AAAAAA "
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 前後の空白は無視されること
             expect(result).toBe(true);
         }
     });
@@ -73,7 +85,7 @@ describe("Hex6Detector.match - ", () => {
         // テスト対象のインスタンスを作成
         const detector = new Hex6Detector();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const expression of [
             "abc",
             "#000",
@@ -90,6 +102,9 @@ describe("Hex6Detector.match - ", () => {
             "hsla(0,0%,0%,0)"
         ]) {
             const result = detector.match(expression);
+
+            // 結果確認
+            // 該当以外の色表現は不一致判定されること
             expect(result).toBe(false);
         }
     });

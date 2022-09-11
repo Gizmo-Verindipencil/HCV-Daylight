@@ -7,9 +7,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("#123");
         const expected = new Color(17, 34, 51, null);
+
+        // 結果確認
+        // 3桁の16進数表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -18,9 +21,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("#1234");
         const expected = new Color(17, 34, 51, 27);
+        
+        // 結果確認
+        // 4桁の16進数表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -29,9 +35,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("#123456");
         const expected = new Color(18, 52, 86, null);
+        
+        // 結果確認
+        // 6桁の16進数表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -40,9 +49,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("#12345678");
         const expected = new Color(18, 52, 86, 47);
+        
+        // 結果確認
+        // 8桁の16進数表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -51,9 +63,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 40%)");
         const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // アルファ値を含むHSL表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -62,9 +77,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%, 0.4)");
         const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // アルファ値を含むHSL表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -73,9 +91,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("hsl(10, 20%, 30%)");
         const expected = new Color(92, 66, 61, null);
+        
+        // 結果確認
+        // アルファ値を含まないHSL表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -84,9 +105,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("hsla(10, 20%, 30%, 40%)");
         const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // HSLA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -95,9 +119,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("hsla(10, 20%, 30%, 0.4)");
         const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // HSLA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -106,9 +133,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 40%)");
         const expected = new Color(10, 20, 30, 40);
+        
+        // 結果確認
+        // アルファ値を含むRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -117,9 +147,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30, 0.4)");
         const expected = new Color(10, 20, 30, 40);
+        
+        // 結果確認
+        // アルファ値を含むRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -128,9 +161,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10, 20, 30)");
         const expected = new Color(10, 20, 30, null);
+        
+        // 結果確認
+        // アルファ値を含まないRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -139,9 +175,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // アルファ値を含む%指定のRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -150,9 +189,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // アルファ値を含む%指定のRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -161,9 +203,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgb(10%, 20%, 30%)");
         const expected = new Color(26, 51, 77, null);
+        
+        // 結果確認
+        // アルファ値を含まない%指定のRGB表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -172,9 +217,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10, 20, 30, 40%)");
         const expected = new Color(10, 20, 30, 40);
+        
+        // 結果確認
+        // RGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -183,9 +231,12 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10, 20, 30, 0.4)");
         const expected = new Color(10, 20, 30, 40);
+        
+        // 結果確認
+        // RGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -194,31 +245,40 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 40%)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // %指定のRGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
     // 19:
-    it("19: 指定RGBA表現 - アルファ値が小数", () => {
+    it("19: %指定RGBA表現 - アルファ値が小数", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // %指定のRGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
     // 20:
-    it("20: 指定RGBA表現 - アルファ値が小数", () => {
+    it("20: %指定RGBA表現 - アルファ値が小数", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("rgba(10%, 20%, 30%, 0.4)");
         const expected = new Color(26, 51, 77, 40);
+        
+        // 結果確認
+        // %指定のRGBA表現が抽出されること
         expect(result).toEqual(expected);
     });
 
@@ -227,13 +287,16 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         for (const pair of [
             [ "red"   , new Color(255 ,   0 ,   0 , null) ],
             [ "green" , new Color(  0 , 128 ,   0 , null) ],
             [ "blue"  , new Color(  0 ,   0 , 255 , null) ],
         ]) {
             const result = extractor.extract(pair[0]);
+            
+            // 結果確認
+            // WEBカラーが抽出されること
             expect(result).toEqual(pair[1]);
         }
     });
@@ -243,8 +306,11 @@ describe("ColorExtractor.extract - ", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = extractor.extract("not color");
+
+        // 結果確認
+        // 色が検出されないこと
         expect(result).toBeNull();
     });
 });

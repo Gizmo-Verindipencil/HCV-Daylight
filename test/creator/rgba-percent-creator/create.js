@@ -7,8 +7,11 @@ describe("RgbaPercentCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new RgbaPercentCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, 4));
+
+        // 結果確認
+        // %指定のRGBA表現が生成されること
         expect(result).toEqual("rgba(0%,1%,1%,4%)");
     });
 
@@ -17,8 +20,11 @@ describe("RgbaPercentCreator.create - ", () => {
         // テスト対象のインスタンスを作成
         const creator = new RgbaPercentCreator();
 
-        // 結果を検証
+        // テスト対象の処理を実行
         const result = creator.create(new Color(1, 2, 3, null));
+        
+        // 結果確認
+        // アルファ値が100%で補完されること
         expect(result).toEqual("rgba(0%,1%,1%,100%)");
     });
 });
