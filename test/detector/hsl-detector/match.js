@@ -96,7 +96,26 @@ describe("HslDetector.match - ", () => {
     });
 
     // 6:
-    it("6: その他アンマッチ", () => {
+    it("6: degキーワードあり", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new HslDetector();
+
+        // テスト対象の処理を実行
+        const values = [ "1", " 2", "3 " ];
+        const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
+        const getAngle = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
+        const expressions = values.map(x => `hsl(${getAngle(x)},${[...Array(2)].map(y => getPercent(x)).join(",")})`);
+        for (const expression of expressions) {
+            const result = detector.match(expression);
+
+            // 結果確認
+            // degキーワードを含むHSL表現が一致判定されること
+            expect(result).toBe(true);
+        }
+    });
+
+    // 7:
+    it("7: その他アンマッチ", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslDetector();
 

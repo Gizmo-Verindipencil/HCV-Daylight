@@ -102,7 +102,24 @@ describe("HslAlphaDetector.detect - ", () => {
     });
 
     // 7:
-    it("7: その他", () => {
+    it("7: degキーワードあり", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new HslAlphaDetector();
+
+        // テスト対象の処理を実行
+        const values = [ "1", " 2", "3 " ];
+        const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
+        const getAngle = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
+        const expressions = values.map(x => `hsl(${getAngle(x)},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
+        const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // degキーワードを含むHSL表現が検出されること
+        expect(result).toEqual(expressions);
+    });
+
+    // 8:
+    it("8: その他", () => {
         // テスト対象のインスタンスを作成
         const detector = new HslAlphaDetector();
 

@@ -10,7 +10,7 @@ class HslaDetector {
      */
     _getColorExpression() {
         const values = [
-            NumberExpression.numericWithMargins,
+            `${NumberExpression.angleWithMargins}(deg)?`,
             [...Array(2)].map(x => NumberExpression.percentWithMargins),
             NumberExpression.questionablePercentWithMargins
         ].flat();

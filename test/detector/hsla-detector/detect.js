@@ -101,6 +101,23 @@ describe("HslaDetector.detect - ", () => {
         expect(result).toEqual(expressions);
     });
 
+    // 6:
+    it("6: degキーワードあり", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new HslaDetector();
+
+        // テスト対象の処理を実行
+        const values = [ "1", " 2", "3 " ];
+        const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
+        const getAngle = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
+        const expressions = values.map(x => `hsla(${getAngle(x)},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
+        const result = detector.detect(expressions.join(" "));
+        
+        // 結果確認
+        // degキーワードを含むHSLA表現が検出されること
+        expect(result).toEqual(expressions);
+    });
+
     // 7:
     it("7: その他", () => {
         // テスト対象のインスタンスを作成
