@@ -301,7 +301,20 @@ describe("ColorCreator.create - ", () => {
     });
 
     // 24:
-    it("24: WEBカラー - 単純変換", () => {
+    it("24: 空白文字区切りのHSL表現", () => {
+        // テスト対象のインスタンスを作成
+        const creator = new ColorCreator();
+
+        // テスト対象の処理を実行
+        const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.spaceDelimitedHsl);
+        
+        // 結果確認
+        // 空白文字区切りの表現が生成されること
+        expect(result).toEqual("hsl(210 50% 1%)");
+    });
+
+    // 25:
+    it("25: WEBカラー - 単純変換", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
@@ -313,8 +326,8 @@ describe("ColorCreator.create - ", () => {
         expect(result).toEqual("red");
     });
 
-    // 25:
-    it("25: WEBカラー - 該当なし", () => {
+    // 26:
+    it("26: WEBカラー - 該当なし", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
@@ -326,8 +339,8 @@ describe("ColorCreator.create - ", () => {
         expect(result).toEqual("#010203");
     });
 
-    // 26:
-    it("26: 不明な表現", () => {
+    // 27:
+    it("27: 不明な表現", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
