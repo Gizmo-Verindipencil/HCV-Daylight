@@ -283,7 +283,21 @@ describe("ColorExtractor.extract - ", () => {
     });
 
     // 21:
-    it("21: WEBカラー", () => {
+    it("21: 空白文字区切りのHSL表現", () => {
+        // テスト対象のインスタンスを作成
+        const extractor = new ColorExtractor();
+
+        // テスト対象の処理を実行
+        const result = extractor.extract("hsl(10 20% 30%)");
+        const expected = new Color(92, 66, 61, null);
+        
+        // 結果確認
+        // 空白文字区切りのHSL表現が抽出されること
+        expect(result).toEqual(expected);
+    });
+
+    // 22:
+    it("22: WEBカラー", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
@@ -301,8 +315,8 @@ describe("ColorExtractor.extract - ", () => {
         }
     });
 
-    // 22:
-    it("22: 変換不可", () => {
+    // 23:
+    it("23: 変換不可", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
