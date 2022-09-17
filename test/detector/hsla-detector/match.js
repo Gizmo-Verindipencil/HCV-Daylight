@@ -149,6 +149,7 @@ describe("HslaDetector.match - ", () => {
             "rgb(0%,0%,0%,0)",
             "rgba(0,0,0,0)",
             "hsl(0,0%,0%)",
+            "hsl(0 0% 0%)",
             "hsl(0,0%,0%,0)"
         ]) {
             const result = detector.match(expression);

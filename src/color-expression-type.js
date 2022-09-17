@@ -107,6 +107,14 @@ class ColorExpressionType {
     }
 
     /**
+     * 空白文字区切りHSL表現の種類を取得します。
+     * @return {String} 色表現の種類を返します。
+     */
+    static get spaceDelimitedHsl() {
+        return "space-delimited-hsl";
+    }
+
+    /**
      * WEBカラー表現の種類を取得します。
      * @return {String} 色表現の種類を返します。
      */

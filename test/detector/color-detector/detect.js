@@ -225,4 +225,20 @@ describe("ColorDetector.detect - ", () => {
         // %指定のRGBA表現が検出されること
         expect(result).toEqual(expectation);
     });
+
+    // 15:
+    it("15: 空白文字区切りのHSL表現", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new ColorDetector();
+
+        // テスト対象の処理を実行
+        const expressionSet = ExpressionSetFactory.create();
+        const expression = expressionSet.spaceDelimitedHsl.join(" ");
+        const result = detector.detect(expression);
+        const expectation = expressionSet.spaceDelimitedHsl.map(x => new ColorDetectorResult("space-delimited-hsl", x.trim()));
+        
+        // 結果確認
+        // 空白文字区切りのHSL表現が検出されること
+        expect(result).toEqual(expectation);
+    });
 });

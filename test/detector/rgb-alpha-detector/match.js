@@ -146,6 +146,7 @@ describe("RgbAlphaDetector.match - ", () => {
             "rgb(0%,0%,0%,0)",
             "rgba(0,0,0,0)",
             "hsl(0,0%,0%)",
+            "hsl(0 0% 0%)",
             "hsl(0,0%,0%,0)",
             "hsla(0,0%,0%,0)"
         ]) {
