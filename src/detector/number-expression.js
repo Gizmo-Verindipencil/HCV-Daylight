@@ -31,6 +31,20 @@ class NumberExpression {
     }
 
     /**
+     * 角度表現を取得します。
+     */
+    static get angle() {
+        return `(${NumberExpression.integer}|${NumberExpression.decimal})(deg)?`;
+    }
+
+    /**
+     * マージン付き角度表現を取得します。
+     */
+    static get angleWithMargins() {
+        return `\\s*${NumberExpression.angle}\\s*`;
+    }
+
+    /**
      * パーセント数値表現を取得します。
      */
     static get percent() {
