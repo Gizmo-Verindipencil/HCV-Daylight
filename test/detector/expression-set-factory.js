@@ -76,6 +76,10 @@ class ExpressionSetFactory {
                 "hsl(2 ,2% ,2% )",
                 "hsl( 3 , 3% , 3% )"
             ],
+            spaceDelimitedHsl : [
+                "hsl(0 0% 0%)",
+                "hsl(   1   1%   1%   )"
+            ],
             hslAlpha : [
                 "hsl(0,0%,0%,0)",
                 "hsl( 1, 1%, 1%, 1)",
