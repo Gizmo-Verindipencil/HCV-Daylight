@@ -10,7 +10,7 @@ class HslAlphaDetector {
      */
     _getColorExpression() {
         const values = [
-            `${NumberExpression.angleWithMargins}(deg)?`,
+            NumberExpression.degreeWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.percentWithMargins,
             NumberExpression.questionablePercentWithMargins
