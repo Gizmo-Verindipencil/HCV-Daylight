@@ -10,7 +10,7 @@ class HslDetector {
      */
     _getColorExpression() {
         const values = [
-            `${NumberExpression.degreeWithMargins}(deg)?`,
+            NumberExpression.degreeWithMargins,
             [...Array(2)].map(x => NumberExpression.percentWithMargins)
         ].flat();
         return `hsl\\(${values.join(",")}\\)`;
