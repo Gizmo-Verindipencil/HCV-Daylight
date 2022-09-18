@@ -45,6 +45,20 @@ class NumberExpression {
     }
 
     /**
+     * 角度表現を取得します。
+     */
+    static get turn() {
+        return `(${NumberExpression.integer}|${NumberExpression.decimal})(turn)`;
+    }
+
+    /**
+     * マージン付き角度表現を取得します。
+     */
+    static get turnWithMargins() {
+        return `\\s*${NumberExpression.turn}\\s*`;
+    }
+
+    /**
      * パーセント数値表現を取得します。
      */
     static get percent() {

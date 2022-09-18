@@ -74,7 +74,25 @@ describe("SpaceDelimitedHslDetector.detect - ", () => {
     });
 
     // 5:
-    it("5: その他", () => {
+    it("5: degキーワードあり", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new SpaceDelimitedHslDetector();
+
+        // テスト対象の処理を実行
+        const values = [ "1", " 2", "3 " ];
+        const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
+        const getDegree = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
+        const valueSets = values.map(x => [ getDegree(x), [...Array(2)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsl(${x.join(" ")})`);
+        const result = detector.detect(expressions.join(" "));
+
+        // 結果確認
+        // degキーワードを含むHSL表現が検出されること
+        expect(result).toEqual(expressions);
+    });
+
+    // 6:
+    it("6: その他", () => {
         // テスト対象のインスタンスを作成
         const detector = new SpaceDelimitedHslDetector();
 

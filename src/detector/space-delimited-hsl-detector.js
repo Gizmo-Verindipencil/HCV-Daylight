@@ -10,7 +10,7 @@ class SpaceDelimitedHslDetector {
      */
     _getColorExpression() {
         const values = [
-            NumberExpression.numericWithMargins,
+            NumberExpression.degreeWithMargins,
             [...Array(2)].map(x => NumberExpression.percentWithMargins)
         ].flat();
         return `hsl\\(${values.join("\\s+")}\\)`;
