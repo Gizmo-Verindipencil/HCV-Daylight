@@ -33,15 +33,15 @@ class NumberExpression {
     /**
      * 角度表現を取得します。
      */
-    static get angle() {
+    static get degree() {
         return `(${NumberExpression.integer}|${NumberExpression.decimal})(deg)?`;
     }
 
     /**
      * マージン付き角度表現を取得します。
      */
-    static get angleWithMargins() {
-        return `\\s*${NumberExpression.angle}\\s*`;
+    static get degreeWithMargins() {
+        return `\\s*${NumberExpression.degree}\\s*`;
     }
 
     /**
