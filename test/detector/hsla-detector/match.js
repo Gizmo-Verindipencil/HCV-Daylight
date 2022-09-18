@@ -12,7 +12,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
+        const valueSets = values.map(x => [ x, [...Array(2)].map(y => getPercent(x)), x ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
 
@@ -30,7 +31,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
+        const valueSets = values.map(x => [ x, [...Array(2)].map(y => getPercent(x)), x ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
 
@@ -48,7 +50,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
+        const valueSets = values.map(x => [ x, [...Array(3)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
 
@@ -66,7 +69,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "0.1", " 0.2", "0.3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
+        const valueSets = values.map(x => [ x, [...Array(3)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
             
@@ -103,7 +107,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "-1", " -2", "-3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
+        const valueSets = values.map(x => [ x, [...Array(3)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
             
@@ -121,7 +126,8 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ ".1", " .2", ".3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const expressions = values.map(x => `hsla(${x},${[...Array(2)].map(y => getPercent(x)).join(",")},${getPercent(x)})`);
+        const valueSets = values.map(x => [ x, [...Array(3)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
             
@@ -139,8 +145,9 @@ describe("HslaDetector.match - ", () => {
         // テスト対象の処理を実行
         const values = [ "1", " 2", "3 " ];
         const getPercent = x => x != x.trimEnd() ? `${x.trimEnd()}% ` : `${x}%`;
-        const getAngle = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
-        const expressions = values.map(x => `hsla(${getAngle(x)},${[...Array(2)].map(y => getPercent(x)).join(",")},${x})`);
+        const getDegree = x => x != x.trimEnd() ? `${x.trimEnd()}deg ` : `${x}deg`;
+        const valueSets = values.map(x => [ getDegree(x), [...Array(3)].map(y => getPercent(x)) ].flat());
+        const expressions = valueSets.map(x => `hsla(${x.join(",")})`);
         for (const expression of expressions) {
             const result = detector.match(expression);
 
