@@ -1,4 +1,5 @@
 import { Hex3Detector } from "../../../src/detector/hex3-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
 
 // hex3
 // 3桁の16進数表現(例: #000 )に関するテスト
@@ -86,22 +87,7 @@ describe("Hex3Detector.match - ", () => {
         const detector = new Hex3Detector();
 
         // テスト対象の処理を実行
-        for (const expression of [
-            "abc",
-            "#0000",
-            "#000000",
-            "#00000000",
-            "rgb(0,0,0)",
-            "rgb(0%,0%,0%)",
-            "rgb(0%,0%,0%,0)",
-            "rgb(0,0,0,0)",
-            "rgba(0,0,0,0)",
-            "rgba(0%,0%,0%,0)",
-            "hsl(0,0%,0%)",
-            "hsl(0 0% 0%)",
-            "hsl(0,0%,0%,0)",
-            "hsla(0,0%,0%,0)"
-        ]) {
+        for (const expression of ExpressionSetFactory.createElse("hex3")) {
             const result = detector.match(expression);
 
             // 結果確認

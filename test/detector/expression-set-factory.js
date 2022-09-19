@@ -98,6 +98,30 @@ class ExpressionSetFactory {
             ]
         };
     }
+
+    /**
+     * 除外対象以外の色表現を取得します。
+     * @param {String} remove 除外対象。
+     * @returns {Array<String>} 色表現を返します。
+     */
+    static createElse(remove) {
+        /* ---------------------------------------------------------------------- */
+        // 30-seconds-of-code (Licensed under CC BY 4.0)
+        // https://www.30secondsofcode.org/js/s/to-kebab-case
+        const toKebabCase = str =>
+            str &&
+            str
+                .match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g)
+                .map(x => x.toLowerCase())
+                .join('-');
+        /* ---------------------------------------------------------------------- */
+
+        const expressionSet = ExpressionSetFactory.create();
+        return Object.keys(expressionSet)
+            .filter(x => x !== remove && toKebabCase(x) !== remove)
+            .map(x => expressionSet[x])
+            .flat();
+    }
 }
 
 export { ExpressionSetFactory };

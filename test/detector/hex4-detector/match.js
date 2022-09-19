@@ -1,4 +1,5 @@
 import { Hex4Detector } from "../../../src/detector/hex4-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
 
 // hex4
 // 4桁の16進数表現(例: #0000 )に関するテスト
@@ -86,22 +87,7 @@ describe("Hex4Detector.match - ", () => {
         const detector = new Hex4Detector();
 
         // テスト対象の処理を実行
-        for (const expression of [
-            "abc",
-            "#000",
-            "#000000",
-            "#00000000",
-            "rgb(0,0,0)",
-            "rgb(0%,0%,0%)",
-            "rgb(0,0,0,0)",
-            "rgb(0%,0%,0%,0)",
-            "rgba(0,0,0,0)",
-            "rgba(0%,0%,0%,0)",
-            "hsl(0,0%,0%)",
-            "hsl(0 0% 0%)",
-            "hsl(0,0%,0%,0)",
-            "hsla(0,0%,0%,0)"
-        ]) {
+        for (const expression of ExpressionSetFactory.createElse("hex4")) {
             const result = detector.match(expression);
 
             // 結果確認

@@ -1,4 +1,5 @@
 import { HslAlphaDetector } from "../../../src/detector/hsl-alpha-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
 
 // hsl-alpha
 // アルファ値を含むHSL表現(例: hsl(0, 0, 0, 0) )に関するテスト
@@ -163,22 +164,7 @@ describe("HslAlphaDetector.match - ", () => {
         const detector = new HslAlphaDetector();
 
         // テスト対象の処理を実行
-        for (const expression of [
-            "abc",
-            "#000",
-            "#0000",
-            "#000000",
-            "#00000000",
-            "rgb(0,0,0)",
-            "rgb(0%,0%,0%)",
-            "rgb(0,0,0,0)",
-            "rgb(0%,0%,0%,0)",
-            "rgba(0,0,0,0)",
-            "rgba(0%,0%,0%,0)",
-            "hsl(0,0%,0%)",
-            "hsl(0 0% 0%)",
-            "hsla(0,0%,0%,0)"
-        ]) {
+        for (const expression of ExpressionSetFactory.createElse("hsl-alpha")) {
             const result = detector.match(expression);
 
             // 結果確認
