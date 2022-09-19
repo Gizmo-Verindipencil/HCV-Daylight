@@ -241,4 +241,20 @@ describe("ColorDetector.detect - ", () => {
         // 空白文字区切りのHSL表現が検出されること
         expect(result).toEqual(expectation);
     });
+
+    // 16:
+    it("16: 空白文字区切りのアルファ値を含むHSL表現", () => {
+        // テスト対象のインスタンスを作成
+        const detector = new ColorDetector();
+
+        // テスト対象の処理を実行
+        const expressionSet = ExpressionSetFactory.create();
+        const expression = expressionSet.spaceDelimitedHslAlpha.join(" ");
+        const result = detector.detect(expression);
+        const expectation = expressionSet.spaceDelimitedHslAlpha.map(x => new ColorDetectorResult("space-delimited-hsl-alpha", x.trim()));
+        
+        // 結果確認
+        // 空白文字区切りのアルファ値を含むHSL表現が検出されること
+        expect(result).toEqual(expectation);
+    });
 });
