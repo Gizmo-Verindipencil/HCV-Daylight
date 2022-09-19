@@ -312,9 +312,35 @@ describe("ColorCreator.create - ", () => {
         // 空白文字区切りの表現が生成されること
         expect(result).toEqual("hsl(210 50% 1%)");
     });
-
+    
     // 25:
-    it("25: WEBカラー - 単純変換", () => {
+    it("25: 空白文字区切りのアルファ値を含むHSL表現 - 単純変換", () => {
+        // テスト対象のインスタンスを作成
+        const creator = new ColorCreator();
+
+        // テスト対象の処理を実行
+        const result = creator.create(new Color(1, 2, 3, 4), ColorExpressionType.spaceDelimitedHslAlpha);
+        
+        // 結果確認
+        // 空白文字区切りの表現が生成されること
+        expect(result).toEqual("hsl(210 50% 1%/4%)");
+    });
+
+    // 26:
+    it("26: 空白文字区切りのアルファ値を含むHSL表現 - アルファ値補完", () => {
+        // テスト対象のインスタンスを作成
+        const creator = new ColorCreator();
+
+        // テスト対象の処理を実行
+        const result = creator.create(new Color(1, 2, 3, null), ColorExpressionType.spaceDelimitedHslAlpha);
+        
+        // 結果確認
+        // 空白文字区切りの表現が生成されること
+        expect(result).toEqual("hsl(210 50% 1%/100%)");
+    });
+
+    // 27:
+    it("27: WEBカラー - 単純変換", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
@@ -326,8 +352,8 @@ describe("ColorCreator.create - ", () => {
         expect(result).toEqual("red");
     });
 
-    // 26:
-    it("26: WEBカラー - 該当なし", () => {
+    // 28:
+    it("28: WEBカラー - 該当なし", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 
@@ -339,8 +365,8 @@ describe("ColorCreator.create - ", () => {
         expect(result).toEqual("#010203");
     });
 
-    // 27:
-    it("27: 不明な表現", () => {
+    // 29:
+    it("29: 不明な表現", () => {
         // テスト対象のインスタンスを作成
         const creator = new ColorCreator();
 

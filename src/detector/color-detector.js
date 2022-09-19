@@ -40,8 +40,8 @@ class ColorDetector {
             rgbPercent             : ColorExpressionType.rgbPercent             ,
             rgba                   : ColorExpressionType.rgba                   ,
             rgbaPercent            : ColorExpressionType.rgbaPercent            ,
-            spaceDelimitedHsl      : ColorExpressionType.spaceDelimitedHsl      ,
             spaceDelimitedHslAlpha : ColorExpressionType.spaceDelimitedHslAlpha ,
+            spaceDelimitedHsl      : ColorExpressionType.spaceDelimitedHsl      ,
             webColor               : ColorExpressionType.webColor               ,
         };
     }
@@ -66,8 +66,8 @@ class ColorDetector {
             [ RgbPercentDetector             , typeSet.rgbPercent             ],
             [ RgbaDetector                   , typeSet.rgba                   ],
             [ RgbaPercentDetector            , typeSet.rgbaPercent            ],
-            [ SpaceDelimitedHslDetector      , typeSet.spaceDelimitedHsl      ],
             [ SpaceDelimitedHslAlphaDetector , typeSet.spaceDelimitedHslAlpha ],
+            [ SpaceDelimitedHslDetector      , typeSet.spaceDelimitedHsl      ],
             [ WebColorDetector               , typeSet.webColor               ]
         ];
     }
