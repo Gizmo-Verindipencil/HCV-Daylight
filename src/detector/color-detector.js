@@ -14,6 +14,7 @@ import { RgbPercentDetector } from "./rgb-percent-detector";
 import { RgbaDetector } from "./rgba-detector";
 import { RgbaPercentDetector } from "./rgba-percent-detector";
 import { SpaceDelimitedHslDetector } from "./space-delimited-hsl-detector";
+import { SpaceDelimitedHslAlphaDetector } from "./space-delimited-hsl-alpha-detector";
 import { WebColorDetector } from "./web-color-detector";
 
 /**
@@ -26,21 +27,22 @@ class ColorDetector {
      */
     getTypeSet() {
         return {
-            hex3              : ColorExpressionType.hex3              ,
-            hex4              : ColorExpressionType.hex4              ,
-            hex6              : ColorExpressionType.hex6              ,
-            hex8              : ColorExpressionType.hex8              ,
-            hslAlpha          : ColorExpressionType.hslAlpha          ,
-            hsl               : ColorExpressionType.hsl               ,
-            hsla              : ColorExpressionType.hsla              ,
-            rgbAlpha          : ColorExpressionType.rgbAlpha          ,
-            rgb               : ColorExpressionType.rgb               ,
-            rgbPercentAlpha   : ColorExpressionType.rgbPercentAlpha   ,
-            rgbPercent        : ColorExpressionType.rgbPercent        ,
-            rgba              : ColorExpressionType.rgba              ,
-            rgbaPercent       : ColorExpressionType.rgbaPercent       ,
-            spaceDelimitedHsl : ColorExpressionType.spaceDelimitedHsl ,
-            webColor          : ColorExpressionType.webColor          ,
+            hex3                   : ColorExpressionType.hex3                   ,
+            hex4                   : ColorExpressionType.hex4                   ,
+            hex6                   : ColorExpressionType.hex6                   ,
+            hex8                   : ColorExpressionType.hex8                   ,
+            hslAlpha               : ColorExpressionType.hslAlpha               ,
+            hsl                    : ColorExpressionType.hsl                    ,
+            hsla                   : ColorExpressionType.hsla                   ,
+            rgbAlpha               : ColorExpressionType.rgbAlpha               ,
+            rgb                    : ColorExpressionType.rgb                    ,
+            rgbPercentAlpha        : ColorExpressionType.rgbPercentAlpha        ,
+            rgbPercent             : ColorExpressionType.rgbPercent             ,
+            rgba                   : ColorExpressionType.rgba                   ,
+            rgbaPercent            : ColorExpressionType.rgbaPercent            ,
+            spaceDelimitedHslAlpha : ColorExpressionType.spaceDelimitedHslAlpha ,
+            spaceDelimitedHsl      : ColorExpressionType.spaceDelimitedHsl      ,
+            webColor               : ColorExpressionType.webColor               ,
         };
     }
 
@@ -51,21 +53,22 @@ class ColorDetector {
     _getDetectorTypeStringPairs() {
         const typeSet = this.getTypeSet();
         return [
-            [ Hex3Detector              , typeSet.hex3              ],
-            [ Hex4Detector              , typeSet.hex4              ],
-            [ Hex6Detector              , typeSet.hex6              ],
-            [ Hex8Detector              , typeSet.hex8              ],
-            [ HslAlphaDetector          , typeSet.hslAlpha          ],
-            [ HslDetector               , typeSet.hsl               ],
-            [ HslaDetector              , typeSet.hsla              ],
-            [ RgbAlphaDetector          , typeSet.rgbAlpha          ],
-            [ RgbDetector               , typeSet.rgb               ],
-            [ RgbPercentAlphaDetector   , typeSet.rgbPercentAlpha   ],
-            [ RgbPercentDetector        , typeSet.rgbPercent        ],
-            [ RgbaDetector              , typeSet.rgba              ],
-            [ RgbaPercentDetector       , typeSet.rgbaPercent       ],
-            [ SpaceDelimitedHslDetector , typeSet.spaceDelimitedHsl ],
-            [ WebColorDetector          , typeSet.webColor          ]
+            [ Hex3Detector                   , typeSet.hex3                   ],
+            [ Hex4Detector                   , typeSet.hex4                   ],
+            [ Hex6Detector                   , typeSet.hex6                   ],
+            [ Hex8Detector                   , typeSet.hex8                   ],
+            [ HslAlphaDetector               , typeSet.hslAlpha               ],
+            [ HslDetector                    , typeSet.hsl                    ],
+            [ HslaDetector                   , typeSet.hsla                   ],
+            [ RgbAlphaDetector               , typeSet.rgbAlpha               ],
+            [ RgbDetector                    , typeSet.rgb                    ],
+            [ RgbPercentAlphaDetector        , typeSet.rgbPercentAlpha        ],
+            [ RgbPercentDetector             , typeSet.rgbPercent             ],
+            [ RgbaDetector                   , typeSet.rgba                   ],
+            [ RgbaPercentDetector            , typeSet.rgbaPercent            ],
+            [ SpaceDelimitedHslAlphaDetector , typeSet.spaceDelimitedHslAlpha ],
+            [ SpaceDelimitedHslDetector      , typeSet.spaceDelimitedHsl      ],
+            [ WebColorDetector               , typeSet.webColor               ]
         ];
     }
 

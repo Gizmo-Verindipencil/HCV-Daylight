@@ -12,6 +12,7 @@ import { RgbPercentAlphaExtractor } from "./rgb-percent-alpha-extractor";
 import { RgbPercentExtractor } from "./rgb-percent-extractor";
 import { RgbaExtractor } from "./rgba-extractor";
 import { RgbaPercentExtractor } from "./rgba-percent-extractor";
+import { SpaceDelimitedHslAlphaExtractor } from "./space-delimited-hsl-alpha-extractor";
 import { SpaceDelimitedHslExtractor } from "./space-delimited-hsl-extractor";
 import { WebColorExtractor } from "./web-color-extractor";
 
@@ -37,6 +38,7 @@ class ColorExtractor {
             RgbPercentExtractor,
             RgbaExtractor,
             RgbaPercentExtractor,
+            SpaceDelimitedHslAlphaExtractor,
             SpaceDelimitedHslExtractor,
             WebColorExtractor
         ]

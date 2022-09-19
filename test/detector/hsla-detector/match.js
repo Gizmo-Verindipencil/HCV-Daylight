@@ -1,4 +1,5 @@
 import { HslaDetector } from "../../../src/detector/hsla-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
 
 // hsla
 // HSLA表現(例: hsla(0, 0%, 0%, 0) )に関するテスト
@@ -163,21 +164,7 @@ describe("HslaDetector.match - ", () => {
         const detector = new HslaDetector();
 
         // テスト対象の処理を実行
-        for (const expression of [
-            "abc",
-            "#000",
-            "#0000",
-            "#000000",
-            "#00000000",
-            "rgb(0,0,0)",
-            "rgb(0%,0%,0%)",
-            "rgb(0,0,0,0)",
-            "rgb(0%,0%,0%,0)",
-            "rgba(0,0,0,0)",
-            "hsl(0,0%,0%)",
-            "hsl(0 0% 0%)",
-            "hsl(0,0%,0%,0)"
-        ]) {
+        for (const expression of ExpressionSetFactory.createElse("hsla")) {
             const result = detector.match(expression);
             
             // 結果確認

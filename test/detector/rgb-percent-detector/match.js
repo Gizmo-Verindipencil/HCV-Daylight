@@ -1,4 +1,5 @@
 import { RgbPercentDetector } from "../../../src/detector/rgb-percent-detector";
+import { ExpressionSetFactory } from "../expression-set-factory";
 
 // rgb-percent
 // アルファ値を含まない%指定RGB表現(例: rgb(0%, 0%, 0%) )に関するテスト
@@ -97,21 +98,7 @@ describe("RgbPercentDetector.match - ", () => {
         const detector = new RgbPercentDetector();
 
         // テスト対象の処理を実行
-        for (const expression of [
-            "abc",
-            "#000",
-            "#0000",
-            "#000000",
-            "#00000000",
-            "rgb(0,0,0)",
-            "rgb(0,0,0,0)",
-            "rgb(0%,0%,0%,0)",
-            "rgba(0,0,0,0)",
-            "hsl(0,0%,0%)",
-            "hsl(0 0% 0%)",
-            "hsl(0,0%,0%,0)",
-            "hsla(0,0%,0%,0)"
-        ]) {
+        for (const expression of ExpressionSetFactory.createElse("rgb-percent")) {
             const result = detector.match(expression);
             
             // 結果確認

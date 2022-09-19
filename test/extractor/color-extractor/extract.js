@@ -283,7 +283,35 @@ describe("ColorExtractor.extract - ", () => {
     });
 
     // 21:
-    it("21: 空白文字区切りのHSL表現", () => {
+    it("21: 空白文字区切りのアルファ値を含むHSL表現 - アルファ値が%", () => {
+        // テスト対象のインスタンスを作成
+        const extractor = new ColorExtractor();
+
+        // テスト対象の処理を実行
+        const result = extractor.extract("hsl(10 20% 30%/40%)");
+        const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // アルファ値を含むHSL表現が抽出されること
+        expect(result).toEqual(expected);
+    });
+
+    // 22:
+    it("22: 空白文字区切りのアルファ値を含むHSL表現 - アルファ値が小数", () => {
+        // テスト対象のインスタンスを作成
+        const extractor = new ColorExtractor();
+
+        // テスト対象の処理を実行
+        const result = extractor.extract("hsl(10 20% 30%/0.4)");
+        const expected = new Color(92, 66, 61, 40);
+        
+        // 結果確認
+        // アルファ値を含むHSL表現が抽出されること
+        expect(result).toEqual(expected);
+    });
+
+    // 23:
+    it("23: 空白文字区切りのHSL表現", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
@@ -296,8 +324,8 @@ describe("ColorExtractor.extract - ", () => {
         expect(result).toEqual(expected);
     });
 
-    // 22:
-    it("22: WEBカラー", () => {
+    // 24:
+    it("24: WEBカラー", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
@@ -315,8 +343,8 @@ describe("ColorExtractor.extract - ", () => {
         }
     });
 
-    // 23:
-    it("23: 変換不可", () => {
+    // 25:
+    it("25: 変換不可", () => {
         // テスト対象のインスタンスを作成
         const extractor = new ColorExtractor();
 
