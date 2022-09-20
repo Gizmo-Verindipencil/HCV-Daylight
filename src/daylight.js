@@ -100,9 +100,13 @@ class Daylight {
      * @param {Config} config 設定情報。
      */
     reflectToElement(element, properties=[], config) {
+        // デフォルト設定を補完
+        config = this._createConfig(config);
+
         // 最大適用回数を超えていれば処理終了
-        const reflectionCount = "numberOfDaylightReflection";
-        if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
+        const reflectionCountKey = "numberOfLimitReflection";
+        const reflectionCount = element.dataset[reflectionCountKey] ? Number(element.dataset[reflectionCountKey]) : 0;
+        if (reflectionCount >= config.numberOfLimitReflection) {
             return;
         }
 
@@ -133,6 +137,9 @@ class Daylight {
             }
             element.style[property] = target;
         }
+
+        // 反映結果を記録
+        element.dataset[reflectionCountKey] = reflectionCount + 1;
     }
 
     /**
@@ -142,6 +149,10 @@ class Daylight {
      * @param {Array<HTMLElement>} ignore 無視対象。
      */
     reflectToPage(properties=[], config, ignore=[]) {
+        // デフォルト設定を補完
+        config = this._createConfig(config);
+
+        // 画面の要素を変更
         const all = document.getElementsByTagName("*");
         for (let i = 0; i < all.length; i++) {
             // 無視対象であればスキップ
