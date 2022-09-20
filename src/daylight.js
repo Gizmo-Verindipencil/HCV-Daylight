@@ -101,8 +101,9 @@ class Daylight {
      */
     reflectToElement(element, properties=[], config) {
         // 最大適用回数を超えていれば処理終了
-        const reflectionCount = "numberOfDaylightReflection";
-        if (element.dataset[reflectionCount] && element.dataset[reflectionCount] >= config.numberOfLimitReflection) {
+        const reflectionCountKey = "numberOfLimitReflection";
+        const reflectionCount = element.dataset[reflectionCount] == null ? 0 : Number(element.dataset[reflectionCount]);
+        if (reflectionCount >= config.numberOfLimitReflection) {
             return;
         }
 
@@ -133,6 +134,9 @@ class Daylight {
             }
             element.style[property] = target;
         }
+
+        // 反映結果を記録
+        element.dataset[reflectionCountKey] = reflectionCount + 1;
     }
 
     /**
