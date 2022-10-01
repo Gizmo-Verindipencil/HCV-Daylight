@@ -7,7 +7,7 @@ describe("Color.rgba - ", () => {
         const color = new Color(1, 2, 3, 4);
 
         // 結果確認
-        // RGB情報が取得されること
+        // RGBA情報が取得されること
         expect(color.rgba).toEqual([ color.r, color.g, color.b, color.a ]);
     });
 });
