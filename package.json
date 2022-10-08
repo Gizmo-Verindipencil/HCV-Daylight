@@ -1,7 +1,7 @@
 {
     "name": "hcv-daylight",
     "version": "0.1.0",
-    "description": "This is something.",
+    "description": "This is a library provides color changes according to time of day.",
     "main": "dist/daylight.js",
     "scripts": {
         "build": "npm run clean && npm run build:dev && npm run build:prd",
