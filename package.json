@@ -1,5 +1,5 @@
 {
-    "name": "daylight",
+    "name": "hcv-daylight",
     "version": "0.1.0",
     "description": "This is something.",
     "main": "dist/daylight.js",
