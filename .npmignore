@@ -1,8 +1,10 @@
 *.log
 /.*/
 /build/
+/doc/
 /.eslint*
 /.gitignore
 /.npmignore
 /.travis.yml
 /webpack.*
+*.tgz
