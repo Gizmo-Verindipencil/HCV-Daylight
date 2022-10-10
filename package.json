@@ -1,12 +1,12 @@
 {
     "name": "hcv-daylight",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "description": "This is a library provides color changes according to time of day.",
-    "main": "dist/daylight.js",
+    "main": "src/daylight.js",
     "scripts": {
         "build": "npm run clean && npm run build:dev && npm run build:prd",
-        "build:dev": "webpack src/main.js dist/daylight.js --config tool/webpack.config.dev.js",
-        "build:prd": "webpack src/main.js dist/daylight.min.js --config tool/webpack.config.prd.js",
+        "build:dev": "webpack src/index.js dist/daylight.js --config tool/webpack.config.dev.js",
+        "build:prd": "webpack src/index.js dist/daylight.min.js --config tool/webpack.config.prd.js",
         "prepublish": "npm run build",
         "clean": "rimraf dist build",
         "lint": "eslint src",
