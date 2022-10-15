@@ -1,4 +1,4 @@
-import { Daylight } from "./daylight.js";
+import { Daylight } from "./daylight";
 
 exports.getReflectionColor = (expression, config) => Daylight.getReflectionColor(expression, config);
 exports.reflectToElement = (element, properties, config) => Daylight.reflectToElement(element, properties, config);
