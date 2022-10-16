@@ -1,8 +1,5 @@
 import { Color } from "./color";
 import { Config } from "./config";
-import { ColorCreator } from "./creator/color-creator";
-import { ColorDetector } from "./detector/color-detector";
-import { ColorExtractor } from "./extractor/color-extractor";
 
 /**
  * 日の満ち欠けをページに反映する処理を提供します。
@@ -12,9 +9,10 @@ class Daylight {
      * インスタンスを初期化します。
      */
     constructor() {
-        this._creator = new ColorCreator();
-        this._detector = new ColorDetector();
-        this._extractor = new ColorExtractor();
+        const core = require("hcv-core");
+        this._creator = core.creator;
+        this._detector = core.detector;
+        this._extractor = core.extractor;
     }
 
     /**

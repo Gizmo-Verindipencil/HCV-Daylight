@@ -36,5 +36,8 @@
         "loader-utils": "^0.2.12",
         "rimraf": "^2.5.0",
         "webpack": "^1.12.11"
+    },
+    "dependencies": {
+        "hcv-core": "^0.1.1"
     }
 }
