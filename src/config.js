@@ -1,5 +1,3 @@
-import { ColorExtractor } from "./extractor/color-extractor";
-
 /**
  * 日の満ち欠けの反映処理の設定を提供します。
  */
@@ -55,7 +53,8 @@ class Config {
         const date = `${this.now.getFullYear()}/${format(this.now.getMonth() + 1)}/${format(this.now.getDate())}`;
 
         // 色情報を抽出する処理
-        const extractor = new ColorExtractor();
+        const core = require("hcv-core");
+        const extractor = core.extractor;
         const getColor = expression => {
             const color = extractor.extract(expression);
             return [ color.r, color.g, color.b ];
