@@ -19,7 +19,7 @@ class Daylight {
      * @param {String} expression 色表現。
      * @param {Config} config 設定情報。
      * @returns {String} 日の満ち欠けを反映した色を返します。色表現は expression と同種類になります。例えば、expression がヘックス表現の場
-     *                   合は、返却される色表現もヘックス表現です。expression が色を含む表現の場合は、その色表現のみが変更された
+     *                   合は、返却される色表現もヘックス表現です。expression が色を含む表現の場合は、その色表現のみを置換した内容を返します。
      */
     getReflectionColor (expression, config) {
         // デフォルト設定を補完
@@ -34,7 +34,7 @@ class Daylight {
             const source = this._extractor.extract(e.expression);
             if (!source) return null;
 
-            // 日付の傾きを反映
+            // 日の満ち欠けを反映
             const themeColor = config.getThemeColor();
             const reflect = (value1, value2) => {
                 const gap = value2 - value1;
