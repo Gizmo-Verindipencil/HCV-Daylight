@@ -1,6 +1,6 @@
 # HDV-Daylight
 
-<img src="img/logo.png" width="300px">
+<img src="img/title.png" width="300px">
 
 <blockquote>
     <p>
